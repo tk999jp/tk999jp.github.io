@@ -1,0 +1,11 @@
+# Set default behavior to handle line endings.
+* text=auto
+
+# Force LF line endings for text-based source files.
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+# Keep binary files as-is
+*.png binary

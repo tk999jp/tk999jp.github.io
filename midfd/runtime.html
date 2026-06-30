@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MidFDの動作に必要な .NET 10 Desktop Runtime (デスクトップ ランタイム) の導入ガイドです。インストール手順や winget コマンドでのインストール方法を解説しています。">
+  <title>.NET 10 Desktop Runtime 導入ガイド | MidFD | TK Portal</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../" class="site-title">TK Portal</a>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="./">MidFD</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>.NET 10 Desktop Runtime 導入ガイド</h1>
+    <p>
+      MidFD を起動するには、お使いの PC に <strong>.NET 10 Desktop Runtime (デスクトップ ランタイム)</strong> がインストールされている必要があります。
+    </p>
+
+    <!-- 主導線: 起動時ダイアログからの導入 -->
+    <section>
+      <h2>推奨手順: 最も簡単な導入方法</h2>
+      <p>
+        PCがインターネットに接続されている場合、アプリ起動時のエラーメッセージから直接導入するのが最も確実で簡単です。
+      </p>
+
+      <div class="card" style="margin-bottom: 2rem;">
+        <ol style="margin-bottom: 0;">
+          <li>
+            <strong>MidFD.exe を起動する</strong><br>
+            ダウンロードして展開した <code>MidFD.exe</code> をダブルクリックして実行します。
+          </li>
+          <li style="margin-top: 1rem;">
+            <strong>ダイアログの指示に従う</strong><br>
+            「You must install .NET Desktop Runtime to run this application.」というダイアログが表示されたら、<strong>「Download it now」</strong>（はい）を選択します。
+          </li>
+          <li style="margin-top: 1rem;">
+            <strong>インストーラーを実行する</strong><br>
+            Webブラウザが起動し、自動的にインストーラーがダウンロードされます。<br>
+            ダウンロードされた <code>windowsdesktop-runtime-10.0.x-win-x64.exe</code> を実行します。
+          </li>
+          <li style="margin-top: 1rem;">
+            <strong>インストール完了と再起動</strong><br>
+            インストーラーの画面指示に従ってセットアップを完了させた後、再度 <code>MidFD.exe</code> を起動してください。
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 補助手段1: 手動ダウンロード -->
+    <section>
+      <h2>補助手段1: Microsoft公式ページから手動で導入する場合</h2>
+      <p>手動でインストーラーを探して適用する手順です。</p>
+
+      <div class="card" style="margin-bottom: 2rem;">
+        <ol style="margin-bottom: 0;">
+          <li>
+            Microsoftの公式ダウンロードページにアクセスします：<br>
+            <a href="https://dotnet.microsoft.com/download/dotnet/10.0" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">
+              .NET 10.0 ダウンロード (Microsoft公式)
+            </a>
+          </li>
+          <li style="margin-top: 1rem;">
+            ページ内の <strong>「.NET Desktop Runtime 10.0.x」</strong> のセクションを探します。<br>
+            <div class="alert alert-warning" style="margin: 0.5rem 0 0; padding: 0.75rem 1rem;">
+              <span style="font-weight: 700; color: var(--text-color);">※重要：</span> 類似の「.NET SDK」や通常の「.NET Runtime」、「ASP.NET Core Runtime」と間違えないようにしてください。デスクトップアプリの動作には <strong>「Desktop Runtime」</strong> が必要です。
+            </div>
+          </li>
+          <li style="margin-top: 1rem;">
+            OSのアーキテクチャに合わせたリンクをクリックしてダウンロードします。<br>
+            通常、64bit版の Windows をご利用の場合は <strong>「x64」</strong> を選択してください。
+          </li>
+          <li style="margin-top: 1rem;">ダウンロードされたインストーラーを実行し、画面の指示に従ってインストールを完了させます。</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 補助手段2: winget -->
+    <section>
+      <h2>補助手段2: コマンドでのインストール (winget)</h2>
+      <p>
+        Windows 10 / 11 に標準搭載されているパッケージマネージャー「winget」を利用して、コマンドプロンプトや PowerShell からインストールすることも可能です。
+      </p>
+      <p>PowerShell または コマンドプロンプトを開き、以下のコマンドを実行します：</p>
+      <pre><code>winget install Microsoft.DotNet.DesktopRuntime.10</code></pre>
+      <p style="font-size: 0.95rem;">コマンド実行後、確認メッセージ等に従って処理が完了するのを待つだけで自動的にセットアップされます。</p>
+    </section>
+
+    <!-- それでも起動しない場合 -->
+    <section>
+      <h2>それでも起動しない場合の確認項目</h2>
+      <p>ランタイムをインストールしたにもかかわらず起動しない場合は、以下の項目を確認してください。</p>
+
+      <div class="alert alert-info">
+        <div class="alert-title">トラブルシューティング</div>
+        <ul>
+          <li>
+            <strong>PCの再起動:</strong><br>
+            ランタイムの反映がシステムに完全に適用されていない場合があります。一度PCを再起動してから再度 <code>MidFD.exe</code> を実行してみてください。
+          </li>
+          <li>
+            <strong>別アーキテクチャ版の誤導入:</strong><br>
+            x64版の Windows に対して Arm64版や x86(32bit)版のランタイムを導入していないか確認してください（通常は x64 を推奨します）。
+          </li>
+          <li>
+            <strong>セキュリティソフトによるブロック:</strong><br>
+            セキュリティ対策ソフトや Windows SmartScreen が MidFD の実行を一時的にブロックしている場合があります。ファイルのブロック解除設定や例外設定を確認してください。
+          </li>
+        </ul>
+      </div>
+
+      <p style="text-align: center; margin-top: 3rem;">
+        <a href="support.html" class="btn btn-secondary">→ それでも起動しない場合は、サポート・FAQを確認する</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="footer-info-brand">MidFD Project</div>
+        <p>Windows向けの軽量・高速なファイル管理ソフト（ファイラー）です。</p>
+      </div>
+      <div class="footer-links-group">
+        <div>
+          <div class="footer-links-title">プロジェクト</div>
+          <ul class="footer-links">
+            <li><a href="https://github.com/tk999jp/MidFD" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a></li>
+            <li><a href="https://github.com/tk999jp/MidFD/releases" target="_blank" rel="noopener noreferrer">Releases (配布物正本)</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-links-title">YouTube</div>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/@ch-tk" target="_blank" rel="noopener noreferrer">よろずごとゆっくり解説ch</a></li>
+            <li><a href="https://www.youtube.com/@ch-tk_station" target="_blank" rel="noopener noreferrer">小さな物語の停車駅</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-links-title">ナビゲーション</div>
+          <ul class="footer-links">
+            <li><a href="../">TK Portal ホーム</a></li>
+            <li><a href="./">MidFD ホーム</a></li>
+            <li><a href="runtime.html">Runtime 導入ガイド</a></li>
+            <li><a href="support.html">注意事項・サポート</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 tk999jp. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

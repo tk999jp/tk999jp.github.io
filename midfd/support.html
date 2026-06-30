@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MidFDの注意事項、FAQ、不具合報告等のサポートに関する情報を掲載しています。">
+  <title>注意事項・FAQ・サポート | MidFD | TK Portal</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../" class="site-title">TK Portal</a>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="./">MidFD</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <h1>注意事項・FAQ・サポート</h1>
+    <p>
+      MidFD を安全かつ快適にご利用いただくための注意事項とサポートに関する情報です。
+    </p>
+
+    <section>
+      <h2>重要：ご利用にあたっての注意事項</h2>
+      <div class="alert alert-warning">
+        <div class="alert-title">データのバックアップについて</div>
+        <p>
+          MidFD はファイル管理・操作ソフト（ファイラー）です。ファイルの移動、コピー、削除などの処理を行います。<br>
+          万が一の不具合によるデータ消失を防ぐため、重要なファイルは必ず事前、または定期的にバックアップを取ってからご利用ください。本ソフトを使用した結果生じたデータ損害等に関して、開発者は一切の責任を負いかねます。
+        </p>
+      </div>
+
+      <div class="alert alert-info">
+        <div class="alert-title">サポートポリシーについて</div>
+        <p>
+          本ソフトウェアは個人開発のフリーウェアです。無償でご利用いただけますが、個別サポート（メール、返信保証のある対応など）の保証は行っておりません。予めご了承ください。
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>よくあるご質問 (FAQ)</h2>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.5rem; display: flex; gap: 0.5rem; align-items: flex-start;">
+          <span style="color: var(--primary-color);">Q.</span>
+          <span>7-Zip, ffmpeg などのツールは同梱されていますか？</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: flex-start; padding-left: 0.25rem;">
+          <span style="color: var(--accent-color); font-weight: 700;">A.</span>
+          <div>
+            <strong>同梱していません。</strong><br>
+            書庫ファイルの圧縮・展開機能や、メディア情報の取得機能などで使用する外部ツール（<code>7-Zip</code>, <code>ffmpeg</code>, <code>ffprobe</code>, <code>ffplay</code> など）は本アプリには同梱していません。<br>
+            これらの機能を利用される場合は、各公式サイト等から別途ツールを入手し、PCの環境変数 PATH に通すか、アプリ設定等で実行ファイルへのパスを登録してください。
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.5rem; display: flex; gap: 0.5rem; align-items: flex-start;">
+          <span style="color: var(--primary-color);">Q.</span>
+          <span>アプリが起動しない、エラーダイアログが出る</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: flex-start; padding-left: 0.25rem;">
+          <span style="color: var(--accent-color); font-weight: 700;">A.</span>
+          <div>
+            <strong>.NET 10 Desktop Runtime が必要です。</strong><br>
+            お使いのPCに動作要件を満たすランタイムがインストールされているか確認してください。詳細は <a href="runtime.html" style="font-weight: 600; text-decoration: underline;">.NET 10 Desktop Runtime 導入ガイド</a> をご確認ください。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>不具合報告・要望について</h2>
+      <p>
+        MidFD の不具合（バグ）の報告や機能要望は、GitHub の Issue にて受け付けています。<br>
+        報告される際は、発生した現象の具体的な手順やエラーメッセージ、動作環境を明記していただけますと助かります。
+      </p>
+
+      <div class="card" style="margin-top: 1.5rem; border-left: 4px solid var(--primary-color);">
+        <ul style="margin-bottom: 0;">
+          <li>
+            不具合の報告・要望の送付先：<br>
+            <a href="https://github.com/tk999jp/MidFD/issues" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">
+              GitHub Issues (tk999jp/MidFD)
+            </a>
+          </li>
+          <li style="margin-top: 1rem;">
+            詳細なサポートドキュメント（日本語）：<br>
+            <a href="https://github.com/tk999jp/MidFD/blob/main/UserDocs/SUPPORT.md" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">
+              UserDocs/SUPPORT.md (GitHub)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="footer-info-brand">MidFD Project</div>
+        <p>Windows向けの軽量・高速なファイル管理ソフト（ファイラー）です。</p>
+      </div>
+      <div class="footer-links-group">
+        <div>
+          <div class="footer-links-title">プロジェクト</div>
+          <ul class="footer-links">
+            <li><a href="https://github.com/tk999jp/MidFD" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a></li>
+            <li><a href="https://github.com/tk999jp/MidFD/releases" target="_blank" rel="noopener noreferrer">Releases (配布物正本)</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-links-title">YouTube</div>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/@ch-tk" target="_blank" rel="noopener noreferrer">よろずごとゆっくり解説ch</a></li>
+            <li><a href="https://www.youtube.com/@ch-tk_station" target="_blank" rel="noopener noreferrer">小さな物語の停車駅</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-links-title">ナビゲーション</div>
+          <ul class="footer-links">
+            <li><a href="../">TK Portal ホーム</a></li>
+            <li><a href="./">MidFD ホーム</a></li>
+            <li><a href="runtime.html">Runtime 導入ガイド</a></li>
+            <li><a href="support.html">注意事項・サポート</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 tk999jp. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
