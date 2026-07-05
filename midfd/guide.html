@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Windows向けファイラー「MidFD」の導入・セットアップ手順。ダウンロードから起動、困ったときのトラブルシューティング、任意連携できる外部ツールの設定を解説。" name="description"/>
+  <title>導入・セットアップガイド - MidFD | TK Portal</title>
+  <link href="../assets/css/site.css" rel="stylesheet"/>
+</head>
+<body class="midfd-page midfd-redesign">
+
+  <header class="midfd-site-header">
+    <div class="nav-container">
+      <a class="site-title" href="../">TK Portal</a>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="./">MidFD</a></li>
+        <li><a class="active" href="guide.html">導入ガイド</a></li>
+        <li><a href="keys.html">キー操作</a></li>
+        <li><a href="index.html#verify">確認情報</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="midfd-showcase" id="guide-hero" style="padding: 4rem 0 1.5rem 0; min-height: auto;">
+      <div class="midfd-container">
+        <p class="midfd-kicker" style="text-align: center;">Setup Roadmap</p>
+        <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; color: var(--text-color);">導入ロードマップ</h1>
+        <p class="midfd-lead" style="text-align: center; max-width: 700px; margin: 0 auto; color: var(--text-muted);">
+          ほとんどのユーザー環境では、以下のシンプルな3ステップだけで MidFD を使い始めることができます。
+        </p>
+      </div>
+    </section>
+
+    <!-- 1. ほとんどの人はこの3ステップ -->
+    <section class="midfd-container" id="setup-flow" style="margin-bottom: 4.5rem;">
+      <div class="midfd-section-heading">
+        <h2>ほとんどの人はこの3ステップ</h2>
+      </div>
+
+      <div class="midfd-roadmap">
+        <div class="midfd-roadmap-step">
+          <div class="midfd-roadmap-num">Step 1</div>
+          <div class="midfd-roadmap-title">通常版ZIPを取得</div>
+          <p style="font-size: 0.9rem; line-height: 1.5; margin: 0; color: var(--text-muted);">
+            まずは配布元ページより、通常起動用のZIPファイルをダウンロードします。
+          </p>
+          <div class="midfd-step-actions">
+            <a href="index.html#download" class="midfd-button midfd-button-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem; width: auto; display: inline-block;">通常版ZIPをダウンロード</a>
+          </div>
+          <span class="midfd-step-note">※Source code (zip) は開発用ソース一式のため、通常の起動には使用できません。</span>
+        </div>
+
+        <div class="midfd-roadmap-step">
+          <div class="midfd-roadmap-num">Step 2</div>
+          <div class="midfd-roadmap-title">ZIPを展開</div>
+          <p style="font-size: 0.9rem; line-height: 1.5; margin: 0; color: var(--text-muted);">
+            ダウンロードしたZIPファイルを右クリックしてすべて展開（解凍）します。迷ったら「ドキュメント」や任意の作業フォルダ等へ配置してください。
+          </p>
+          <span class="midfd-step-note">※書き込みエラーを避けるため、Program Files 等のシステム保護領域以外を推奨します。</span>
+        </div>
+
+        <div class="midfd-roadmap-step">
+          <div class="midfd-roadmap-num">Step 3</div>
+          <div class="midfd-roadmap-title">MidFD.exeを起動</div>
+          <p style="font-size: 0.9rem; line-height: 1.5; margin: 0; color: var(--text-muted);">
+            展開フォルダ内の <code>MidFD.exe</code> を起動します。画面に従って好みの初期キー操作プリセットを選択すれば完了です。
+          </p>
+          <span class="midfd-step-note">※キー割り当ては後から設定画面でいつでも変更可能です。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. うまく起動しない場合 -->
+    <section class="midfd-container" style="margin-bottom: 4.5rem;">
+      <div class="midfd-section-heading">
+        <h2>うまく起動しない場合</h2>
+      </div>
+      <p style="text-align: center; margin-bottom: 1.5rem; color: var(--text-muted);">万が一、上記の手順で起動できなかった場合は、以下の症状に合わせて対処を行ってください。</p>
+      <div class="midfd-help-grid">
+        <div class="midfd-help-card">
+          <div>
+            <div class="midfd-help-title">⚠️ Runtimeがない</div>
+            <p class="midfd-help-desc">
+              「.NET Runtime が見つからない」という警告が出て起動しない状態。
+            </p>
+          </div>
+          <div class="midfd-help-action">
+            <strong>【対処】:</strong> <code>.NET 10 Desktop Runtime x64</code> をインストールします。<br>
+            起動ダイアログの「はい」から自動ダウンロードするか、Microsoft公式から「x64版」を取得してください。<br>
+            （または <code>winget install Microsoft.DotNet.DesktopRuntime.10</code> を実行）
+            <div style="margin-top: 0.75rem;">
+              <a href="https://dotnet.microsoft.com/download/dotnet/10.0" target="_blank" rel="noopener noreferrer" class="midfd-button midfd-button-primary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; width: auto; display: inline-block;">Microsoft ダウンロード</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="midfd-help-card">
+          <div>
+            <div class="midfd-help-title">⚠️ 警告が出る</div>
+            <p class="midfd-help-desc">
+              Windows SmartScreen やウイルス対策ソフトによって起動が一時ブロックされる状態。
+            </p>
+          </div>
+          <div class="midfd-help-action">
+            <strong>【対処】:</strong> 個人開発プログラムのため、Windows保護機能が警告を出す場合があります。画面内の「詳細情報」をクリックし、入手元が公式であることを確認の上、ご自身の判断で「実行」を選択して起動してください。
+          </div>
+        </div>
+
+        <div class="midfd-help-card">
+          <div>
+            <div class="midfd-help-title">⚠️ zipを間違えた</div>
+            <p class="midfd-help-desc">
+              起動ファイル <code>MidFD.exe</code> が見当たらず、ソースコードのフォルダやファイルだけが入っている状態。
+            </p>
+          </div>
+          <div class="midfd-help-action">
+            <strong>【対処】:</strong> 開発用の一式である <code>Source code zip</code> を取得した可能性があります。配布ページのダウンロードエリアに戻り、通常版の <code>MidFD-win-x64.zip</code> をダウンロードし直してください。
+            <div style="margin-top: 0.75rem;">
+              <a href="index.html#download" class="midfd-button midfd-button-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; width: auto; display: inline-block;">ダウンロードに戻る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 外部ツール連携について -->
+    <section class="midfd-container" id="external-tools" style="margin-bottom: 5rem;">
+      <div class="midfd-section-heading">
+        <h2>外部ツール・外部エディタ連携の設定方法</h2>
+      </div>
+      <div class="midfd-compact-info-card">
+        <p style="margin-bottom: 1.25rem; line-height: 1.6; color: var(--text-color); font-weight: 500;">
+          アーカイブ操作を便利にする 7-Zip、動画プレビューを可能にする ffmpeg、および外部テキストエディタ等の連携設定は、<strong>初回起動後にいつでも自由に行えます。</strong>
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+          具体的なツール別の特徴や役割については、トップページの紹介をご覧ください。
+        </p>
+        <div style="text-align: center;">
+          <a href="index.html#external-tools" class="midfd-button midfd-button-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem; width: auto; display: inline-block;">外部ツール連携を見る →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 次に見る (CTA) -->
+    <section class="midfd-container" style="margin-bottom: 6rem;">
+      <div class="midfd-cta-box">
+        <p class="midfd-kicker">Next Step</p>
+        <h2 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--text-color);">操作キーを確認しましょう</h2>
+        <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text-muted);">
+          基本となるキー操作やマーク選択、標準・FD互換プリセットごとのFキー割り当て一覧をまとめたキー操作リファレンスです。
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="keys.html" class="midfd-button midfd-button-primary">キー操作ガイドを見る</a>
+          <a href="index.html#download" class="midfd-button midfd-button-secondary">ダウンロードに戻る</a>
+          <a href="index.html" class="midfd-button midfd-button-secondary">トップページへ戻る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="footer-info-brand">MidFD Project</div>
+        <p>FDライクな操作感を目指した、Windows向けの軽量ファイラーです。</p>
+        <p style="font-size: 0.8rem; margin-bottom: 0;"><a href="retro.html">CRT mode</a></p>
+      </div>
+      <div class="footer-links-group">
+        <div>
+          <div class="footer-links-title">プロジェクト</div>
+          <ul class="footer-links">
+            <li><a href="https://github.com/tk999jp/MidFD" target="_blank" rel="noopener noreferrer">開発者向け: GitHub</a></li>
+            <li><a href="https://github.com/tk999jp/MidFD/releases" target="_blank" rel="noopener noreferrer">配布元ページ</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-links-title">ナビゲーション</div>
+          <ul class="footer-links">
+            <li><a href="./">MidFD ホーム</a></li>
+            <li><a href="guide.html">導入ガイド</a></li>
+            <li><a href="keys.html">キー操作</a></li>
+            <li><a href="index.html#external-tools">外部ツール連携</a></li>
+            <li><a href="index.html#verify">確認情報</a></li>
+            <li><a href="index.html#report">報告・注意</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 tk999jp. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

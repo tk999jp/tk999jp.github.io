@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MidFDのレトロPC風おまけ紹介ページです。通常版ダウンロードとRuntime要件も確認できます。">
+  <title>MidFD CRT Mode</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="retro-page">
+  <main class="retro-shell">
+    <div class="retro-frame">
+      <header class="retro-header">
+        <span>TK PORTAL / HIDDEN PAGE</span>
+        <div class="retro-header-links">
+          <a href="./">通常ページへ戻る</a>
+          <a href="./#report">REPORT</a>
+        </div>
+      </header>
+
+      <section class="retro-hero">
+        <p class="retro-kicker">FILE MANAGER FOR WINDOWS</p>
+        <h1>MidFD</h1>
+        <p>軽量・高速・タブ型ファイラー。CRTモードでも配布、起動、確認情報までたどれます。</p>
+        <div class="retro-actions">
+          <a href="https://github.com/tk999jp/MidFD/releases/latest/download/MidFD-win-x64.zip" class="retro-download">Download MidFD-win-x64.zip</a>
+          <a href="https://github.com/tk999jp/MidFD/releases" target="_blank" rel="noopener noreferrer" class="retro-link-button">配布元ページへ</a>
+        </div>
+      </section>
+
+      <section class="retro-console">
+        <div class="retro-console-head">
+          <span>MAIN BROWSER PREVIEW</span>
+          <span>READY</span>
+        </div>
+        <img src="assets/images/screenshot-main-browser.png" alt="MidFD Main Browser" class="retro-shot">
+      </section>
+
+      <section class="retro-status">
+        <div>
+          <span>PACKAGE</span>
+          <strong>MidFD-win-x64.zip</strong>
+        </div>
+        <div>
+          <span>RUNTIME</span>
+          <strong>.NET 10 Desktop Runtime x64</strong>
+        </div>
+        <div>
+          <span>STATE</span>
+          <strong>Self-Contained: 未公開</strong>
+        </div>
+      </section>
+
+      <section class="retro-grid">
+        <div>
+          <h2>SYSTEM</h2>
+          <ul>
+            <li>Windows x64</li>
+            <li>.NET 10 Desktop Runtime x64</li>
+            <li>Runtime不足時は起動時の案内から進める</li>
+          </ul>
+        </div>
+        <div>
+          <h2>RELEASE</h2>
+          <ul>
+            <li>Version: <span data-midfd-release-field="tag">取得中</span></li>
+            <li>Asset: MidFD-win-x64.zip</li>
+            <li data-midfd-release-row="product-version" hidden>ProductVersion: <span data-midfd-release-field="product-version"></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="retro-grid retro-grid-wide">
+        <div>
+          <h2>BOOT SEQUENCE</h2>
+          <ol class="retro-sequence">
+            <li>MidFD-win-x64.zip を展開</li>
+            <li>MidFD.exe を起動</li>
+            <li>起動時に案内が出た場合だけ実行環境を追加</li>
+          </ol>
+        </div>
+        <div>
+          <h2>STARTUP RECOVERY</h2>
+          <ul>
+            <li>画面内の Download it now を優先</li>
+            <li>進めない場合は Microsoft公式ページで x64 を選択</li>
+            <li>さらにだめなら通常ページの報告・注意を確認</li>
+          </ul>
+          <div class="retro-inline-links">
+            <a href="guide.html#setup-flow">起動サポート</a>          </div>
+        </div>
+      </section>
+
+      <section class="retro-grid retro-grid-wide">
+        <div>
+          <h2>TOOL SLOTS</h2>
+          <ul>
+            <li>ARCHIVE: 7-Zip</li>
+            <li>MEDIA: FFmpeg</li>
+            <li>DIFF: WinMerge / KDiff3 / Meld / Beyond Compare</li>
+          </ul>
+          <div class="retro-inline-links">
+            <a href="./#external-tools">外部ツール</a>
+            <a href="https://winmerge.org/downloads/" target="_blank" rel="noopener noreferrer">Diff guide</a>
+          </div>
+        </div>
+        <div>
+          <h2>ROUTE MAP</h2>
+          <ul>
+            <li>NORMAL PAGE: 配布サイト本編へ戻る</li>
+            <li>REPORT: 報告・バックアップ・注意</li>
+            <li>VERIFY: ハッシュと公開情報を確認</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="retro-warning">
+        <h2>NOTICE</h2>
+        <p>通常利用では <code>MidFD-win-x64.zip</code> を使用してください。GitHub Releases の <code>Source code (zip)</code> / <code>Code &gt; Download ZIP</code> はソース一式で、通常の起動用ファイルではありません。</p>
+        <p class="midfd-release-status" data-midfd-release-status>GitHub Releases から確認情報を取得しています。</p>
+      </section>
+
+      <section class="retro-verification">
+        <h2>VERIFICATION BOARD</h2>
+        <div class="retro-verify-grid">
+          <div><span>配布元</span><strong>GitHub Releases</strong></div>
+          <div><span>Release</span><strong data-midfd-release-field="tag">取得中</strong></div>
+          <div><span>Asset</span><strong>MidFD-win-x64.zip</strong></div>
+          <div><span>Runtime</span><strong>.NET 10 Desktop Runtime x64</strong></div>
+          <div data-midfd-release-row="product-version" hidden><span>ProductVersion</span><code data-midfd-release-field="product-version"></code></div>
+          <div data-midfd-release-row="sha256" hidden><span>SHA256</span><div><code data-midfd-release-field="sha256"></code><small>GitHub Releases asset digest</small></div></div>
+        </div>
+      </section>
+
+      <footer class="retro-footer">
+        <span>This is an Easter egg page.</span>
+        <div class="retro-header-links">
+          <a href="./">通常ページへ</a>
+          <a href="https://github.com/tk999jp/MidFD/releases" target="_blank" rel="noopener noreferrer">配布元ページへ</a>
+        </div>
+      </footer>
+    </div>
+  </main>
+  <script src="../assets/js/midfd-release.js?v=20260705b"></script>
+</body>
+</html>

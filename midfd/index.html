@@ -1,267 +1,267 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Windows向けの軽量・高速なファイル管理ソフト（ファイラー）「MidFD」の公式配布ページです。ダウンロードや導入方法について解説しています。">
-  <title>MidFD - Windows用軽量ファイラー | TK Portal</title>
-  <link rel="stylesheet" href="../assets/css/site.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="FDライクな操作感を目指した、Windows向けの軽量ファイラー「MidFD」の公式配布ページ。キーボード主体でファイル操作を素早く進められます。" name="description"/>
+<title>MidFD - FDライクな操作感を目指したWindowsファイラー | TK Portal</title>
+<link href="../assets/css/site.css" rel="stylesheet"/>
 </head>
-<body>
-  <header>
-    <div class="nav-container">
-      <a href="../" class="site-title">TK Portal</a>
-      <ul class="nav-links">
-        <li><a href="../">Home</a></li>
-        <li><a href="./" class="active">MidFD</a></li>
-      </ul>
-    </div>
-  </header>
+<body class="midfd-page midfd-redesign">
+<header class="midfd-site-header">
+<div class="nav-container">
+<a class="site-title" href="../">TK Portal</a>
+<ul class="nav-links">
+<li><a href="../">Home</a></li>
+<li><a class="active" href="./">MidFD</a></li>
+<li><a href="guide.html">導入ガイド</a></li>
+<li><a href="keys.html">キー操作</a></li>
+<li><a href="#verify">確認情報</a></li>
+</ul>
+</div>
+</header>
+<main>
+<!-- 1. Hero -->
+<section class="midfd-showcase" id="hero">
+<div class="midfd-container midfd-showcase-grid">
+<div class="midfd-showcase-copy">
+<p class="midfd-kicker">Official download page</p>
+<h1 class="midfd-logo-heading">
+<img alt="MidFD" src="../assets/images/MidFD.svg"/>
+</h1>
+<h2 class="midfd-showcase-title">FDライクな操作感を目指した、Windows向けの軽量ファイラー</h2>
+<p class="midfd-lead">キーボード主体で、ファイル操作を素早く進める。<br>Explorerとコマンドラインの間で使える軽量なGUI補助ツールです。</p>
+<div class="midfd-command-row">
+<a class="midfd-button midfd-button-primary" href="https://github.com/tk999jp/MidFD/releases/latest/download/MidFD-win-x64.zip" id="hero-dl-btn">通常版をダウンロード</a>
+<a class="midfd-button midfd-button-secondary" href="https://github.com/tk999jp/MidFD/releases" rel="noopener noreferrer" target="_blank">配布元ページを見る</a>
+</div>
+<div class="midfd-runtime-note" style="margin-top:1rem;">
+<strong>動作要件:</strong>
+<span>Windows x64 / .NET 10 Desktop Runtime x64 が必要です</span>
+</div>
+<p class="midfd-small-note">Runtime が不足している場合は <a href="guide.html">導入ガイド</a> を確認してください。<br>
+</div>
+<div class="midfd-product-stage">
+<img alt="MidFD 本体画面" class="midfd-product-shot" data-midfd-preview-image="" src="assets/images/screenshot-main-browser.png"/>
+<div class="midfd-product-caption">
+<strong data-midfd-preview-title="">本体画面</strong>
+<span data-midfd-preview-caption="">ファイル一覧の見え方を確認できます。</span>
+</div>
+<div aria-label="キャプチャ選択" class="midfd-preview-picker">
+<button class="midfd-preview-button is-active" data-midfd-preview-trigger="main-browser" data-preview-alt="MidFD 本体画面" data-preview-caption="ファイル一覧の見え方を確認できます。" data-preview-src="assets/images/screenshot-main-browser.png" data-preview-title="本体画面" type="button">本体画面</button>
+<button class="midfd-preview-button" data-midfd-preview-trigger="command-palette" data-preview-alt="MidFD コマンドパレット" data-preview-caption="機能や外部ツールを検索して実行できます。" data-preview-src="assets/images/screenshot-command-palette.png" data-preview-title="Command Palette" type="button">Command Palette</button>
+<button class="midfd-preview-button" data-midfd-preview-trigger="input-customize" data-preview-alt="MidFD キー設定" data-preview-caption="入力割り当てをまとめて確認・変更できます。" data-preview-src="assets/images/screenshot-input-customize.png" data-preview-title="キー設定" type="button">キー設定</button>
+<button class="midfd-preview-button" data-midfd-preview-trigger="image-viewer" data-preview-alt="MidFD 画像ビューア" data-preview-caption="矩形選択、回転、反転、画像情報表示に対応します。" data-preview-src="assets/images/screenshot-image-viewer.png" data-preview-title="画像ビューア" type="button">画像ビューア</button>
+<button class="midfd-preview-button" data-midfd-preview-trigger="settings-colors" data-preview-alt="MidFD 設定画面" data-preview-caption="設定画面の雰囲気を確認できます。" data-preview-src="assets/images/screenshot-settings-colors.png" data-preview-title="設定画面" type="button">設定画面</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Download / Runtime -->
+<section class="midfd-download-runtime midfd-container" id="download">
+<div class="midfd-section-heading">
+<h2>ダウンロード / 動作要件</h2>
+</div>
+<div class="midfd-dl-grid">
+<div class="midfd-dl-card">
+<p class="midfd-kicker">通常版</p>
+<p class="midfd-dl-filename"><code>MidFD-win-x64.zip</code></p>
+<p>ZIP を展開して <code>MidFD.exe</code> を起動するだけで使い始められます。インストール不要です。</p>
+<div class="midfd-panel-actions">
+<a class="midfd-button midfd-button-primary" href="https://github.com/tk999jp/MidFD/releases/latest/download/MidFD-win-x64.zip" id="dl-main-btn">通常版をダウンロード</a>
+<a class="midfd-button midfd-button-secondary" href="https://github.com/tk999jp/MidFD/releases" rel="noopener noreferrer" target="_blank">配布元ページ (GitHub Releases)</a>
+</div>
+</div>
+<div class="midfd-runtime-card">
+<p class="midfd-kicker">動作要件</p>
+<ul class="midfd-req-list">
+<li><strong>OS:</strong> Windows x64</li>
+<li><strong>Runtime:</strong> .NET 10 Desktop Runtime x64</li>
+</ul>
+<p class="midfd-small-note">起動時に「<code>Download it now</code>」ボタンが表示された場合は、そこからRuntime を追加できます。それ以外の方法は <a href="guide.html">導入ガイド</a> を参照してください。</p>
+</div>
+</div>
+</section>
+<!-- 3. MidFDの特徴 -->
+<section class="midfd-features-section midfd-container" id="features">
+<div class="midfd-section-heading">
+<h2>MidFDの特徴</h2>
+</div>
+<div class="midfd-opref-cards">
+<div class="midfd-opref-card">
+<div class="midfd-opref-card-title">キーボード主体の軽快操作</div>
+<p>移動、選択、ファイル操作、コマンド実行など、ファイラーの全主要操作をキーボードだけで軽快に行えます。設定からコマンド単位のキーカスタマイズやFunctionキー割り当ても可能です。</p>
+</div>
+<div class="midfd-opref-card">
+<div class="midfd-opref-card-title">移動と管理の高速化</div>
+<p>複数タブとカテゴリ機能で作業フォルダを分離。よく使うフォルダへ素早く移動できるQuickAccessや、マーク状態を保存・復元するMarkSlotなどの強力な整理機能を搭載しています。</p>
+</div>
+<div class="midfd-opref-card">
+<div class="midfd-opref-card-title">メディアプレビューと外部連携</div>
+<p>動作の軽い内蔵画像ビューアのほか、ffmpegと連携した動画静止画プレビュー（VideoStill）を内蔵。7-Zipなどの使い慣れた外部ツールを直接呼び出せるAlt slot launcherもサポートします。</p>
+</div>
+</div>
+</section>
+<!-- 4. 操作リファレンス -->
+<section class="midfd-opref-section midfd-container" id="quick-start"><div class="midfd-section-heading">
+<h2>クイックスタート</h2>
+</div><p class="midfd-lead" style="text-align: center; margin-bottom: 2rem;">まずは以下の主要な基本キーを覚えるだけで、MidFD の操作を始められます。</p><div class="midfd-table-wrap" style="max-width: 600px; margin: 0 auto 3rem auto;">
+<table class="midfd-ref-table">
+<thead>
+<tr><th>キー</th><th>動作</th></tr>
+</thead>
+<tbody>
+<tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>選択項目の上下移動</td></tr>
+<tr><td><kbd>Enter</kbd></td><td>ファイルを開く、または内蔵ビューアで表示</td></tr>
+<tr><td><kbd>Backspace</kbd></td><td>親フォルダへ移動</td></tr>
+<tr><td><kbd>L</kbd></td><td>移動履歴（Logdsk）からディレクトリを素早く移動</td></tr>
+<tr><td><kbd>Q</kbd></td><td>よく使う場所（QuickAccess）を開く</td></tr>
+<tr><td><kbd>Ctrl+Shift+P</kbd></td><td>コマンドパレットを開き、機能や外部ツールを検索して実行</td></tr>
+</tbody>
+</table>
+</div>
+</section>
 
-  <main>
-    <!-- Hero 2カラムスプリット構成 -->
-    <section class="hero hero-split">
-      <div class="hero-split-left">
-        <h1>MidFD</h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); margin: 0.5rem 0 1.5rem; max-width: none;">
-          Windows向けの軽量・高速なタブ型ファイラー
-        </p>
-        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem;">
-          シンプルで軽快な操作感を追求した、C# & .NET 10 製ファイルマネージャー。必要な機能に素早くアクセスできるキー操作やコマンドパレットを搭載しています。
-        </p>
-        <div class="cta-group">
-          <a href="https://github.com/tk999jp/MidFD/releases/latest/download/MidFD-win-x64.zip" class="btn btn-primary">
-            通常版ダウンロード (win-x64)
-          </a>
-          <a href="https://github.com/tk999jp/MidFD" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            GitHub
-          </a>
-        </div>
-        <div style="font-size: 0.85rem; color: var(--text-muted);">
-          ※動作要件: <a href="runtime.html" style="font-weight: 600; text-decoration: underline;">.NET 10 Desktop Runtime</a>
-        </div>
-      </div>
-      <div class="hero-split-right">
-        <a href="#modal-main" class="modal-trigger">
-          <img src="assets/images/screenshot-main-browser.png" alt="MidFD Main Browser" class="screenshot-img">
-        </a>
-      </div>
-    </section>
+<!-- 4. 外部ツール連携 -->
+<section class="midfd-container" id="external-tools" style="margin-bottom: 4.5rem;">
+<div class="midfd-section-heading">
+<h2>外部ツールとの柔軟な連携</h2>
+</div>
+<p style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto; color: var(--text-muted);">
+外部ツールは<strong>初回起動の必須条件ではありません。</strong> 必要になったら後から設定の「外部連携」タブに登録し、MidFDから素早く呼び出すことができます。
+</p>
+<div class="midfd-optional-tools">
+<a href="https://www.7-zip.org/" target="_blank" rel="noopener noreferrer" class="midfd-optional-tool-card">
+<div>
+<div class="midfd-optional-tool-type">Archive</div>
+<div class="midfd-optional-tool-name">7-Zip</div>
+<div class="midfd-optional-tool-desc">大容量ZIPの高速圧縮・展開や、各種書庫ファイルの高度な書庫操作を行う際に使用します。</div>
+</div>
+<div class="midfd-card-cta">公式サイトを開く ↗ <span class="midfd-external-badge">外部サイト</span></div>
+</a>
 
-    <!-- 主な特徴セクション -->
-    <section style="margin-bottom: 3rem;">
-      <h2>主な特徴</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-title">軽快な動作性能</div>
-          <p style="font-size: 0.95rem; margin-bottom: 0;">.NET 10 テクノロジーを基盤とし、起動速度と操作レスポンスの軽快さを追求しました。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-title">タブ型インターフェース</div>
-          <p style="font-size: 0.95rem; margin-bottom: 0;">複数のフォルダを並行して切り替えながら、スムーズに整理・移動が可能です。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-title">無駄のないシンプル設計</div>
-          <p style="font-size: 0.95rem; margin-bottom: 0;">複雑な多機能化を避け、直感的かつ確実にファイル操作を行える画面構成です。</p>
-        </div>
-      </div>
-    </section>
+<a href="https://ffmpeg.org/download.html" target="_blank" rel="noopener noreferrer" class="midfd-optional-tool-card">
+<div>
+<div class="midfd-optional-tool-type">Media</div>
+<div class="midfd-optional-tool-name">ffmpeg / ffplay / ffprobe</div>
+<div class="midfd-optional-tool-desc">動画のサムネイル・シークプレビュー（VideoStill）機能やメディアファイルの再生連携に使用します。</div>
+</div>
+<div class="midfd-card-cta">ダウンロードページを開く ↗ <span class="midfd-external-badge">外部サイト</span></div>
+</a>
 
-    <!-- スクリーンショットギャラリーセクション -->
-    <section style="margin-bottom: 3rem;">
-      <h2>スクリーンショットギャラリー</h2>
-      <div class="gallery-grid">
-        <div class="gallery-card">
-          <a href="#modal-gal-1" class="modal-trigger">
-            <img src="assets/images/screenshot-command-palette.png" alt="Command Palette" class="gallery-img">
-          </a>
-          <div class="gallery-title">Command Palette</div>
-        </div>
-        <div class="gallery-card">
-          <a href="#modal-gal-2" class="modal-trigger">
-            <img src="assets/images/screenshot-settings-colors.png" alt="Color Settings" class="gallery-img">
-          </a>
-          <div class="gallery-title">配色設定</div>
-        </div>
-        <div class="gallery-card">
-          <a href="#modal-gal-3" class="modal-trigger">
-            <img src="assets/images/screenshot-input-customize.png" alt="Input Customization" class="gallery-img">
-          </a>
-          <div class="gallery-title">入力割り当て</div>
-        </div>
-        <div class="gallery-card">
-          <a href="#modal-gal-4" class="modal-trigger">
-            <img src="assets/images/screenshot-image-viewer.png" alt="Image Viewer" class="gallery-img">
-          </a>
-          <div class="gallery-title">Image Viewer</div>
-        </div>
-      </div>
-    </section>
+<a href="guide.html#external-tools" class="midfd-optional-tool-card">
+<div>
+<div class="midfd-optional-tool-type">Text</div>
+<div class="midfd-optional-tool-name">外部エディタ</div>
+<div class="midfd-optional-tool-desc"><code>E</code> / <code>F4</code> キーで選択ファイルを使い慣れた好みのテキストエディタで直接開くための設定が可能です。</div>
+</div>
+<div class="midfd-card-cta">設定方法を見る →</div>
+</a>
+</div>
+</section>
 
-    <!-- ダウンロードセクション -->
-    <section id="download" style="margin-bottom: 3rem;">
-      <h2>ダウンロード</h2>
-      <div class="download-hero">
-        <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">最新リリース通常版</div>
-        <p style="margin-bottom: 1.5rem;">Windows x64環境向けのバイナリパッケージです。</p>
-        <div class="cta-group">
-          <a href="https://github.com/tk999jp/MidFD/releases/latest/download/MidFD-win-x64.zip" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
-            通常版 MidFD (win-x64.zip) をダウンロード
-          </a>
-        </div>
-        <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0;">
-          ※配布物の正本および最新バージョンは <a href="https://github.com/tk999jp/MidFD/releases/latest" target="_blank" rel="noopener noreferrer" style="font-weight: 600;">GitHub Releases</a> で管理されています。
-        </p>
-      </div>
+<section class="midfd-container" style="margin-bottom: 4.5rem;">
+<div class="midfd-section-heading">
+<h2>詳細ガイド</h2>
+</div>
+<div class="midfd-dl-grid">
+<div class="midfd-dl-card">
+<p class="midfd-kicker">導入・セットアップ</p>
+<div class="midfd-opref-card-title" style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">導入ガイド</div>
+<p style="margin-bottom: 1.5rem;">ZIP の展開・起動手順、.NET Runtime の導入手順。外部連携ツールの初期設定やトラブルシューティングまでを解説しています。</p>
+<div class="midfd-panel-actions">
+<a class="midfd-button midfd-button-primary" href="guide.html">導入ガイドを見る</a>
+</div>
+</div>
+<div class="midfd-dl-card">
+<p class="midfd-kicker">キーボード操作</p>
+<div class="midfd-opref-card-title" style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">キー操作ガイド</div>
+<p style="margin-bottom: 1.5rem;">「移動する」「ファイルを選択する」「整理する」「開く・外へ渡す」など、作業フローに沿って整理された分かりやすいキーボード操作体系です。</p>
+<div class="midfd-panel-actions">
+<a class="midfd-button midfd-button-primary" href="keys.html">キー操作ガイドを見る</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. 導入ガイド -->
 
-      <div class="alert alert-warning">
-        <div class="alert-title">ダウンロードに関する注意点</div>
-        <p>
-          GitHub リポジトリ上にある <strong>「Source code (zip)」</strong> は、開発者向けのソースコード一式です。ビルドしないと実行ファイルが含まれていないため、通常利用目的の方は上記の「通常版 MidFD (win-x64.zip)」または GitHub Releases のビルド済みバイナリをご利用ください。
-        </p>
-      </div>
-    </section>
+<!-- 6. 外部ツール -->
 
-    <!-- 更新情報セクション -->
-    <section id="changelog" style="margin-top: 3rem;">
-      <h2>更新情報</h2>
-      <div class="card" style="padding: 1.5rem 2rem;">
-        <p style="margin-bottom: 1.5rem;">
-          MidFDの最新版、過去バージョン、リリースノートは GitHub Releases で管理しています。<br>
-          詳細な変更履歴を確認したい場合は、更新履歴ページもご覧ください。
-        </p>
-        <div style="display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap;">
-          <a href="https://github.com/tk999jp/MidFD/releases" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="border-color: var(--primary-color); color: var(--primary-color) !important;">
-            リリース一覧を見る
-          </a>
-          <a href="https://github.com/tk999jp/MidFD/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="border-color: var(--primary-color); color: var(--primary-color) !important;">
-            更新履歴を見る
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 前提環境とサポートへの導線 -->
-    <section style="margin-top: 3rem;">
-      <h2>動作環境と前提要件</h2>
-
-      <div class="guide-box">
-        <div class="guide-box-content">
-          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">動作には .NET 10 Desktop Runtime が必要です</div>
-          <p style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-muted);">
-            <code>MidFD.exe</code> 起動時に .NET Runtime 不足のダイアログが表示された場合は、画面の<strong>「Download it now」</strong>ボタンを押すことで簡単にインストーラーをダウンロードできます。
-          </p>
-          <p style="font-size: 0.95rem; margin-bottom: 0; color: var(--text-muted);">
-            起動時の流れや、うまくインストールできない場合の対処方法はガイドをご確認ください。
-          </p>
-        </div>
-        <div class="guide-box-btn">
-          <a href="runtime.html" class="btn btn-secondary">Runtime 導入ガイドへ</a>
-        </div>
-      </div>
-
-      <div class="guide-box">
-        <div class="guide-box-content">
-          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">ご利用上の注意・サポートについて</div>
-          <p style="font-size: 0.95rem; margin-bottom: 0; color: var(--text-muted);">
-            データバックアップに関する推奨事項、FAQ、外部連携ツールの有無、不具合の報告窓口についてはこちらをご確認ください。
-          </p>
-        </div>
-        <div class="guide-box-btn">
-          <a href="support.html" class="btn btn-secondary">サポート・FAQへ</a>
-        </div>
-      </div>
-
-      <h3 style="margin-top: 2rem;">Runtimeの導入でお困りの場合</h3>
-      <p>
-        PCの環境制限等により .NET 10 Desktop Runtime をシステムに直接インストールできない場合は、ランタイムがあらかじめ同梱された「自己完結型 (Self-Contained)」の配布パッケージの利用をご検討ください。
-      </p>
-      <p style="font-size: 0.95rem; color: var(--text-muted);">
-        ※自己完結型パッケージは、ファイルサイズが大きくなります。可能な限り通常版＋システムへのRuntime導入を推奨します。
-      </p>
-      <p>
-        <a href="https://github.com/tk999jp/MidFD/releases/latest" target="_blank" rel="noopener noreferrer" style="font-weight: 600;">
-          → GitHub Releases から Self-Contained 版 (MidFD-win-x64-selfcontained.zip 等) を探す
-        </a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-info">
-        <div class="footer-info-brand">MidFD Project</div>
-        <p>Windows向けの軽量・高速なファイル管理ソフト（ファイラー）です。</p>
-      </div>
-      <div class="footer-links-group">
-        <div>
-          <div class="footer-links-title">プロジェクト</div>
-          <ul class="footer-links">
-            <li><a href="https://github.com/tk999jp/MidFD" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a></li>
-            <li><a href="https://github.com/tk999jp/MidFD/releases" target="_blank" rel="noopener noreferrer">Releases (配布物正本)</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-links-title">YouTube</div>
-          <ul class="footer-links">
-            <li><a href="https://www.youtube.com/@ch-tk" target="_blank" rel="noopener noreferrer">よろずごとゆっくり解説ch</a></li>
-            <li><a href="https://www.youtube.com/@ch-tk_station" target="_blank" rel="noopener noreferrer">小さな物語の停車駅</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-links-title">ナビゲーション</div>
-          <ul class="footer-links">
-            <li><a href="../">TK Portal ホーム</a></li>
-            <li><a href="./">MidFD ホーム</a></li>
-            <li><a href="runtime.html">Runtime 導入ガイド</a></li>
-            <li><a href="support.html">注意事項・サポート</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <p>&copy; 2026 tk999jp. All rights reserved.</p>
-    </div>
-  </footer>
-  <!-- Image Modals (CSS-only) -->
-  <div id="modal-main" class="modal">
-    <a href="#close" class="modal-close-overlay"></a>
-    <div class="modal-content">
-      <img src="assets/images/screenshot-main-browser.png" alt="MidFD Main Browser Large">
-      <a href="#close" class="modal-close-btn">&times;</a>
-    </div>
-  </div>
-
-  <div id="modal-gal-1" class="modal">
-    <a href="#close" class="modal-close-overlay"></a>
-    <div class="modal-content">
-      <img src="assets/images/screenshot-command-palette.png" alt="Command Palette Large">
-      <a href="#close" class="modal-close-btn">&times;</a>
-    </div>
-  </div>
-
-  <div id="modal-gal-2" class="modal">
-    <a href="#close" class="modal-close-overlay"></a>
-    <div class="modal-content">
-      <img src="assets/images/screenshot-settings-colors.png" alt="Color Settings Large">
-      <a href="#close" class="modal-close-btn">&times;</a>
-    </div>
-  </div>
-
-  <div id="modal-gal-3" class="modal">
-    <a href="#close" class="modal-close-overlay"></a>
-    <div class="modal-content">
-      <img src="assets/images/screenshot-input-customize.png" alt="Input Customization Large">
-      <a href="#close" class="modal-close-btn">&times;</a>
-    </div>
-  </div>
-
-  <div id="modal-gal-4" class="modal">
-    <a href="#close" class="modal-close-overlay"></a>
-    <div class="modal-content">
-      <img src="assets/images/screenshot-image-viewer.png" alt="Image Viewer Large">
-      <a href="#close" class="modal-close-btn">&times;</a>
-    </div>
-  </div>
+<!-- 7. 確認情報 -->
+<section class="midfd-proof-band" id="verify">
+<div class="midfd-container midfd-proof-grid">
+<div>
+<p class="midfd-kicker">Release verification</p>
+<h2>確認情報</h2>
+<p>配布元、ファイル名、公開日時、SHA256 の取得状態を表示します。</p>
+<p class="midfd-release-status" data-midfd-release-status="">GitHub Releases から確認情報を取得しています。</p>
+</div>
+<div class="midfd-proof-list">
+<div><span>配布元</span><strong><a class="midfd-text-link" href="https://github.com/tk999jp/MidFD/releases" rel="noopener noreferrer" target="_blank">GitHub Releases (tk999jp/MidFD)</a></strong></div>
+<div><span>ファイル名</span><strong data-midfd-release-field="asset-name">MidFD-win-x64.zip</strong></div>
+<div><span>Release</span><strong data-midfd-release-field="tag">取得中</strong></div>
+<div><span>Runtime</span><strong>.NET 10 Desktop Runtime x64</strong></div>
+<div data-midfd-release-row="published-at"><span>公開日時</span><strong data-midfd-release-field="published-at">取得中</strong></div>
+<div data-midfd-release-row="product-version" hidden=""><span>ProductVersion</span><code data-midfd-release-field="product-version"></code></div>
+<div data-midfd-release-row="sha256" hidden=""><span>SHA256</span><div class="midfd-proof-value-group"><code data-midfd-release-field="sha256"></code><small>GitHub Releases asset digest より取得</small></div><button class="midfd-copy-button" data-copy-value="" data-midfd-copy-field="sha256" hidden="" type="button">コピー</button></div>
+</div>
+</div>
+</section>
+<!-- 8. 報告・注意 -->
+<section class="midfd-report-section midfd-container" id="report">
+<div class="midfd-section-heading">
+<h2>報告・注意</h2>
+</div>
+<div class="midfd-report-grid">
+<div class="midfd-caution-panel">
+<strong>注意</strong>
+<span>移動・コピー・削除の前に重要なファイルのバックアップを確認してください。使用結果のデータ損害等について、開発者は責任を負いかねます。</span>
+</div>
+<div class="midfd-report-card">
+<h3>不具合報告</h3>
+<p>再現手順・エラーメッセージ・動作環境を添えて報告してください。GitHub アカウントが必要な場合があります。</p>
+<div class="midfd-panel-actions">
+<a class="midfd-button midfd-button-primary" href="https://github.com/tk999jp/MidFD/issues" id="report-issues-btn" rel="noopener noreferrer" target="_blank">GitHub Issues を開く</a>
+<a class="midfd-text-link" href="https://github.com/tk999jp/MidFD/blob/main/UserDocs/SUPPORT.md" rel="noopener noreferrer" target="_blank">詳細サポート文書</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-container">
+<div class="footer-info">
+<div class="footer-info-brand">MidFD Project</div>
+<p>FDライクな操作感を目指した、Windows向けの軽量ファイラーです。</p>
+<p style="font-size: 0.8rem; margin-bottom: 0;"><a href="retro.html">CRT mode</a></p>
+</div>
+<div class="footer-links-group">
+<div>
+<div class="footer-links-title">プロジェクト</div>
+<ul class="footer-links">
+<li><a href="https://github.com/tk999jp/MidFD" rel="noopener noreferrer" target="_blank">開発者向け: GitHub</a></li>
+<li><a href="https://github.com/tk999jp/MidFD/releases" rel="noopener noreferrer" target="_blank">配布元ページ</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-links-title">ナビゲーション</div>
+<ul class="footer-links">
+<li><a href="./">MidFD ホーム</a></li>
+<li><a href="guide.html">導入ガイド</a></li>
+<li><a href="keys.html">キー操作</a></li>
+<li><a href="#external-tools">外部ツール連携</a></li>
+<li><a href="#verify">確認情報</a></li>
+<li><a href="#report">報告・注意</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-copyright">
+<p>© 2026 tk999jp. All rights reserved.</p>
+</div>
+</footer>
+<script src="../assets/js/midfd.js?v=20260705c"></script>
+<script src="../assets/js/midfd-release.js?v=20260705b"></script>
 </body>
 </html>
