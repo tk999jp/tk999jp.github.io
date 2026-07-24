@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8"/>
@@ -30,7 +30,7 @@
         <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; color: var(--text-color);">キー操作ガイド</h1>
         <p class="midfd-lead" style="text-align: center; max-width: 700px; margin: 0 auto;">
           MidFD はキーボードでの素早い操作を重視して設計されています。<br>
-          「標準」と「FD互換」の2つのキー操作体系をサポートしており、設定から好みの割り当てに変更できます。
+          「MidFD標準」と「FD／WinFD互換」の2つの操作方式をサポートしており、設定から好みの割り当てに変更できます。
         </p>
       </div>
     </section>
@@ -146,7 +146,7 @@
             <tr>
               <td><strong>パスの直接入力</strong></td>
               <td><kbd>Ctrl + L</kbd></td>
-              <td>パス入力欄を開いて直接フォルダパスを指定します。</td>
+              <td>パス入力欄を開いて直接フォルダパスを指定します。<code>%TEMP%</code> や <code>%USERPROFILE%</code> などの環境変数を含むパスも指定できます。</td>
             </tr>
           </tbody>
         </table>
@@ -175,7 +175,7 @@
             </tr>
             <tr>
               <td><strong>移動 (Move)</strong></td>
-              <td><kbd>M</kbd> / <kbd>F5</kbd></td>
+              <td><kbd>M</kbd></td>
               <td>移動先の入力欄を開いて移動を実行します。</td>
             </tr>
             <tr>
@@ -302,7 +302,7 @@
             </tr>
             <tr>
               <td><strong>マークスロット画面を開く</strong></td>
-              <td><kbd>Ctrl + M</kbd> / <kbd>F11</kbd></td>
+              <td><kbd>Ctrl + M</kbd> / <kbd>F11</kbd>（F11はMidFD標準）</td>
               <td>現在のマーク状態をスロットに一時保存・復元する画面を開きます。</td>
             </tr>
           </tbody>
@@ -310,20 +310,20 @@
       </div>
     </section>
 
-    <!-- 4. ファンクションキー割り当て（標準 vs FD互換） -->
+    <!-- 4. ファンクションキー割り当て（MidFD標準 vs FD／WinFD互換） -->
     <section class="midfd-container" style="margin-bottom: 4rem;">
       <div class="midfd-section-heading">
         <h2>ファンクションキー割り当て</h2>
       </div>
-      <p style="margin-bottom: 2rem;">操作設定のプリセットにより、ファンクションキー（F1〜F12）の初期機能が変化します。キーおよびファンクションバーの割り当ては設定からカスタマイズ可能です。</p>
+      <p style="margin-bottom: 2rem;">操作方式により、ファンクションキー（F1〜F12）の初期機能が変化します。キーおよびファンクションバーの割り当ては設定からカスタマイズ可能です。</p>
 
       <div class="midfd-table-wrap">
         <table class="midfd-ref-table">
           <thead>
             <tr>
               <th>物理キー</th>
-              <th>標準プリセット</th>
-              <th>FD互換プリセット</th>
+              <th>MidFD標準</th>
+              <th>FD／WinFD互換</th>
             </tr>
           </thead>
           <tbody>
