@@ -124,12 +124,12 @@
         } else {
           setCopyField("sha256", "");
         }
+        setStatus("GitHub Releases の asset digest から確認情報を表示しています。");
       } else {
         toggleRow("sha256", false);
         setCopyField("sha256", "");
+        setStatus("GitHub Releases から公開情報を表示しています。SHA256は取得できませんでした。");
       }
-
-      setStatus("GitHub Releases の asset digest から確認情報を表示しています。");
     } catch {
       setText("tag", "GitHub Releasesで確認");
       toggleRow("published-at", false);

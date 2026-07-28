@@ -2,9 +2,6 @@
   const hashAliases = {
     download:    [{ sectionId: "download" }],
     features:    [{ sectionId: "features" }],
-    "operation-reference": [{ sectionId: "operation-reference" }],
-    "install-guide": [{ sectionId: "install-guide" }],
-    startup:     [{ sectionId: "install-guide" }],
     "external-tools": [{ sectionId: "external-tools" }],
     verify:      [{ sectionId: "verify" }],
     report:      [{ sectionId: "report" }],

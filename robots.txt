@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tk999jp.github.io/sitemap.xml

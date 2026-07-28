@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Windows向けファイラー「MidFD」のキー操作ガイド。移動、マーク、ファイル操作、表示切り替えや外部連携のショートカットキーを分かりやすくまとめています。" name="description"/>
+  <meta content="Windows 10／11 64bit向けファイラー「MidFD」のキー操作ガイド。移動、Mark、ファイル操作、表示切り替えや外部連携のショートカットキーを分かりやすくまとめています。" name="description"/>
   <title>キー操作ガイド - MidFD | TK Portal</title>
+  <link rel="canonical" href="https://tk999jp.github.io/midfd/keys.html"/>
   <link href="../assets/css/site.css" rel="stylesheet"/>
 </head>
 <body class="midfd-page midfd-redesign">
@@ -40,13 +41,13 @@
       <div class="midfd-section-heading">
         <h2>最初に覚える基本キー</h2>
       </div>
-      <p style="text-align: center; margin-bottom: 2rem;">まずは以下の基本操作を覚えると、すぐに MidFD を使い始めることができます。</p>
+      <p style="text-align: center; margin-bottom: 2rem;">まずは以下の基本操作を覚えると、すぐに MidFD を使い始めることができます。F1～F12の割り当ては、後半のプロファイル別表を確認してください。</p>
       <div class="midfd-table-wrap" style="max-width: 800px; margin: 0 auto;">
         <table class="midfd-ref-table">
           <thead>
             <tr>
               <th>機能</th>
-              <th>キー</th>
+              <th>共通キー</th>
               <th>説明</th>
             </tr>
           </thead>
@@ -54,16 +55,16 @@
             <tr>
               <td><strong>開く / 表示</strong></td>
               <td><kbd>Enter</kbd></td>
-              <td>選択項目を開く、または内蔵ビューアで画像・動画を表示します。</td>
+              <td>選択項目を開く、または内蔵Viewerで画像・動画を表示します。</td>
             </tr>
             <tr>
               <td><strong>関連付けで開く</strong></td>
               <td><kbd>Z</kbd></td>
-              <td>OS の関連付け（既定のアプリ）でファイルを開きます。</td>
+              <td>OSの関連付け（既定のアプリ）でファイルを開きます。</td>
             </tr>
             <tr>
               <td><strong>外部エディタで開く</strong></td>
-              <td><kbd>E</kbd> / <kbd>F4</kbd></td>
+              <td><kbd>E</kbd></td>
               <td>選択ファイルを登録した外部エディタで開きます。</td>
             </tr>
             <tr>
@@ -72,19 +73,19 @@
               <td>コマンド実行ダイアログを開きます。</td>
             </tr>
             <tr>
-              <td><strong>コマンドパレット</strong></td>
+              <td><strong>Command Palette</strong></td>
               <td><kbd>Ctrl + Shift + P</kbd></td>
-              <td>機能や外部ツールをすばやく検索・実行します。</td>
+              <td>機能、設定、外部ツールなどをすばやく検索・実行します。</td>
             </tr>
             <tr>
-              <td><strong>移動履歴 (Logdsk)</strong></td>
+              <td><strong>移動履歴（Logdsk）</strong></td>
               <td><kbd>L</kbd> / <kbd>F9</kbd></td>
-              <td>過去の移動履歴からディレクトリを素早く移動します。</td>
+              <td>過去の移動履歴からディレクトリを素早く移動します。F9は両プロファイル共通です。</td>
             </tr>
             <tr>
-              <td><strong>お気に入り (QuickAccess)</strong></td>
-              <td><kbd>Q</kbd> / <kbd>F8</kbd></td>
-              <td>登録済みの場所や最近使ったフォルダへ移動します。</td>
+              <td><strong>QuickAccess</strong></td>
+              <td><kbd>Q</kbd></td>
+              <td>登録済みの場所や最近使ったフォルダーへ移動します。</td>
             </tr>
           </tbody>
         </table>
@@ -126,7 +127,7 @@
             <tr>
               <td><strong>親ディレクトリへ移動</strong></td>
               <td><kbd>Backspace</kbd> / <kbd>Alt + ↑</kbd></td>
-              <td>現在位置の1つ上のフォルダへ移動します。</td>
+              <td>現在位置の1つ上のフォルダーへ移動します。</td>
             </tr>
             <tr>
               <td><strong>ディレクトリ履歴を戻る</strong></td>
@@ -146,7 +147,7 @@
             <tr>
               <td><strong>パスの直接入力</strong></td>
               <td><kbd>Ctrl + L</kbd></td>
-              <td>パス入力欄を開いて直接フォルダパスを指定します。<code>%TEMP%</code> や <code>%USERPROFILE%</code> などの環境変数を含むパスも指定できます。</td>
+              <td>パス入力欄を開いて直接フォルダーパスを指定します。<code>%TEMP%</code> や <code>%USERPROFILE%</code> などの環境変数を含むパスも指定できます。</td>
             </tr>
           </tbody>
         </table>
@@ -158,35 +159,35 @@
           <thead>
             <tr>
               <th>操作</th>
-              <th>キー</th>
+              <th>共通キー</th>
               <th>説明</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>名前変更 (Rename)</strong></td>
-              <td><kbd>R</kbd> / <kbd>F2</kbd></td>
-              <td>選択しているファイルやフォルダの名前を変更します。</td>
+              <td><strong>Rename（名前変更）</strong></td>
+              <td><kbd>R</kbd></td>
+              <td>選択しているファイルやフォルダーの名前を変更します。</td>
             </tr>
             <tr>
-              <td><strong>コピー (Copy)</strong></td>
-              <td><kbd>C</kbd> / <kbd>F3</kbd></td>
+              <td><strong>Copy（コピー）</strong></td>
+              <td><kbd>C</kbd></td>
               <td>コピー先の入力欄を開いてコピーを実行します。</td>
             </tr>
             <tr>
-              <td><strong>移動 (Move)</strong></td>
+              <td><strong>Move（移動）</strong></td>
               <td><kbd>M</kbd></td>
               <td>移動先の入力欄を開いて移動を実行します。</td>
             </tr>
             <tr>
-              <td><strong>削除 (Delete)</strong></td>
+              <td><strong>Delete（削除）</strong></td>
               <td><kbd>D</kbd> / <kbd>Delete</kbd></td>
-              <td>選択またはマークしている項目を削除します。</td>
+              <td>選択またはMarkしている項目を削除します。</td>
             </tr>
             <tr>
-              <td><strong>新規フォルダ作成</strong></td>
+              <td><strong>新規フォルダー作成</strong></td>
               <td><kbd>K</kbd></td>
-              <td>新規フォルダ作成ダイアログを開きます。</td>
+              <td>新規フォルダー作成ダイアログを開きます。</td>
             </tr>
             <tr>
               <td><strong>新規ファイル作成</strong></td>
@@ -201,7 +202,7 @@
             <tr>
               <td><strong>圧縮</strong></td>
               <td><kbd>P</kbd></td>
-              <td>選択・マークした項目を ZIP などに圧縮します。</td>
+              <td>選択・Markした項目を ZIP などに圧縮します。</td>
             </tr>
             <tr>
               <td><strong>解凍</strong></td>
@@ -229,18 +230,18 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>再読込 (Reload)</strong></td>
+              <td><strong>Reload（再読込）</strong></td>
               <td><kbd>Ctrl + R</kbd> / <kbd>Shift + R</kbd></td>
-              <td>現在フォルダの内容を最新に更新します。</td>
+              <td>現在フォルダーの内容を最新に更新します。</td>
             </tr>
             <tr>
-              <td><strong>フィルタ</strong></td>
+              <td><strong>フィルター</strong></td>
               <td><kbd>F</kbd> / <kbd>Ctrl + F</kbd></td>
               <td>ファイル名で一覧を絞り込みます。</td>
             </tr>
             <tr>
               <td><strong>ソート順変更</strong></td>
-              <td><kbd>F6</kbd></td>
+              <td>プロファイル別Fキー表を参照</td>
               <td>ソート順変更ダイアログを開きます。</td>
             </tr>
             <tr>
@@ -268,42 +269,42 @@
       </div>
     </section>
 
-    <!-- 3. マーク操作と MarkSlot -->
+    <!-- 3. Mark操作とMarkSlot -->
     <section class="midfd-container" style="margin-bottom: 4rem;">
       <div class="midfd-section-heading">
-        <h2>マーク操作と MarkSlot</h2>
+        <h2>Mark操作とMarkSlot</h2>
       </div>
-      <p style="margin-bottom: 2rem;">MidFD では、複数のファイルを選択（マーク）して一括でコピー、移動、削除などの操作を行えます。</p>
+      <p style="margin-bottom: 2rem;">MidFDでは、複数のファイルをMarkして一括でコピー、移動、削除などの操作を行えます。</p>
       
       <div class="midfd-table-wrap">
         <table class="midfd-ref-table">
           <thead>
             <tr>
               <th>操作</th>
-              <th>キー</th>
+              <th>共通キー</th>
               <th>説明</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>マーク切り替え</strong></td>
+              <td><strong>Mark切り替え</strong></td>
               <td><kbd>Space</kbd> / <kbd>Insert</kbd></td>
-              <td>カーソル位置の項目のマーク状態を反転させて下に移動します。</td>
+              <td>カーソル位置の項目のMark状態を反転させて下に移動します。</td>
             </tr>
             <tr>
               <td><strong>ファイルのみ全選択</strong></td>
               <td><kbd>Home</kbd></td>
-              <td>ディレクトリ（フォルダ）を除外し、ファイルのみを全選択/解除します。</td>
+              <td>ディレクトリ（フォルダー）を除外し、ファイルのみを全選択/解除します。</td>
             </tr>
             <tr>
-              <td><strong>フォルダを含む全選択</strong></td>
+              <td><strong>フォルダーを含む全選択</strong></td>
               <td><kbd>End</kbd> / <kbd>Ctrl + A</kbd></td>
-              <td>すべてのフォルダとファイルを一括選択/解除します。</td>
+              <td>すべてのフォルダーとファイルを一括選択/解除します。</td>
             </tr>
             <tr>
-              <td><strong>マークスロット画面を開く</strong></td>
-              <td><kbd>Ctrl + M</kbd> / <kbd>F11</kbd>（F11はMidFD標準）</td>
-              <td>現在のマーク状態をスロットに一時保存・復元する画面を開きます。</td>
+              <td><strong>MarkSlot画面を開く</strong></td>
+              <td><kbd>Ctrl + M</kbd></td>
+              <td>現在のMark状態をスロットに一時保存・復元する画面を開きます。</td>
             </tr>
           </tbody>
         </table>
@@ -330,15 +331,43 @@
             <tr><td><kbd>F1</kbd></td><td>Help（ヘルプ表示）</td><td>Help（ヘルプ表示）</td></tr>
             <tr><td><kbd>F2</kbd></td><td>Rename（名前変更）</td><td>Check / Execute（実行・決定）</td></tr>
             <tr><td><kbd>F3</kbd></td><td>Copy（コピー）</td><td>Copy（コピー）</td></tr>
-            <tr><td><kbd>F4</kbd></td><td>外部エディタで開く</td><td>Edit（外部エディタで開く）</td></tr>
+            <tr><td><kbd>F4</kbd></td><td>Edit（外部エディタで開く）</td><td>Delete（削除）</td></tr>
             <tr><td><kbd>F5</kbd></td><td>Reload（再読込）</td><td>Rename（名前変更）</td></tr>
             <tr><td><kbd>F6</kbd></td><td>Sort（並び替え）</td><td>Sort（並び替え）</td></tr>
-            <tr><td><kbd>F7</kbd></td><td>Filter（フィルタ）</td><td>Filter（フィルタ）</td></tr>
-            <tr><td><kbd>F8</kbd></td><td>QuickAccess（お気に入り）</td><td>Tree（ツリー表示）</td></tr>
+            <tr><td><kbd>F7</kbd></td><td>Filter（フィルター）</td><td>Filter（フィルター）</td></tr>
+            <tr><td><kbd>F8</kbd></td><td>QuickAccess</td><td>Tree（ツリー表示）</td></tr>
             <tr><td><kbd>F9</kbd></td><td>Logdsk（ディレクトリ移動）</td><td>Logdsk（ディレクトリ移動）</td></tr>
             <tr><td><kbd>F10</kbd></td><td>Command Palette</td><td>Unpack（圧縮ファイル解凍）</td></tr>
-            <tr><td><kbd>F11</kbd></td><td>MarkSlot（マークスロット）</td><td>Top（一覧の最上部へ移動）</td></tr>
+            <tr><td><kbd>F11</kbd></td><td>MarkSlot</td><td>Top（一覧の最上部へ移動）</td></tr>
             <tr><td><kbd>F12</kbd></td><td>コマンド一覧の表示</td><td>Bottom（一覧の最下部へ移動）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">FD／WinFD互換時のShift割り当て</h3>
+      <div class="midfd-table-wrap">
+        <table class="midfd-ref-table">
+          <thead>
+            <tr>
+              <th>キー</th>
+              <th>操作</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><kbd>Shift + F1</kbd></td><td>属性・日時変更</td><td>属性・日時変更ダイアログを開きます。</td></tr>
+            <tr><td><kbd>Shift + F2</kbd></td><td>システム情報</td><td>システム情報を表示します。</td></tr>
+            <tr><td><kbd>Shift + F3</kbd></td><td>Move（移動）</td><td>移動先の入力欄を開きます。</td></tr>
+            <tr><td><kbd>Shift + F4</kbd></td><td>Delete（削除）</td><td>FD／WinFD互換では、F4とShift+F4の両方が削除です。</td></tr>
+            <tr><td><kbd>Shift + F5</kbd></td><td>新規フォルダー</td><td>新規フォルダー作成ダイアログを開きます。</td></tr>
+            <tr><td><kbd>Shift + F6</kbd></td><td>PowerShell</td><td>PowerShellを開きます。</td></tr>
+            <tr><td><kbd>Shift + F7</kbd></td><td>Reload（再読込）</td><td>現在フォルダーの内容を再読込します。</td></tr>
+            <tr><td><kbd>Shift + F8</kbd></td><td>Edit（外部エディタ）</td><td>選択ファイルを登録した外部エディタで開きます。</td></tr>
+            <tr><td><kbd>Shift + F9</kbd></td><td>Preview</td><td>選択項目をプレビューします。</td></tr>
+            <tr><td><kbd>Shift + F10</kbd></td><td>Pack（圧縮）</td><td>圧縮ダイアログを開きます。</td></tr>
+            <tr><td><kbd>Shift + F11</kbd></td><td>QuickAccess</td><td>QuickAccessを開きます。</td></tr>
+            <tr><td><kbd>Shift + F12</kbd></td><td>未割り当て</td><td>既定では機能を割り当てていません。</td></tr>
+            <tr><td><kbd>Shift + Enter</kbd></td><td>Edit（外部エディタ）</td><td>FD／WinFD互換時の外部エディタ別名キーです。</td></tr>
           </tbody>
         </table>
       </div>
@@ -350,8 +379,8 @@
         <h2>メディアプレビューと外部連携</h2>
       </div>
 
-      <h3 style="border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">動画静画プレビュー (VideoStill) 操作</h3>
-      <p style="margin: 1rem 0;">内蔵画像ビューアで動画プレビュー（ffmpeg 連携時）を表示している際、以下のシーク操作を行えます。</p>
+      <h3 style="border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">動画静画プレビュー（VideoStill）操作</h3>
+      <p style="margin: 1rem 0;">内蔵画像Viewerで動画プレビュー（ffmpeg連携時）を表示している際、以下のシーク操作を行えます。</p>
       <div class="midfd-table-wrap" style="margin-bottom: 2rem;">
         <table class="midfd-ref-table">
           <thead>
@@ -411,7 +440,7 @@
             <tr>
               <td><strong>選択して起動</strong></td>
               <td><kbd>↑</kbd> / <kbd>↓</kbd> を経て <kbd>Enter</kbd></td>
-              <td>Alt で開いたランチャー内で選択を移動し、決定して起動します。</td>
+              <td>Altで開いたランチャー内で選択を移動し、決定して起動します。</td>
             </tr>
           </tbody>
         </table>
@@ -421,7 +450,7 @@
     <!-- Details Link -->
     <section class="midfd-container" style="text-align: center; margin-bottom: 6rem;">
       <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-        より詳細な割り当てや拡張機能のキー操作については、GitHub のリファレンスドキュメントをご覧ください。
+        より詳細な割り当てや拡張機能のキー操作については、GitHubのリファレンスドキュメントをご覧ください。
       </p>
       <a href="https://github.com/tk999jp/MidFD/blob/main/UserDocs/KEYBINDINGS.md" target="_blank" rel="noopener noreferrer" class="midfd-button midfd-button-primary">GitHub: KEYBINDINGS.md を見る</a>
     </section>
@@ -431,7 +460,7 @@
     <div class="footer-container">
       <div class="footer-info">
         <div class="footer-info-brand">MidFD Project</div>
-        <p>FDライクな操作感を目指した、Windows向けの軽量ファイラーです。</p>
+        <p>FD／WinFD風の操作を選べる、Windows 10／11 64bit向けの軽量ファイラーです。</p>
         <p style="font-size: 0.8rem; margin-bottom: 0;"><a href="retro.html">CRT mode</a></p>
       </div>
       <div class="footer-links-group">

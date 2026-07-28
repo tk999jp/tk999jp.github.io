@@ -1,0 +1,32 @@
+/* MidFD quality corrections loaded after site.css. */
+
+.midfd-page a:focus-visible,
+.midfd-page button:focus-visible,
+.midfd-page summary:focus-visible {
+  outline: 3px solid var(--midfd-blue, var(--primary-color));
+  outline-offset: 3px;
+}
+
+.retro-page a:focus-visible,
+.retro-page button:focus-visible,
+.retro-page summary:focus-visible {
+  outline: 3px solid #7fd3ff;
+  outline-offset: 3px;
+}
+
+/* Correct the invalid transition declaration in the legacy stylesheet. */
+.midfd-summary::after {
+  transition: transform 0.3s ease 0.05s;
+}
+
+@media (max-width: 640px) {
+  /* Keep comparison and explanation columns available on small screens. */
+  .midfd-ref-table th:nth-child(3),
+  .midfd-ref-table td:nth-child(3) {
+    display: table-cell;
+  }
+
+  #keys-hero ~ .midfd-container .midfd-ref-table {
+    min-width: 640px;
+  }
+}
