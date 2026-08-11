@@ -100,6 +100,13 @@ function extractReleaseHighlights(body) {
     return digest.replace(/^sha256:/i, "").trim().toUpperCase();
   }
 
+  function formatAssetSize(value) {
+    if (!Number.isFinite(value) || value < 0) {
+      return "";
+    }
+    return `${value.toLocaleString("en-US")} bytes`;
+  }
+
   function formatPublishedAt(value) {
     if (!value) {
       return "";
@@ -121,6 +128,7 @@ function extractReleaseHighlights(body) {
       setText("tag", "GitHub Releasesで確認");
       toggleRow("published-at", false);
       toggleRow("product-version", false);
+      toggleRow("asset-size", false);
       toggleRow("sha256", false);
       setCopyField("sha256", "");
       setStatus("ローカルファイル表示では確認情報を取得しません。GitHub Releasesで確認してください。");
@@ -148,6 +156,14 @@ function extractReleaseHighlights(body) {
       setText("tag", release.tag_name || "GitHub Releasesで確認");
       setText("asset-name", asset?.name || ASSET_NAME);
 
+      const assetSize = formatAssetSize(asset?.size);
+      if (assetSize) {
+        setText("asset-size", assetSize);
+        toggleRow("asset-size", true);
+      } else {
+        toggleRow("asset-size", false);
+      }
+
       const publishedAt = formatPublishedAt(release.published_at);
       if (publishedAt) {
         setText("published-at", publishedAt);
@@ -173,8 +189,9 @@ function extractReleaseHighlights(body) {
         } else {
           setCopyField("sha256", "");
         }
-        setStatus("GitHub Releases の asset digest から確認情報を表示しています。");
+        setStatus("GitHub Releases の asset size／digest から確認情報を表示しています。");
       } else {
+        toggleRow("asset-size", false);
         toggleRow("sha256", false);
         setCopyField("sha256", "");
         setStatus("GitHub Releases から公開情報を表示しています。SHA256は取得できませんでした。");
@@ -183,6 +200,7 @@ function extractReleaseHighlights(body) {
       setText("tag", "GitHub Releasesで確認");
       toggleRow("published-at", false);
       toggleRow("product-version", false);
+      toggleRow("asset-size", false);
       toggleRow("sha256", false);
       setCopyField("sha256", "");
       setStatus("取得できませんでした。GitHub Releasesで確認してください。");
