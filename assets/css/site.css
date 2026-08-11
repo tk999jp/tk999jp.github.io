@@ -35,6 +35,7 @@
 
 .midfd-feature-spotlight-image {
   display: block;
+  min-width: 0;
   width: 100%;
   height: auto;
   border-radius: 0.75rem;
@@ -71,6 +72,6 @@
 
 @media (max-width: 760px) {
   .midfd-feature-spotlight-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
