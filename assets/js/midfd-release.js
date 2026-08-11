@@ -1,3 +1,25 @@
+const MIDFD_SITE_HIGHLIGHTS_BEGIN = "<!-- MIDFD_SITE_HIGHLIGHTS_BEGIN -->";
+const MIDFD_SITE_HIGHLIGHTS_END = "<!-- MIDFD_SITE_HIGHLIGHTS_END -->";
+
+function extractReleaseHighlights(body) {
+  if (typeof body !== "string") {
+    return [];
+  }
+
+  const begin = body.indexOf(MIDFD_SITE_HIGHLIGHTS_BEGIN);
+  const end = body.indexOf(MIDFD_SITE_HIGHLIGHTS_END);
+  if (begin < 0 || end < 0 || end <= begin) {
+    return [];
+  }
+
+  return body
+    .slice(begin + MIDFD_SITE_HIGHLIGHTS_BEGIN.length, end)
+    .split(/\r?\n/)
+    .filter((line) => /^[-*]\s+\S/.test(line))
+    .map((line) => line.replace(/^[-*]\s+/, "").trim())
+    .filter(Boolean);
+}
+
 (() => {
   const RELEASE_API_URL = "https://api.github.com/repos/tk999jp/MidFD/releases/latest";
   const RELEASES_PAGE_URL = "https://github.com/tk999jp/MidFD/releases";
@@ -33,6 +55,31 @@
       button.hidden = false;
       button.setAttribute("data-copy-value", value);
     });
+  }
+
+  function renderReleaseHighlights(release) {
+    const section = document.querySelector("[data-midfd-release-highlights]");
+    const list = document.querySelector("[data-midfd-release-highlights-list]");
+    const tag = document.querySelector("[data-midfd-release-highlights-tag]");
+    if (!section || !list || !tag) {
+      return;
+    }
+
+    section.hidden = true;
+    list.replaceChildren();
+
+    const highlights = extractReleaseHighlights(release?.body);
+    if (highlights.length === 0) {
+      return;
+    }
+
+    tag.textContent = release.tag_name || "最新公開版";
+    highlights.forEach((highlight) => {
+      const item = document.createElement("li");
+      item.textContent = highlight;
+      list.appendChild(item);
+    });
+    section.hidden = false;
   }
 
   function extractProductVersion(release) {
@@ -95,6 +142,8 @@
       const asset = Array.isArray(release.assets)
         ? release.assets.find((item) => item && item.name === ASSET_NAME)
         : null;
+
+      renderReleaseHighlights(release);
 
       setText("tag", release.tag_name || "GitHub Releasesで確認");
       setText("asset-name", asset?.name || ASSET_NAME);
