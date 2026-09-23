@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="動画『数値演算コプロセッサ CPUの横で動く専用チップとは？』のResearch Note。8087以前の数値演算LSI、8087と8086/8088の協調、PC-98のNDP市場、486世代でのFPU統合までを整理します。">
+  <title>CPUの横にいた「計算専用チップ」――数値演算コプロセッサの歴史｜Research Notes｜TK Portal</title>
+  <link rel="canonical" href="https://tk999jp.github.io/yorozugoto/research/coprocessor.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="TK Portal">
+  <meta property="og:title" content="CPUの横にいた「計算専用チップ」――数値演算コプロセッサの歴史">
+  <meta property="og:description" content="CPUだけでも実数計算できたのに、なぜ8087のような数値演算コプロセッサが必要だったのか。一次資料・当時資料から整理します。">
+  <meta property="og:url" content="https://tk999jp.github.io/yorozugoto/research/coprocessor.html">
+  <meta property="og:image" content="https://i.ytimg.com/vi/X6ZULS1S8Jo/hqdefault.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/portal-frame.css">
+  <link rel="stylesheet" href="../../assets/css/content-notes.css">
+</head>
+<body class="portal-frame">
+<header>
+  <div class="nav-container">
+    <a href="../../" class="site-title">TK Portal</a>
+    <ul class="nav-links">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../midfd/">MidFD</a></li>
+      <li><a href="../" class="active">よろずごと</a></li>
+      <li><a href="../../station/">停車駅</a></li>
+      <li><a href="../../about/">About</a></li>
+    </ul>
+  </div>
+</header>
+<main class="research-article">
+  <nav class="content-breadcrumbs" aria-label="パンくず">
+    <a href="../../">TK Portal</a><span>/</span><a href="../">よろずごと</a><span>/</span><a href="./">Research Notes</a><span>/</span><span>Numeric Coprocessor</span>
+  </nav>
+
+  <article>
+    <header class="page-hero">
+      <span class="portal-eyebrow">Research Note / CPU / History</span>
+      <h1>CPUの横にいた「計算専用チップ」――数値演算コプロセッサの歴史</h1>
+      <p>CPU自身でも実数計算はできたのに、なぜ8087のような別チップへ数万円を払う価値があったのか。動画制作で確認した一次資料・当時資料から、専用演算器の意味とCPUとの関係を整理します。</p>
+      <div class="portal-link-row">
+        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=X6ZULS1S8Jo" target="_blank" rel="noopener noreferrer">動画を見る</a>
+        <a class="btn btn-secondary" href="./">Research Notes一覧</a>
+      </div>
+    </header>
+
+    <div class="research-question">
+      <strong>中心の問い：</strong> CPUだけでも実数計算はできたのに、なぜ高価な「計算専用チップ」を別に追加する必要があったのか。
+    </div>
+
+    <section>
+      <h2>CPUだけでも小数は計算できた</h2>
+      <p>8087がなければ浮動小数点計算そのものができなかった、という理解は正確ではありません。当時のCPUでも、整数命令を組み合わせたソフトウェア処理によって実数演算は可能でした。</p>
+      <p>ただし浮動小数点数は、仮数・指数などを扱いながら複数の処理を積み重ねる必要があります。動画ではIEEE 754の詳細講義へは進まず、まず「できるが重い」という境界を置きました。</p>
+      <div class="portal-note">
+        <p><strong>Research Noteで残す境界</strong></p>
+        <p>「昔のCPUは小数を計算できなかった」ではなく、「ソフトウェアでも可能だったが、数値演算を多用する用途では処理時間が問題になった」と整理します。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>8087より前にも、計算だけを担当するLSIがいた</h2>
+      <p>数値処理を専用ハードウェアへ分ける発想は8087が最初ではありません。1970年代後半にはMM57109のような数値処理向けLSIや、AMD Am9511 Arithmetic Processing Unitが存在しました。</p>
+      <div class="topic-grid">
+        <article class="topic-card"><h3>MM57109</h3><p>8087以前にも数値処理専用LSIが存在したことを示す例。単純に「電卓LSIの流用」とは断定せず、数値処理用プロセッサとして扱います。</p></article>
+        <article class="topic-card"><h3>Am9511</h3><p>固定小数点・浮動小数点・各種関数をハードウェアで処理するArithmetic Processor。専用化による高速化を示す代表例です。</p></article>
+      </div>
+      <p>I/O 1979年4月号では、MM57109が5,400円、AM9511が79,000円で一般のマイコン部品と並んで販売されています。1981年10月号では、関数演算の多い処理をソフトウェアで行う速度上の限界から、8087や9511のような演算プロセッサへ話をつないでいます。</p>
+    </section>
+
+    <section>
+      <h2>8087は「CPUから仕事を投げられる別CPU」ではない</h2>
+      <p>8087の面白さは、単に高速な計算器を横へ置いたことではありません。8086/8088と8087は命令ストリームを密接に協調して扱い、8087側が自分に関係する数値演算命令を処理します。</p>
+      <p>Intelの資料では8087を8086/8088のレジスタ・命令セットを実質的に拡張するコプロセッサとして説明しており、通常のI/O装置へ逐次仕事を依頼する構成とは異なります。CPUと8087が並行して処理できる場面もありました。</p>
+      <div class="research-table-wrap">
+        <table class="research-table">
+          <thead><tr><th>見方</th><th>整理</th></tr></thead>
+          <tbody>
+            <tr><td>誤解しやすい像</td><td>8086が計算内容を8087へ渡し、答えだけを受け取る。</td></tr>
+            <tr><td>今回の整理</td><td>8086/8088と8087が同じ命令の流れへ参加し、それぞれの役割を協調して処理する。</td></tr>
+            <tr><td>意味</td><td>周辺装置を増設するというより、CPUの数値演算能力を横から拡張するような設計。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>I/O 1981年1月号は8087を「高速演算処理用コー・プロセッサ」と紹介し、浮動小数点・10進演算、80ビットレジスタ群、単精度19μs・倍精度27μsなどを掲載しています。1986年2月号ではFADD、FSUB、FSQRT、FYL2Xなど具体的な命令まで確認できます。</p>
+    </section>
+
+    <section>
+      <h2>PC-98では、数万円払って追加するNDPだった</h2>
+      <p>1980年代後半になると、数値演算コプロセッサは「NDP」としてPC-9801のチューンアップ部品になりました。効果が大きいのは、関数計算や数値処理を大量に行い、NDPへ対応したソフトを使う場合です。</p>
+      <div class="research-table-wrap">
+        <table class="research-table">
+          <thead><tr><th>製品</th><th>1988年広告価格</th><th>位置づけ</th></tr></thead>
+          <tbody>
+            <tr><td>8087-2</td><td>30,000円</td><td>PC-9801VM/UVなど向け</td></tr>
+            <tr><td>80287-8</td><td>45,000円</td><td>PC-9801VXなど向け</td></tr>
+            <tr><td>80387-16</td><td>120,000円</td><td>386世代向け</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>I/O 1988年2月号の広告では「関数計算速度3〜600倍」と訴求されていますが、同時に「比較はプログラムによります」と条件も付いています。これは普遍的な高速化率ではなく、販売側の条件付き表現として扱います。</p>
+      <p>一方、I/O 1989年1月号には、X68000で高価な68881を買わず、68000上の固定小数点演算で高速化へ挑戦した記事もあります。コプロセッサは「速いなら全員が買う部品」ではなく、用途と価格で判断が分かれる専門部品でした。</p>
+    </section>
+
+    <section>
+      <h2>外付けFPUはCPUの中へ入った</h2>
+      <p>8087、80287、80387では数値演算器はCPUの外側にある別チップでした。Intel486 DX世代では、CPUとFPUが同一チップへ統合されます。</p>
+      <p>ただし移行は一直線ではありません。486SXにはFPUがなく、後から80487SXを追加する選択肢も存在しました。1992年のI/O広告でも486SX搭載機と80487SXが同時代の製品として確認できます。</p>
+      <div class="portal-note">
+        <p><strong>「486で外付けFPUが全部消えた」ではない</strong></p>
+        <p>80487SXは8087の単純な486版として扱わず、FPU付き486に近いアップグレードプロセッサという例外を残します。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>GPUやNPUの「直系の祖先」ではない</h2>
+      <p>8087からGPU、NPUへ一本の系図を引くのは正確ではありません。GPUにはグラフィックス専用ハードウェアから発展した独自の系譜があり、TPU/NPUもニューラルネットワークなど特定領域へ特化した別系統のハードウェアです。</p>
+      <p>共通しているのは、<strong>汎用CPUですべてを処理せず、特定の計算に向いた専用ハードウェアへ仕事を分ける</strong>という設計判断です。8087は、その考え方がパーソナルコンピュータ上で非常に分かりやすく現れた例として位置づけます。</p>
+    </section>
+
+    <section>
+      <h2>動画制作で使った当時資料</h2>
+      <div class="source-list">
+        <article class="source-item"><span class="source-item__kind">I/O / 1978.07</span><h3>MM57109</h3><p>数値処理専用LSIの存在を確認する起点。</p></article>
+        <article class="source-item"><span class="source-item__kind">I/O / 1979.04</span><h3>MM57109 / AM9511販売広告</h3><p>8087以前の数値演算LSIが実際にマイコン用部品として販売されていたことを確認。</p></article>
+        <article class="source-item"><span class="source-item__kind">I/O / 1981.01</span><h3>8087新製品記事</h3><p>「高速演算処理用コー・プロセッサ」として8087を紹介。性能・機能・位置づけを確認。</p></article>
+        <article class="source-item"><span class="source-item__kind">I/O / 1981.10</span><h3>APPLE PASCALによる高速数値計算</h3><p>ソフトウェア処理の速度上の問題から、8087や9511のような浮動小数点演算プロセッサを使う流れを確認。</p></article>
+        <article class="source-item"><span class="source-item__kind">I/O / 1986.02</span><h3>8087命令・内部構造</h3><p>FADD、FSUB、FSQRTなど具体的な命令とスタック構造を確認。</p></article>
+        <article class="source-item"><span class="source-item__kind">I/O / 1988.02</span><h3>PC-9801向けNDP広告</h3><p>価格、対応機種、対応ソフト、「3〜600倍」という速度訴求を確認。</p></article>
+        <article class="source-item"><span class="source-item__kind">I/O / 1989.01</span><h3>X68000と固定小数点</h3><p>高価な68881を買わず、68000上の固定小数点演算で高速化へ挑戦した記事。</p></article>
+        <article class="source-item"><span class="source-item__kind">I/O / 1992.03</span><h3>486SX / 80487SX</h3><p>486世代でも外付けの数値演算アップグレードが残っていた移行期を確認。</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>公開Web資料</h2>
+      <p>手元の当時資料に加え、8087の協調動作、486世代でのFPU統合、現代の専用演算器との境界を確認するために参照した公開資料です。</p>
+      <div class="source-list">
+        <article class="source-item">
+          <span class="source-item__kind">Intel / Primary via PCjs</span>
+          <h3>Intel 8087 FPU Information / iAPX 86/88 User's Manual</h3>
+          <p>8087を8086/8088と密接に協調するnumeric processor extensionとして確認する資料。</p>
+          <a href="https://www.pcjs.org/documents/manuals/intel/8087/" target="_blank" rel="noopener noreferrer">PCjs Archive</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">AMD / Primary</span>
+          <h3>1980 AMD MOS/LSI Data Book</h3>
+          <p>Am9511A Arithmetic Processorの仕様確認。</p>
+          <a href="https://www.bitsavers.org/components/amd/_dataBooks/1980_AMD_MOS_LSI_Data_Book.pdf" target="_blank" rel="noopener noreferrer">Bitsavers PDF</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">Intel / Official</span>
+          <h3>Intel® 64 and IA-32 Architectures Software Developer's Manual</h3>
+          <p>x87 FPUの歴史的位置づけと、CPU内蔵FPUへ移行した後のアーキテクチャ確認。</p>
+          <a href="https://www.intel.com/content/dam/support/us/en/documents/processors/pentium4/sb/25366521.pdf" target="_blank" rel="noopener noreferrer">Intel PDF</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">Motorola / Primary</span>
+          <h3>MC68881 as a Peripheral in an M68000 System</h3>
+          <p>68000系ではIntel 8086＋8087と同一の接続形態ではないことを確認するための資料。</p>
+          <a href="https://www.bitsavers.org/components/motorola/_appNotes/AN-0947_MC68881_Floating-Point_Coprocessor_as_a_Peripheral_in_a_M68000_System_%5BMotorola_1987_37p%5D.pdf" target="_blank" rel="noopener noreferrer">Bitsavers PDF</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">NVIDIA / Research</span>
+          <h3>Evolution of the Graphics Processing Unit (GPU)</h3>
+          <p>GPUを8087の直系子孫とせず、グラフィックス専用プロセッサから発展した別系統として確認。</p>
+          <a href="https://research.nvidia.com/publication/2021-12_evolution-graphics-processing-unit-gpu" target="_blank" rel="noopener noreferrer">NVIDIA Research</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">Google / Research</span>
+          <h3>In-Datacenter Performance Analysis of a Tensor Processing Unit</h3>
+          <p>AI向けのdomain-specific hardwareを、専用演算という共通した設計判断の別系統として確認。</p>
+          <a href="https://research.google/pubs/in-datacenter-performance-analysis-of-a-tensor-processing-unit/" target="_blank" rel="noopener noreferrer">Google Research</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research Notesとして残す理由</h2>
+      <p>動画では「CPUの横にもう一つ計算するチップが必要だった」という直感との矛盾を軸に、技術史を一本の流れへまとめました。一方、調査では8087以前の専用LSI、8087の密結合、用途ごとの価格判断、486世代の例外、GPU/NPUとの系譜の違いといった境界を分けて確認しています。</p>
+      <p>このページでは、動画で省いたその境界を残します。型番を増やすためではなく、<strong>「CPUだけで全部をやる必要はない」という設計判断が、どこで同じでどこから違うのか</strong>を後から辿れる形にするためです。</p>
+    </section>
+  </article>
+</main>
+<footer>
+  <div class="footer-container">
+    <div class="footer-info"><div class="footer-info-brand">Yorozugoto Research Notes</div><p>CPU / Retro PC / Technology History</p></div>
+    <div class="footer-links-group"><div><div class="footer-links-title">Navigate</div><ul class="footer-links">
+      <li><a href="./">Research Notes</a></li><li><a href="../">よろずごと</a></li><li><a href="../../">TK Portal</a></li>
+    </ul></div></div>
+  </div>
+  <div class="footer-copyright"><p>&copy; 2026 tk999jp. All rights reserved.</p></div>
+</footer>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>

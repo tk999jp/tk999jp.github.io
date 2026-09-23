@@ -1,0 +1,391 @@
+/*
+ * TK Portal common frame
+ * いったん「今風カードUI」から離す。細かい所は使いながら直す。
+ */
+
+body.portal-frame {
+  --portal-width: 1060px;
+  --bg-color: #e9edf1;
+  --text-color: #222;
+  --text-muted: #4f5860;
+  --primary-color: #183b63;
+  --primary-hover: #9b1c2b;
+  --primary-light: #eef2f5;
+  --accent-color: #9b1c2b;
+  --card-bg: #fff;
+  --border-color: #b8c0c7;
+  --code-bg: #edf0f2;
+  --radius-sm: 0;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic UI", "Meiryo", sans-serif;
+  margin: 0;
+  background: #e9edf1;
+  color: #222;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+body.portal-frame a { color: #164f86; text-decoration: none; transition: none; }
+body.portal-frame a:hover { color: #9b1c2b; text-decoration: underline; }
+body.portal-frame p { margin: 0 0 .8em; color: #3f474e; }
+body.portal-frame ul,
+body.portal-frame ol { margin: 0 0 .8em; }
+body.portal-frame li { margin-bottom: .2em; color: #3f474e; }
+
+/* 上の細い帯。こういうのが昔のポータルっぽくて落ち着く */
+.top-line { background: #0d2742; color: #dce4ec; border-bottom: 3px solid #9b1c2b; font-size: 12px; }
+.top-line-inner { width: min(var(--portal-width), calc(100% - 28px)); margin: 0 auto; padding: 4px 0; display: flex; justify-content: space-between; gap: 12px; }
+.top-line-note { color: #aebdca; }
+
+.portal-frame header,
+.portal-frame .header-box {
+  position: static;
+  background: #fff;
+  border: 0;
+  border-bottom: 1px solid #9ea8b0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.portal-frame .nav-container {
+  width: min(var(--portal-width), calc(100% - 28px));
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: 0 18px;
+}
+.portal-frame .site-title {
+  grid-column: 1;
+  padding: 14px 0 9px;
+  color: #17385b;
+  font-size: 26px;
+  line-height: 1;
+  font-family: Georgia, "Times New Roman", "Yu Mincho", serif;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.portal-frame .site-title::before { display: none; }
+.portal-frame .header-copy { grid-column: 2; align-self: center; color: #66717a; font-size: 12px; padding-top: 7px; }
+.portal-frame .nav-links {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #c7cdd2;
+  border-left: 1px solid #b4bcc3;
+  background: #f2f4f6;
+}
+.portal-frame .nav-links li { margin: 0; }
+.portal-frame .nav-links a {
+  display: block;
+  min-width: 92px;
+  padding: 7px 12px 6px;
+  border-right: 1px solid #b4bcc3;
+  border-bottom: 0;
+  color: #2c3a47;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.portal-frame .nav-links a:hover { background: #fff; color: #9b1c2b; text-decoration: none; }
+.portal-frame .nav-links a.active { background: #17385b; color: #fff; border-bottom: 0; }
+
+.portal-frame main,
+.portal-frame .portal-main {
+  width: min(var(--portal-width), calc(100% - 28px));
+  max-width: none;
+  margin: 0 auto;
+  padding: 16px 0 24px;
+}
+.portal-main { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 16px; align-items: start; }
+.main-column { min-width: 0; }
+.side-column { min-width: 0; }
+
+.portal-frame section { margin: 0 0 16px; }
+.portal-frame h1,
+.portal-frame h2,
+.portal-frame h3,
+.portal-frame h4 { color: #202a32; letter-spacing: 0; }
+.portal-frame h1 { margin: 0 0 8px; font-size: 27px; line-height: 1.3; }
+.portal-frame h2 {
+  display: block;
+  width: auto;
+  margin: 0 0 9px;
+  padding: 5px 8px 4px;
+  border-left: 4px solid #9b1c2b;
+  border-bottom: 1px solid #9fa8af;
+  background: #edf0f2;
+  color: #17385b;
+  font-size: 16px;
+  line-height: 1.35;
+}
+.portal-frame h2::after { display: none; }
+.portal-frame h3 { margin: .6em 0 .35em; font-size: 15px; }
+
+.intro-box,
+.section-box,
+.side-box,
+.portal-panel,
+.topic-card,
+.principle-card,
+.comparison-card,
+.project-card,
+.featured-path,
+.note-index-card,
+.source-item {
+  border: 1px solid #b8c0c7;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+}
+.intro-box { padding: 12px 14px 10px; border-top: 4px solid #17385b; }
+.intro-label { margin-bottom: 4px; color: #9b1c2b; font: 700 11px/1.4 Consolas, "Courier New", monospace; letter-spacing: .08em; }
+.intro-box .small-note { padding-top: 5px; border-top: 1px dotted #aeb5bb; color: #6a737b; font-size: 12px; }
+.section-box { padding: 0 10px 10px; }
+.section-box > h2 { margin-left: -10px; margin-right: -10px; }
+
+.project-list { border-top: 1px solid #c4cbd0; }
+.project-row { display: grid; grid-template-columns: 42px minmax(0,1fr); border-bottom: 1px solid #c4cbd0; background: #fff; }
+.project-row:nth-child(even) { background: #f8f9fa; }
+.project-row-main { border-left: 3px solid #17385b; }
+.project-no { padding: 11px 5px; color: #78828a; font: 700 12px/1 Consolas, "Courier New", monospace; text-align: center; }
+.project-body { padding: 8px 10px 8px; border-left: 1px solid #d5dadd; }
+.project-title { margin-bottom: 3px; font-size: 16px; font-weight: 700; }
+.project-title a { color: #17385b; }
+.project-body p { margin-bottom: 4px; }
+.link-line { font-size: 12px; color: #6a737b; }
+.mini-tag { display: inline-block; margin-left: 5px; padding: 1px 4px; border: 1px solid #9b1c2b; color: #9b1c2b; font: 700 10px/1.4 Arial, sans-serif; vertical-align: 2px; }
+.mini-tag.gray { border-color: #7d858b; color: #666; }
+
+.dense-list { border-top: 1px solid #bcc4ca; }
+.dense-list a { display: grid; grid-template-columns: 92px 1fr; gap: 2px 9px; padding: 8px 6px; border-bottom: 1px dotted #aeb7be; color: #203343; }
+.dense-list a:hover { background: #f5f7f8; text-decoration: none; }
+.dense-list strong { font-size: 14px; }
+.dense-list small { grid-column: 2; color: #69737b; font-size: 12px; }
+.dense-kind { grid-row: 1 / span 2; align-self: start; min-width: 0; padding: 2px 4px; white-space: nowrap; box-sizing: border-box; background: #17385b; color: #fff; font: 700 10px/1.4 Arial, sans-serif; text-align: center; }
+
+.side-box { margin-bottom: 12px; padding: 0 9px 8px; }
+.side-box h2 { margin: 0 -9px 8px; border-left: 0; border-bottom: 1px solid #7e8991; background: #17385b; color: #fff; font-size: 13px; }
+.plain-links { margin: 0; padding: 0; list-style: none; }
+.plain-links li { margin: 0; border-bottom: 1px dotted #c0c6cb; }
+.plain-links li:last-child { border-bottom: 0; }
+.plain-links a { display: block; padding: 5px 2px; }
+.status-table { margin: 0; }
+.status-table > div { display: grid; grid-template-columns: 42% 58%; border-bottom: 1px solid #d4d8dc; }
+.status-table > div:last-child { border-bottom: 0; }
+.status-table dt,
+.status-table dd { margin: 0; padding: 4px 3px; font-size: 12px; }
+.status-table dt { font-weight: 700; color: #38434c; }
+.status-table dd { color: #666; }
+.side-small { font-size: 12px; line-height: 1.55; }
+.side-memo { margin: 3px 0 14px 7px; padding: 7px 8px; border-left: 3px solid #aeb6bc; color: #68727a; background: #f3f4f5; font: 12px/1.5 Consolas, "Courier New", monospace; transform: rotate(-.25deg); }
+
+/* 既存のページ群も同じトーンへ寄せる */
+.portal-frame .portal-hero,
+.portal-frame .page-hero {
+  margin: 0 0 14px;
+  padding: 12px 14px 10px;
+  border: 1px solid #aeb7be;
+  border-top: 4px solid #17385b;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+}
+.portal-frame .portal-hero h1,
+.portal-frame .page-hero h1 { margin-bottom: 5px; font-size: 27px; }
+.portal-frame .portal-hero p,
+.portal-frame .page-hero p { max-width: none; margin: 0 0 6px; font-size: 14px; }
+.portal-frame .portal-eyebrow { margin: 0 0 4px; color: #9b1c2b; font-size: 10px; letter-spacing: .08em; }
+.portal-frame .portal-eyebrow::before { display: none; }
+.portal-frame .section-lead { max-width: none; margin: -2px 0 8px; font-size: 13px; }
+
+.portal-frame .project-grid,
+.portal-frame .featured-paths,
+.portal-frame .video-grid,
+.portal-frame .playlist-grid,
+.portal-frame .principle-grid,
+.portal-frame .repository-records { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+.portal-frame .project-card,
+.portal-frame .featured-path,
+.portal-frame .topic-card,
+.portal-frame .principle-card,
+.portal-frame .comparison-card,
+.portal-frame .portal-panel { padding: 9px 10px; min-height: 0; }
+.portal-frame .project-card { border-top-width: 3px; }
+.portal-frame .principle-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.portal-frame .comparison-card { align-self: start; }
+.comparison-card > div + div { margin-top: 8px; padding-top: 8px; border-top: 1px solid #c4cbd0; }
+.comparison-card strong,
+.comparison-card span { display: block; }
+.portal-frame .project-card h3,
+.portal-frame .featured-path strong { margin: 2px 0 4px; }
+.portal-frame .project-label,
+.portal-frame .status-pill,
+.portal-frame .note-meta span {
+  border-radius: 0;
+  padding: 1px 4px;
+  background: #eef0f2;
+  color: #59636b;
+  font-size: 10px;
+  font-weight: 700;
+}
+.portal-frame .featured-path { min-height: 0; }
+.portal-frame .featured-path:hover,
+.portal-frame .project-card:hover { transform: none; box-shadow: none; }
+.portal-frame .topic-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.portal-frame .topic-card h3 { margin-top: 0; color: #17385b; }
+.portal-frame .portal-split { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(240px,.8fr); gap: 12px; }
+.portal-frame .about-grid { display: grid; grid-template-columns: minmax(0,.7fr) minmax(0,1.6fr); gap: 12px; align-items: start; }
+.about-grid .topic-card { border: 0; border-bottom: 1px dotted #aeb7be; background: transparent; }
+.portal-frame .portal-note { padding: 7px 9px; border-left: 4px solid #9b1c2b; border-radius: 0; background: #f2f3f4; }
+.portal-frame .design-statement { padding: 10px 12px; border: 1px solid #aeb7be; border-left: 5px solid #17385b; border-radius: 0; background: #f7f8f9; font-size: 14px; }
+
+.portal-frame .brand-lockup { display: grid; grid-template-columns: 72px minmax(0,1fr); gap: 10px; align-items: center; }
+.portal-frame .brand-lockup img { width: 64px; height: 64px; border: 1px solid #aeb7be; border-radius: 0; object-fit: cover; }
+.portal-frame .status-line { margin: 5px 0 7px; }
+
+.portal-frame .video-card,
+.portal-frame .playlist-card,
+.portal-frame .media-feature {
+  border: 1px solid #b8c0c7;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+}
+.portal-frame .video-card:hover,
+.portal-frame .playlist-card:hover { transform: none; box-shadow: none; }
+.portal-frame .video-card { display: grid; grid-template-columns: 144px minmax(0,1fr); align-items: start; min-width: 0; }
+.video-card img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: contain; }
+.portal-frame .video-card > div { padding: 8px; }
+.portal-frame .video-card h3 { margin: 2px 0 4px; font-size: 14px; }
+.portal-frame .playlist-card { position: relative; padding: 9px 34px 9px 10px; border-color: #9aa9b5; border-left: 4px solid #17385b; background: #eef3f7; color: #17385b; }
+.portal-frame .playlist-card::after { content: "↗"; position: absolute; top: 50%; right: 10px; transform: translateY(-50%); color: #17385b; font-weight: 700; }
+.portal-frame .playlist-card:hover { border-color: #17385b; background: #e3ebf1; color: #17385b; }
+.playlist-card strong,
+.playlist-card span { display: block; }
+.playlist-card span { margin-top: 3px; color: #59636b; font-size: 12px; }
+.portal-frame .media-feature { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(260px,.85fr); gap: 0; }
+.portal-frame .media-feature__copy { padding: 10px 12px; border-left: 1px solid #c1c7cc; }
+.portal-frame .media-feature__visual img { min-height: 250px; }
+
+.portal-frame .btn,
+.portal-frame .btn-primary,
+.portal-frame .btn-secondary {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #596a79;
+  border-radius: 0;
+  background: #f2f4f5;
+  color: #183b63;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  box-shadow: none;
+}
+.portal-frame .btn-primary { border-color: #17385b; background: #17385b; color: #fff; }
+.portal-frame .btn:hover { background: #fff; color: #9b1c2b; text-decoration: none; }
+.portal-frame .btn-primary:hover { background: #244c75; color: #fff; }
+.portal-frame .portal-link-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+
+/* H.I.M.A.D.E.S.U. は「ネオンUI」ではなく古い管理画面/資料庫寄りに */
+.himadesu-page {
+  --primary-color: #17385b;
+  --primary-hover: #9b1c2b;
+  --primary-light: #eef0f2;
+  --card-bg: #fff;
+  --border-color: #aeb7be;
+  --code-bg: #e8ecef;
+  background: #dfe4e8 !important;
+  color: #20262c;
+}
+.himadesu-page header { background: #fff; }
+.himadesu-page .site-title,
+.himadesu-page h1,
+.himadesu-page h2,
+.himadesu-page h3 { color: #17385b; }
+.repository-hero { display: grid; grid-template-columns: minmax(0,.88fr) minmax(330px,1.12fr); gap: 12px; align-items: start; padding: 0; }
+.repository-tag { display: inline-block; margin-bottom: 5px; padding: 2px 5px; border: 1px solid #7e8a94; border-radius: 0; background: #f0f2f3; color: #5d6871; font: 700 10px/1.4 Consolas, "Courier New", monospace; letter-spacing: .05em; }
+.repository-keyvisual { margin: 0; border: 1px solid #596979; border-radius: 0; background: #fff; box-shadow: none; }
+.repository-keyvisual figcaption { padding: 4px 6px; border-top: 1px solid #aeb7be; color: #66717a; font: 11px/1.4 Consolas, "Courier New", monospace; }
+.repository-console { min-height: 0; padding: 10px 11px; border: 1px solid #4c5e6f; border-radius: 0; background: #142f4d; color: #fff; box-shadow: none; }
+.repository-console__line { color: #fff; font: 700 18px/1.3 Consolas, "Courier New", monospace; }
+.repository-console__id,
+.repository-console__log { margin-top: 5px; color: #d8e2eb; font: 12px/1.4 Consolas, "Courier New", monospace; letter-spacing: .04em; }
+.portal-frame .repository-console p { margin: 8px 0 0; color: #d8e2eb; }
+.repository-policy { border-left-color: #9b1c2b !important; background: #f3f4f5 !important; }
+.repository-record { padding: 8px 9px; border: 1px solid #aeb7be; border-radius: 0; background: #fff; color: #26333d; }
+.repository-record:hover { background: #f5f6f7; text-decoration: none; }
+.repository-record .record-id { color: #9b1c2b; font: 700 10px/1.3 Consolas, "Courier New", monospace; }
+.glossary-grid { gap: 8px; }
+.glossary-grid > div { padding: 8px 9px; border: 1px solid #b8c0c7; border-radius: 0; background: #fff; }
+.glossary-grid dt { color: #17385b; font-family: Consolas, "Courier New", monospace; }
+.glossary-grid dd { color: #4b555d; }
+.himadesu-page footer { background: #17385b; }
+
+.portal-frame footer { margin-top: 10px; padding: 0; border-top: 4px solid #17385b; background: #d8dde1; color: #3e4850; }
+.portal-frame .footer-container { width: min(var(--portal-width), calc(100% - 28px)); max-width: none; margin: 0 auto; padding: 10px 0; gap: 12px 24px; }
+.portal-frame .footer-info { flex: 1 1 240px; }
+.portal-frame .footer-info p { margin-bottom: 0; font-size: 12px; }
+.portal-frame .footer-links-title { margin-bottom: 4px; font-size: 12px; }
+.portal-frame .footer-links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0; }
+.portal-frame .footer-links li { margin: 0; }
+.portal-frame .footer-links a { font-size: 12px; }
+.portal-frame .old-footer { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.portal-frame .footer-nav { font-size: 12px; }
+.portal-frame .footer-copyright { max-width: none; margin: 0; padding: 0; border-top: 1px solid #b2bac0; background: #cbd1d6; }
+.portal-frame .footer-copyright p { width: min(var(--portal-width), calc(100% - 28px)); margin: 0 auto; padding: 5px 0; color: #59636b; font-size: 11px; }
+.portal-frame .footer-info-brand { margin-bottom: 3px; color: #17385b; font-size: 14px; }
+
+.mobile-nav-button { display: none; }
+
+@media (max-width: 960px) {
+  .portal-main { grid-template-columns: minmax(0,1fr) 230px; }
+  .portal-frame .project-grid { grid-template-columns: 1fr 1fr; }
+  .portal-frame .video-grid,
+  .portal-frame .about-grid,
+  .portal-frame .portal-split { grid-template-columns: 1fr; }
+  .repository-hero { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  body.portal-frame { font-size: 13px; }
+  .top-line-note { display: none; }
+  .portal-frame .nav-container { grid-template-columns: 1fr auto; }
+  .portal-frame .header-copy { display: none; }
+  .mobile-nav-button { display: block; grid-column: 2; align-self: center; padding: 4px 7px; border: 1px solid #78838c; border-radius: 0; background: #eef0f2; color: #17385b; font-weight: 700; }
+  .portal-frame .nav-links { grid-column: 1 / -1; flex-direction: column; border-top: 1px solid #9ea8b0; }
+  .portal-frame.js-nav-enabled .nav-links { display: none; }
+  .portal-frame.js-nav-enabled .nav-links.is-open { display: flex; }
+  .portal-frame .nav-links a { min-width: 0; padding: 6px 8px; border-right: 0; border-bottom: 1px solid #c1c7cc; text-align: left; }
+  .portal-main { grid-template-columns: 1fr; }
+  .side-column { display: grid; grid-template-columns: 1fr; }
+  .portal-frame .project-grid,
+  .portal-frame .featured-paths,
+  .portal-frame .video-grid,
+  .portal-frame .playlist-grid,
+  .portal-frame .principle-grid,
+  .portal-frame .repository-records,
+  .portal-frame .topic-grid,
+  .glossary-grid { grid-template-columns: 1fr; }
+  .project-row { grid-template-columns: 34px minmax(0,1fr); }
+  .dense-list a { grid-template-columns: 82px 1fr; }
+  .portal-frame .media-feature { grid-template-columns: 1fr; }
+  .portal-frame .media-feature__copy { border-left: 0; border-top: 1px solid #c1c7cc; }
+  .portal-frame .brand-lockup { grid-template-columns: 56px minmax(0,1fr); }
+  .portal-frame .brand-lockup img { width: 52px; height: 52px; }
+  .portal-frame .video-card { grid-template-columns: 100px minmax(0,1fr); }
+  .portal-frame .old-footer { display: block; }
+  .portal-frame .footer-nav { margin-top: 6px; line-height: 1.7; }
+}

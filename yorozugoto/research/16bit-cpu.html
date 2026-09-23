@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="動画『16ビットCPUの軌跡』のResearch Note。16ビットCPUを単一のビット数で分類せず、レジスタ、ALU、外部データバス、アドレス幅、当時の呼称などを分けて見る調査設計を整理します。">
+  <title>16ビットCPUは何を見て16ビットと呼ぶのか｜Research Notes｜TK Portal</title>
+  <link rel="canonical" href="https://tk999jp.github.io/yorozugoto/research/16bit-cpu.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="TK Portal">
+  <meta property="og:title" content="16ビットCPUは何を見て16ビットと呼ぶのか">
+  <meta property="og:description" content="8088、68000、65C816などの分類が揺れる理由を、動画制作時の調査設計から整理。">
+  <meta property="og:url" content="https://tk999jp.github.io/yorozugoto/research/16bit-cpu.html">
+  <meta property="og:image" content="https://i.ytimg.com/vi/Rb5ZvCaIRPY/hqdefault.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/portal-frame.css">
+  <link rel="stylesheet" href="../../assets/css/content-notes.css">
+</head>
+<body class="portal-frame">
+<header>
+  <div class="nav-container">
+    <a href="../../" class="site-title">TK Portal</a>
+    <ul class="nav-links">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../../midfd/">MidFD</a></li>
+      <li><a href="../" class="active">よろずごと</a></li>
+      <li><a href="../../station/">停車駅</a></li>
+      
+      <li><a href="../../about/">About</a></li>
+    </ul>
+  </div>
+</header>
+<main class="research-article">
+  <nav class="content-breadcrumbs" aria-label="パンくず">
+    <a href="../../">TK Portal</a><span>/</span><a href="../">よろずごと</a><span>/</span><a href="./">Research Notes</a><span>/</span><span>16-bit CPU</span>
+  </nav>
+
+  <article>
+    <header class="page-hero">
+      <span class="portal-eyebrow">Research Note / CPU</span>
+      <h1>16ビットCPUは、何を見て「16ビット」と呼ぶのか。</h1>
+      <p>動画「16ビットCPUの軌跡」を作るとき、最初に固定する必要があったのはCPUの一覧ではなく、そもそも何をもって16ビットと判定するかでした。</p>
+      <div class="portal-link-row">
+        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=Rb5ZvCaIRPY" target="_blank" rel="noopener noreferrer">動画を見る</a>
+        <a class="btn btn-secondary" href="./">Research Notes一覧</a>
+      </div>
+    </header>
+
+    <div class="research-question">
+      <strong>中心の問い：</strong> 「16ビットCPU」という一つの呼称の中に、どの技術的な幅を含めているのか。
+    </div>
+
+    <section>
+      <h2>単純な「16ビットCPU一覧」では混ざってしまう</h2>
+      <p>調査では、命令体系やレジスタが16ビットのCPU、内部は16ビットでも外部データバスが8ビットのCPU、32ビットレジスタを持ちながら外部バスが16ビットのCPU、8ビット互換性を維持しながら16ビット機能を加えたCPUを、同じ一列へ押し込まないようにしました。</p>
+      <div class="research-table-wrap">
+        <table class="research-table">
+          <thead><tr><th>分類上の例</th><th>調査で問題になる点</th></tr></thead>
+          <tbody>
+            <tr><td>8086 / Z8000 / TMS9900</td><td>命令体系・レジスタ幅を軸にすると比較的「16ビット」と整理しやすい。</td></tr>
+            <tr><td>Intel 8088 / 80188</td><td>内部の16ビット性と、外部データバス8ビットを分けないと「8ビットCPU」と誤解しやすい。</td></tr>
+            <tr><td>Motorola 68000</td><td>32ビットレジスタと16ビット外部データバスを持つため、16ビット、32ビット、16/32ビットという複数の表記が出てくる。</td></tr>
+            <tr><td>WDC 65C816</td><td>8ビット互換性を残しつつ16ビット機能を加えるため、「8ビット機の延長」と「16ビットCPU」の境界を考える必要がある。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>分離して記録した軸</h2>
+      <p>動画制作時の調査では、少なくとも次の項目を別々に記録する方針を取りました。ひとつの「bit数」へ潰すと、CPUそのものと搭載システムの特徴が混ざるためです。</p>
+      <ul class="axis-list">
+        <li>プログラマから見た基本ワード長</li>
+        <li>汎用レジスタ幅</li>
+        <li>ALUの演算幅</li>
+        <li>命令体系の基本データ幅</li>
+        <li>外部データバス幅</li>
+        <li>アドレスバス幅</li>
+        <li>物理アドレス空間</li>
+        <li>メーカーによる公式な分類</li>
+        <li>当時の専門誌・市場での呼ばれ方</li>
+        <li>後世の資料での分類</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>「どれが正しいか」より、なぜ呼び方が揺れるか</h2>
+      <p>分類が揺れるCPUについて、Research Noteでは一つの呼称へ断定するより、どの軸を見ればその呼び方になるのかを残します。</p>
+      <div class="topic-grid">
+        <article class="topic-card"><h3>8088</h3><p>外部8ビットバスでも、なぜ16ビットCPUとして扱われるのか。</p></article>
+        <article class="topic-card"><h3>68000</h3><p>なぜ16ビット、32ビット、16/32ビットという表記が併存するのか。</p></article>
+        <article class="topic-card"><h3>65C816</h3><p>8ビット互換性と16ビット機能を、どのように同時に見るべきか。</p></article>
+        <article class="topic-card"><h3>搭載PC</h3><p>CPUの分類と「パソコンが何ビットか」を同一視してよいのか。</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>一次資料をどう優先したか</h2>
+      <p>この動画の調査では、CPUのビット数や仕様を後世の一行要約だけで決めず、資料の証拠レベルを分けました。とくに分類が揺れるCPUは、メーカー一次資料に書かれたレジスタ、バス、アドレス、データ型などを分解して確認する方針です。</p>
+      <div class="topic-grid">
+        <article class="topic-card"><h3>A / メーカー一次資料</h3><p>Intel 8086・8088・80286、Motorola M68000系列、Texas Instruments TMS9900/TMS9995、Zilog Z8000、WDC 65C816、NEC V20/V30などのマニュアル、データブック、データシートを最優先にします。</p></article>
+        <article class="topic-card"><h3>B / 公式史・公的アーカイブ</h3><p>メーカー公式史、博物館、情報処理学会など、製品史や採用機の位置づけを確認できる資料を補助線として使います。</p></article>
+        <article class="topic-card"><h3>C / 当時資料</h3><p>当時の専門誌、広告、製品資料、独立した複数の技術記事から、市場での呼ばれ方や搭載機の実際を確認します。</p></article>
+        <article class="topic-card"><h3>D / 後世の資料</h3><p>個人サイトやコレクター資料は探索や照合には使いますが、単独では重要な年次・価格・技術分類の確定根拠にしません。</p></article>
+      </div>
+      <div class="portal-note" style="margin-top:1rem;">
+        <p><strong>68000を一つの幅へ押し込まない理由</strong></p>
+        <p>Motorola/NXPが公開するM68000資料自体が「8-/16-/32-bit Microprocessor」と表現しており、内部の32ビットレジスタと外部16ビットバスなど複数の幅を持つ系列として読む必要があります。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>確認できる一次・公式資料</h2>
+      <p>ここでは、現在Web上で公開状態を確認できた資料だけをリンクします。動画制作時に参照した資料全量ではなく、公開URLを安定して示せるものから追加しています。</p>
+      <div class="source-list">
+        <article class="source-item">
+          <span class="source-item__kind">Intel / Official</span>
+          <h3>Intel® 64 and IA-32 Architectures Software Developer’s Manual, Volume 1</h3>
+          <p>Intel公式の現行アーキテクチャマニュアル。歴史節で8086/8088を16ビット世代として扱い、8086は16ビット外部データバス、8088は8ビット外部データバスと明記しています。</p>
+          <a href="https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-1-manual.pdf" target="_blank" rel="noopener noreferrer">Intel PDF</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">Motorola / NXP Official</span>
+          <h3>M68000 8-/16-/32-bit Microprocessor User’s Manual</h3>
+          <p>NXPがMotorola資料を継承公開しているMC68000公式ドキュメント。68000を単一のビット幅だけで説明しにくいことを確認する基礎資料です。</p>
+          <a href="https://www.nxp.com/products/MC68000" target="_blank" rel="noopener noreferrer">NXP MC68000 Documents</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">WDC / Official</span>
+          <h3>W65C816S 8/16-bit MPU</h3>
+          <p>WDC公式。8ビットデータバス、24ビットアドレスバス、16ビットALU・Accumulator・Index Registers、6502互換のEmulation Modeを同時に確認できます。</p>
+          <a href="https://wdc65xx.com/65xx-chips/w65c816s/16bit/MPU" target="_blank" rel="noopener noreferrer">WDC Product Page</a>
+        </article>
+        <article class="source-item">
+          <span class="source-item__kind">Texas Instruments / Primary</span>
+          <h3>TMS 9900 Microprocessor Data Manual</h3>
+          <p>Texas Instruments Semiconductor Groupによる1976年のData Manual。TMS9900の命令体系・レジスタ・バス仕様を一次資料で確認するための基礎資料です。</p>
+          <a href="https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/138/TMS9900-data-manual.pdf" target="_blank" rel="noopener noreferrer">TI-hosted PDF</a>
+        </article>
+      </div>
+      <div class="portal-note" style="margin-top:1rem;">
+        <p><strong>当時資料も別軸で確認</strong></p>
+        <p>たとえばI/O 1981年10月号の販売広告では、8086は「16bit CPU」、8088は「8bit」、Z8001/Z8002は「16bit」と表記されています。これはCPU内部構造の正本ではなく、当時の市場でどう見せられていたかを確認する資料として扱います。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>年の意味も分ける</h2>
+      <p>「何年のCPUか」も一つにまとめません。発表年、サンプル出荷、量産、搭載パソコンの発売は別の出来事です。最初の16ビットCPU、最初のシングルチップ16ビットCPU、最初に家庭市場へ普及した16ビット機といった「最初」も、定義を分けて扱います。</p>
+    </section>
+
+    <section>
+      <h2>Research Notesとして残す理由</h2>
+      <p>動画では最終的なストーリーを優先するため、調査段階で検討した分類軸や境界事例をすべて説明できません。このページでは結論を増やすより、どの前提を分けて考えたかを残します。</p>
+      <p>個別資料名、版、ページ、公開URLについては、こちらで確定できたものだけを順次追加します。資料名を推定で補ったり、後世のまとめを一次資料として扱ったりはしません。</p>
+    </section>
+  </article>
+</main>
+<footer>
+  <div class="footer-container">
+    <div class="footer-info"><div class="footer-info-brand">Yorozugoto Research Notes</div><p>CPU / Retro PC / Technology History</p></div>
+    <div class="footer-links-group"><div><div class="footer-links-title">Navigate</div><ul class="footer-links">
+      <li><a href="./">Research Notes</a></li><li><a href="../">よろずごと</a></li><li><a href="../../">TK Portal</a></li>
+    </ul></div></div>
+  </div>
+  <div class="footer-copyright"><p>&copy; 2026 tk999jp. All rights reserved.</p></div>
+</footer>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

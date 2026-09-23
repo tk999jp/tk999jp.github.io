@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MidFDを作りながら考えたFD系ファイラーの操作思想。FDをそのまま再現するのではなく、何を現代のWindowsへ残すかを考える開発者のDesign Notesです。">
+  <title>FDを再現しない―MidFD Design Notes｜TK Portal</title>
+  <link rel="canonical" href="https://tk999jp.github.io/midfd/design.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="TK Portal">
+  <meta property="og:title" content="FDを再現しない―MidFD Design Notes">
+  <meta property="og:description" content="MidFD開発者が、FD系ファイラーから何を価値として読み取り、現代のWindowsでどう再構成するかを考えるDesign Notes。">
+  <meta property="og:url" content="https://tk999jp.github.io/midfd/design.html">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/portal-frame.css">
+</head>
+<body class="portal-frame midfd-design-page">
+<header>
+  <div class="nav-container">
+    <a href="../" class="site-title">TK Portal</a>
+    <ul class="nav-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="./" class="active">MidFD</a></li>
+      <li><a href="../yorozugoto/">よろずごと</a></li>
+      <li><a href="../station/">停車駅</a></li>
+      
+      <li><a href="../about/">About</a></li>
+    </ul>
+  </div>
+</header>
+<nav class="midfd-local-nav" aria-label="MidFD ナビゲーション">
+  <a href="./">MidFD ホーム</a>
+  <a href="guide.html">導入ガイド</a>
+  <a href="keys.html">キー操作</a>
+  <a href="design.html" class="active" aria-current="page">Design Notes</a>
+  <a href="./#verify">確認情報</a>
+</nav>
+<main>
+  <section class="page-hero">
+    <span class="portal-eyebrow">MidFD / Design Notes</span>
+    <h1>FDを再現しない。</h1>
+    <p>MidFDを作りながら考えた、FD系ファイラーの操作思想と、その現代的な再定義についての開発者ノートです。</p>
+  </section>
+
+  <div class="portal-note">
+    <p><strong>この文書の立場</strong></p>
+    <p>FD作者自身の意図や思想を代弁するものではありません。FD系ファイラーを使い、MidFDを設計する開発者として、どこに価値を感じ、何を現在のWindowsへ残そうとしているかを記録します。</p>
+  </div>
+
+  <section>
+    <h2>古いUIを復刻することが目的ではない</h2>
+    <p>昔の見た目や制約をそのまま再現するだけなら、現在のWindowsで使う理由は薄くなります。MidFDが残したいのは、操作対象を明示し、キーボードから直接コマンドへ到達し、習熟によって反復作業を短くできるという感覚です。</p>
+    <div class="topic-grid">
+      <article class="topic-card"><h3>Keyboard First</h3><p>画面上の操作を探してから実行するのではなく、覚えた操作へ直接到達できること。</p></article>
+      <article class="topic-card"><h3>Mark</h3><p>一時的なSelectionだけでなく、操作したい対象を明示して扱うという考え方。</p></article>
+      <article class="topic-card"><h3>Learned Speed</h3><p>最初からすべてが見えることより、使い込むほど手数が減っていくこと。</p></article>
+      <article class="topic-card"><h3>Modern Context</h3><p>タブ、Viewer、現在のWindowsパスやストレージなど、今の環境に必要なものは別途取り込むこと。</p></article>
+    </div>
+  </section>
+
+  <section>
+    <h2>残すもの、捨てるもの、加えるもの</h2>
+    <div class="principle-grid">
+      <article class="principle-card"><span>KEEP</span><h3>操作の距離を短くする</h3><p>キーボード主体のコマンド到達、Markによる対象指定、反復作業を短くする習熟性は残したい部分です。</p></article>
+      <article class="principle-card"><span>DROP</span><h3>当時の制約そのもの</h3><p>DOS時代の画面やストレージ制約、古い環境に由来する不便さまで保存することは目的にしません。</p></article>
+      <article class="principle-card"><span>ADD</span><h3>現在の作業文脈</h3><p>タブ、マウス、Viewer、現代的なパスやファイル環境など、現在のWindowsで自然に必要になる要素を取り込みます。</p></article>
+    </div>
+  </section>
+
+  <section class="portal-split">
+    <div>
+      <h2>Explorerを否定するためではない</h2>
+      <p>Explorerは、対象を見つけて直感的に操作することに強いUIです。FD系の操作は、その逆として「覚える代わりに、繰り返す操作の距離を短くする」方向に強みがあります。</p>
+      <p>MidFDはExplorerを置き換える唯一の正解を目指すのではなく、キーボード中心で大量のファイル操作を繰り返すときの、別の最適化を現在のWindowsへ残すことを目指します。</p>
+    </div>
+    <aside class="comparison-card">
+      <div><strong>Explorer的</strong><span>発見しやすい / GUI中心 / 初見に強い</span></div>
+      <div><strong>FD / MidFD的</strong><span>覚えて速くなる / Keyboard中心 / 反復に強い</span></div>
+    </aside>
+  </section>
+
+  <section>
+    <h2>MidFDでの再定義</h2>
+    <p>MidFDはFDの完全互換を目標にはしていません。FD系の操作から得た価値を抽出し、現在のWindows上で実際に使える形へ組み直すことを目指します。</p>
+    <p>今後このDesign Notesでは、Mark、Command、Viewer、タブなどを個別に取り上げ、なぜその形にしたのかを整理します。</p>
+    <div class="portal-link-row">
+      <a class="btn btn-primary" href="./">MidFD公式ページ</a>
+      <a class="btn btn-secondary" href="keys.html">キー操作を見る</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-container"><div class="footer-info"><div class="footer-info-brand">MidFD Design Notes</div><p>Developer perspective / TK Portal</p></div>
+  <div class="footer-links-group"><div><div class="footer-links-title">MidFD</div><ul class="footer-links">
+    <li><a href="./">MidFDトップ</a></li><li><a href="guide.html">導入ガイド</a></li><li><a href="keys.html">キー操作</a></li>
+  </ul></div></div></div>
+  <div class="footer-copyright"><p>&copy; 2026 tk999jp. All rights reserved.</p></div>
+</footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

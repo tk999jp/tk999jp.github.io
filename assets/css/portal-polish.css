@@ -1,0 +1,183 @@
+/* station / repository top pages
+ * 共通CSSに詰め込みすぎると触りにくいので、この2ページだけ少し別扱い。
+ */
+.station-page .station-head { margin-bottom: 10px; }
+.station-statusbar { margin: 8px -14px -10px; padding: 5px 9px; border-top: 1px solid #c2c9ce; background: #eef1f3; color: #59636b; font-size: 11px; }
+.station-two-col { display: grid; grid-template-columns: minmax(0,1.6fr) minmax(240px,.7fr); gap: 10px; margin-bottom: 14px; }
+.station-about { padding-right: 8px; }
+.station-now { margin-top: 0; border: 1px solid #b7c0c7; background: #fff; }
+.station-now-title { padding: 5px 8px; background: #17385b; color: #fff; font-size: 12px; font-weight: 700; }
+.station-now p { margin: 0; padding: 7px 8px 4px; font-size: 12px; }
+.station-now a { display: block; padding: 3px 8px 7px; font-size: 12px; font-weight: 700; }
+.station-feature { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(280px,.8fr); border: 1px solid #8f9aa3; background: #fff; }
+.station-feature-image { display: block; align-self: center; background: #d8dde1; }
+.station-feature-image img { display: block; width: 100%; height: auto; }
+.station-feature-copy { padding: 10px 12px; border-left: 1px solid #bfc6cc; }
+.feature-kicker { color: #9b1c2b; font: 700 10px/1.4 Consolas, "Courier New", monospace; letter-spacing: .04em; }
+.station-feature-copy h3 { margin: 3px 0 7px; color: #17385b; font-size: 17px; }
+.feature-note { padding-top: 5px; border-top: 1px dotted #b5bdc4; color: #626c74 !important; font-size: 12px; }
+.station-links { padding-top: 3px; font-size: 12px; font-weight: 700; }
+.station-links span { margin: 0 6px; color: #9da5ab; }
+.station-index-list { margin: 0; border-top: 1px solid #9fa9b1; }
+.station-index-list > div { display: grid; grid-template-columns: 130px minmax(0,1fr); border-bottom: 1px solid #c4cbd0; background: #fff; }
+.station-index-list > div:nth-child(even) { background: #f5f6f7; }
+.station-index-list dt { padding: 6px 8px; color: #17385b; font-weight: 700; }
+.station-index-list dd { margin: 0; padding: 6px 9px; border-left: 1px solid #c8ced3; color: #59636b; }
+
+/* Repository top: 箱を増やさず、目次として読めるようにする */
+.repository-home .repo-cover { display: grid; grid-template-columns: minmax(0,.9fr) minmax(420px,1.25fr); gap: 12px; margin-bottom: 12px; padding: 10px; border: 1px solid #8c99a3; border-top: 4px solid #17385b; background: #fff; }
+.repo-code { color: #9b1c2b; font: 700 10px/1.4 Consolas, "Courier New", monospace; letter-spacing: .07em; }
+.repo-cover h1 { margin: 5px 0 8px !important; color: #17385b !important; }
+.repo-lead { font-size: 13px; }
+.repo-policy { margin-top: 10px; padding: 7px 8px; border-left: 4px solid #9b1c2b; background: #f2f3f4; font-size: 12px; }
+.repo-cover-image { align-self: start; margin: 0; border: 1px solid #7f8d98; background: #d9dee2; }
+.repo-cover-image img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.repo-cover-image figcaption { padding: 3px 6px; border-top: 1px solid #aeb6bd; color: #67727b; font: 10px/1.4 Consolas, "Courier New", monospace; }
+.repo-world-line { margin-bottom: 12px !important; }
+.repo-world-copy { display: grid; grid-template-columns: 245px minmax(0,1fr); border: 1px solid #aeb7be; background: #fff; }
+.repo-world-copy strong { padding: 8px 10px; border-right: 1px solid #bfc6cc; color: #17385b; }
+.repo-world-copy span { padding: 8px 10px; color: #515b63; }
+.repo-index-table { border-top: 1px solid #85929c; }
+.repo-index-table a { display: grid; grid-template-columns: 110px 150px minmax(0,1fr) 64px; gap: 8px; align-items: center; padding: 7px 8px; border-bottom: 1px solid #bfc7cd; background: #fff; color: #26343f; }
+.repo-index-table a:nth-child(even) { background: #f4f6f7; }
+.repo-index-table a:hover { background: #eef1f3; color: #26343f; text-decoration: none; }
+.repo-index-code { color: #9b1c2b; font: 700 10px/1.4 Consolas, "Courier New", monospace; }
+.repo-index-table strong { color: #17385b; font-size: 14px; }
+.repo-index-table em { color: #59636b; font-size: 12px; font-style: normal; }
+.repo-index-table b { color: #164f86; font-size: 11px; text-align: right; }
+.repo-lower-grid { display: grid; grid-template-columns: minmax(0,1fr) 265px; gap: 12px; margin-bottom: 14px; }
+.repo-log-row { display: grid; grid-template-columns: 260px minmax(0,1fr); border: 1px solid #8f9aa3; background: #fff; color: #26343f; }
+.repo-log-row:hover { color: #26343f; text-decoration: none; background: #f7f8f9; }
+.repo-log-row img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: contain; border-right: 1px solid #b8c1c8; }
+.repo-log-row > div { padding: 8px 10px; }
+.repo-log-row span { color: #9b1c2b; font: 700 10px/1.4 Consolas, "Courier New", monospace; }
+.repo-log-row h3 { margin: 3px 0 5px; color: #17385b; }
+.repo-log-row p { margin-bottom: 5px; font-size: 12px; }
+.repo-log-row b { color: #164f86; font-size: 11px; }
+.repo-side-info { margin-top: 0; border: 1px solid #17385b; background: #fff; }
+.repo-status-head { padding: 5px 7px; background: #17385b; color: #fff; font: 700 12px/1.4 Consolas, "Courier New", monospace; }
+.repo-side-info dl { margin: 0; }
+.repo-side-info dl > div { display: grid; grid-template-columns: 42% 58%; border-bottom: 1px solid #c4cbd0; }
+.repo-side-info dt,.repo-side-info dd { margin: 0; padding: 4px 6px; font: 11px/1.45 Consolas, "Courier New", monospace; }
+.repo-side-info dt { color: #59636b; }
+.repo-side-info dd { border-left: 1px solid #c4cbd0; color: #17385b; font-weight: 700; }
+.repo-side-info p { margin: 0; padding: 7px; color: #59636b; font-size: 11px; }
+.repo-story-first { padding-top: 1px; }
+.repo-story-first p { max-width: 860px; }
+.repo-related { padding-top: 6px; border-top: 1px dotted #aeb6bd; font-size: 12px; }
+
+@media (max-width: 960px) {
+  .station-feature { grid-template-columns: minmax(0,1.25fr) minmax(250px,.9fr); }
+  .repository-home .repo-cover { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .repo-cover h1 { overflow-wrap: anywhere; }
+  .repo-lower-grid { grid-template-columns: 1fr; }
+  .repo-index-table a { grid-template-columns: 100px 135px minmax(0,1fr) 58px; }
+}
+
+@media (max-width: 600px) {
+  .station-two-col,.station-feature,.repository-home .repo-cover,.repo-lower-grid,.repo-log-row,.repo-world-copy { grid-template-columns: 1fr; }
+  .station-feature-copy { border-left: 0; border-top: 1px solid #bfc6cc; }
+  .station-feature-image,.station-feature-image img { min-height: 0; }
+  .station-index-list > div { grid-template-columns: 95px minmax(0,1fr); }
+  .repo-world-copy strong { border-right: 0; border-bottom: 1px solid #bfc6cc; }
+  .repo-index-table a { grid-template-columns: 82px minmax(0,1fr); gap: 3px 7px; }
+  .repo-index-table em { grid-column: 2; }
+  .repo-index-table b { grid-column: 2; text-align: left; }
+  .repo-log-row img { height: auto; border-right: 0; border-bottom: 1px solid #b8c1c8; }
+}
+
+
+/* Station published works / reading pages */
+.station-works { margin-bottom: 14px; }
+.station-section-head { display: flex; justify-content: space-between; gap: 14px; align-items: end; border-bottom: 1px solid #9fa9b1; margin-bottom: 8px; }
+.station-section-head h2 { margin: 2px 0 5px; }
+.station-section-head p { margin: 0 0 5px; color: #66717a; font-size: 12px; }
+.station-work-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+.station-work-card { display: grid; grid-template-columns: 96px minmax(0,1fr) auto; gap: 8px; align-items: center; padding: 7px 8px; border: 1px solid #b6bec5; background: #fff; color: #26343f; }
+.station-work-card:hover { background: #f4f6f7; color: #26343f; text-decoration: none; border-color: #7f8b94; }
+.station-work-card strong { color: #17385b; }
+.station-work-card > span:last-child { color: #164f86; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.station-work-id { color: #9b1c2b; font: 700 10px/1.4 Consolas, "Courier New", monospace; letter-spacing: .04em; }
+
+.story-page main { max-width: 900px; }
+.story-page .story-hero { margin-bottom: 10px; }
+.story-meta-line { margin-top: 7px; padding-top: 6px; border-top: 1px dotted #aeb6bd; color: #67727b; font: 11px/1.5 Consolas, "Courier New", monospace; }
+.story-actions { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+.story-text { padding: 18px 22px; border: 1px solid #b6bec5; background: #fff; color: #252f37; font-family: "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif; font-size: 15px; line-height: 2; }
+.story-text p { margin: 0 0 1.15em; }
+.story-text p:last-child { margin-bottom: 0; }
+.story-separator { margin: 1.7em 0; text-align: center; color: #6b747b; letter-spacing: .3em; }
+.story-after { margin-top: 12px; padding-top: 8px; border-top: 1px solid #aeb6bd; }
+
+.himadesu-log-card--text { min-height: 0; }
+.himadesu-log-card--text .himadesu-log-card__body { height: 100%; }
+.log-read-action { margin-top: 10px; }
+
+@media (max-width: 700px) {
+  .station-section-head { display: block; }
+  .station-work-list { grid-template-columns: 1fr; }
+  .station-work-card { grid-template-columns: 82px minmax(0,1fr); }
+  .station-work-card > span:last-child { grid-column: 2; }
+  .story-text { padding: 14px 12px; font-size: 14px; line-height: 1.9; }
+}
+
+
+/* Station interactive work preview */
+.station-work-card { grid-template-columns: 96px minmax(0,1fr) auto; padding: 0; transition: background .12s ease,border-color .12s ease; }
+.station-work-card.is-active { border-color: #17385b; background: #eef3f7; box-shadow: inset 3px 0 0 #9b1c2b; }
+.station-work-card .station-work-id { padding: 7px 0 7px 8px; }
+.station-work-trigger { appearance: none; width: 100%; padding: 7px 4px; border: 0; background: transparent; color: #17385b; font: inherit; font-weight: 700; text-align: left; cursor: pointer; }
+.station-work-trigger:hover { background: #e7ecef; color: #17385b; box-shadow: inset 0 0 0 1px #a7b1b8; text-decoration: none; }
+.station-work-card.is-active .station-work-trigger { background: #17385b; color: #fff; box-shadow: inset 0 0 0 1px #17385b; }
+.station-work-trigger:focus-visible { outline: 2px solid #17385b; outline-offset: -2px; text-decoration: none; }
+.station-work-actions { display: flex; gap: 4px; padding: 4px 8px 4px 0; white-space: nowrap; }
+.station-work-action { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 24px; padding: 2px 6px; border: 1px solid #b8c1c8; border-radius: 3px; background: #fff; color: #17385b; font-size: 10.5px; font-weight: 700; line-height: 1.2; text-decoration: none; }
+.station-work-action:hover,.station-work-action:focus-visible { border-color: #17385b; background: #eef3f7; color: #17385b; text-decoration: none; }
+.station-work-icon { display: block; width: 14px; height: 14px; flex: 0 0 14px; }
+.station-work-icon--youtube { width: 15px; height: 11px; flex-basis: 15px; }
+.station-work-emoji { display: inline-block; font-size: 13px; line-height: 1; flex: 0 0 auto; }
+.station-work-read { color: #164f86; }
+.station-feature-image { overflow: hidden; }
+.station-feature-image img { aspect-ratio: 16/9; object-fit: cover; }
+@media (max-width:700px) {
+  .station-work-card { grid-template-columns: 82px minmax(0,1fr); }
+  .station-work-card .station-work-id { grid-row: 1 / span 2; align-self: start; }
+  .station-work-actions { grid-column: 2; padding: 0 8px 7px 4px; flex-wrap: wrap; }
+}
+
+/* Station series / Shorts separation */
+.station-series-overview { margin-bottom: 14px; }
+.station-series-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.station-series-card { padding: 10px; border: 1px solid #aeb7be; border-top: 3px solid #17385b; background: #fff; }
+.station-series-card h3 { margin: 3px 0 5px; color: #17385b; }
+.station-series-card p { margin-bottom: 8px; color: #59636b; }
+.station-series-label,.story-series-tag { display: inline-block; padding: 1px 4px; border: 1px solid #9da6ad; background: #eef0f2; color: #59636b; font: 700 10px/1.4 Arial,sans-serif; }
+.station-shorts { margin: 14px 0; }
+.station-shorts-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+.station-short-card { display: block; overflow: hidden; border: 1px solid #b6bec5; background: #fff; color: #26343f; }
+.station-short-card:hover { border-color: #17385b; background: #f4f6f7; color: #26343f; text-decoration: none; }
+.station-short-card img { display: block; width: 100%; aspect-ratio: 9/16; object-fit: cover; background: #d8dde1; }
+.station-short-card > div { padding: 7px 8px 8px; }
+.station-short-card span { display: inline-block; margin-bottom: 4px; padding: 1px 4px; border: 1px solid #9da6ad; background: #eef0f2; color: #59636b; font-size: 9px; font-weight: 700; }
+.station-short-card strong,.station-short-card small { display: block; }
+.station-short-card strong { color: #17385b; font-size: 12px; line-height: 1.45; }
+.station-short-card small { margin-top: 5px; color: #164f86; font-size: 10px; font-weight: 700; }
+.story-series-nav { display: flex; flex-wrap: wrap; gap: 6px; }
+@media (max-width: 960px) { .station-shorts-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 700px) { .station-series-grid { grid-template-columns: 1fr; } .station-shorts-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 420px) { .station-shorts-grid { grid-template-columns: 1fr; } .station-short-card { display: grid; grid-template-columns: 92px minmax(0,1fr); } .station-short-card img { height: 164px; } }
+
+/* Station main content tabs */
+.station-view-tabs { display: none; margin: 0 0 12px; border-bottom: 2px solid #17385b; }
+.station-tabs-enabled .station-view-tabs { display: flex; align-items: end; gap: 3px; }
+.station-view-tab { appearance: none; margin: 0; padding: 7px 14px 6px; border: 1px solid #9ca8b1; border-bottom: 0; border-radius: 0; background: #eef1f3; color: #4c5963; font: 700 12px/1.35 Arial,sans-serif; cursor: pointer; }
+.station-view-tab:hover { background: #e4e9ed; color: #17385b; }
+.station-view-tab.is-active { padding-top: 8px; background: #17385b; border-color: #17385b; color: #fff; }
+.station-view-tab:focus-visible { outline: 2px solid #9b1c2b; outline-offset: 2px; }
+.station-view-tab span { display: inline-block; min-width: 18px; margin-left: 5px; padding: 0 4px; border: 1px solid currentColor; font-size: 9px; line-height: 1.5; text-align: center; }
+.station-tabs-enabled .station-view-panel[hidden] { display: none; }
+.station-tabs-enabled #station-panel-shorts .station-shorts { margin-top: 0; }
+@media (max-width: 600px) {
+  .station-tabs-enabled .station-view-tabs { width: 100%; }
+  .station-view-tab { flex: 1 1 0; padding-left: 8px; padding-right: 8px; text-align: center; }
+}
