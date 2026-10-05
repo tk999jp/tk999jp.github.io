@@ -83,7 +83,7 @@
             <tr>
               <td><strong>コマンド実行</strong></td>
               <td><kbd>X</kbd></td>
-              <td>コマンド実行ダイアログを開きます。</td>
+              <td>コマンド・引数・Working Directoryを指定します。Working Directoryを空欄にすると現在のBrowser directoryを使います。</td>
             </tr>
             <tr>
               <td><strong>Command Palette</strong></td>
@@ -153,6 +153,16 @@
               <td>移動履歴を1つ進みます。</td>
             </tr>
             <tr>
+              <td><strong>タブ履歴を戻る</strong></td>
+              <td><kbd>Alt + Shift + ←</kbd></td>
+              <td>タブ訪問履歴を1つ戻ります。</td>
+            </tr>
+            <tr>
+              <td><strong>タブ履歴を進む</strong></td>
+              <td><kbd>Alt + Shift + →</kbd></td>
+              <td>タブ訪問履歴を1つ進みます。</td>
+            </tr>
+            <tr>
               <td><strong>ドライブのルートへ</strong></td>
               <td><kbd>\</kbd>（バックスラッシュ/円マーク）</td>
               <td>現在のドライブの最上層（ルート）へ移動します。</td>
@@ -180,7 +190,7 @@
             <tr>
               <td><strong>Rename（名前変更）</strong></td>
               <td><kbd>R</kbd></td>
-              <td>選択しているファイルやフォルダーの名前を変更します。</td>
+              <td>単一対象は通常の名前変更、複数選択またはMark中はBatch Renameを開きます。</td>
             </tr>
             <tr>
               <td><strong>Copy（コピー）</strong></td>
@@ -225,7 +235,7 @@
             <tr>
               <td><strong>元に戻す / やり直し</strong></td>
               <td><kbd>Ctrl + Z</kbd> / <kbd>Ctrl + Y</kbd></td>
-              <td>直前のファイル操作を元に戻す、またはやり直します（対応操作のみ）。</td>
+              <td>対応するfile操作を戻す／やり直します。一括directory tab openも1操作として同じ時系列履歴に入ります。</td>
             </tr>
           </tbody>
         </table>
@@ -248,9 +258,19 @@
               <td>現在フォルダーの内容を最新に更新します。</td>
             </tr>
             <tr>
-              <td><strong>フィルター</strong></td>
-              <td><kbd>F</kbd> / <kbd>Ctrl + F</kbd></td>
-              <td>ファイル名で一覧を絞り込みます。</td>
+              <td><strong>一覧Filter</strong></td>
+              <td><kbd>F</kbd></td>
+              <td>現在表示中の一覧だけを絞り込みます。filesystemを再帰検索しません。</td>
+            </tr>
+            <tr>
+              <td><strong>配下Search</strong></td>
+              <td><kbd>Ctrl + F</kbd> / <kbd>F7</kbd></td>
+              <td>現在のBrowser tabをrootに配下を再帰検索します。名前／内容の使い分けと結果操作は<a href="#filter-search">Filter / Search</a>を参照してください。</td>
+            </tr>
+            <tr>
+              <td><strong>頭文字jump</strong></td>
+              <td><kbd>@</kbd>の後に1文字</td>
+              <td>Browser一覧のfocus中、入力した1文字で始まる項目へ移動します。</td>
             </tr>
             <tr>
               <td><strong>ソート順変更</strong></td>
@@ -264,8 +284,8 @@
             </tr>
             <tr>
               <td><strong>表示モード切替</strong></td>
-              <td><kbd>Ctrl + 1</kbd> / <kbd>2</kbd> / <kbd>3</kbd></td>
-              <td>「ファイル名のみ」「ファイル名＋サイズ」「詳細情報」を切り替えます。</td>
+              <td><kbd>Ctrl + 1</kbd> / <kbd>Ctrl + 2</kbd> / <kbd>Ctrl + 3</kbd> / <kbd>Ctrl + 4</kbd> / <kbd>Ctrl + NumPad4</kbd></td>
+              <td>「ファイル名のみ」「ファイル名＋サイズ」「ファイル名＋サイズ＋更新日時」「拡張子整列」を切り替えます。拡張子整列は同じ表示列のfileで拡張子の開始位置を揃えます。</td>
             </tr>
             <tr>
               <td><strong>システム情報</strong></td>
@@ -282,12 +302,92 @@
       </div>
     </section>
 
+    <section class="midfd-container" id="filter-search" style="margin-bottom: 4rem;">
+      <div class="midfd-section-heading">
+        <h2>Filter / Search</h2>
+      </div>
+      <div class="midfd-table-wrap">
+        <table class="midfd-ref-table">
+          <thead>
+            <tr>
+              <th>操作</th>
+              <th>キー／条件</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>現在一覧Filter</strong></td>
+              <td><kbd>F</kbd></td>
+              <td>現在表示中の一覧だけを絞り込みます。filesystemを再帰検索しません。</td>
+            </tr>
+            <tr>
+              <td><strong>Search</strong></td>
+              <td><kbd>Ctrl + F</kbd> / <kbd>F7</kbd></td>
+              <td>現在のBrowser tabをrootとして配下を再帰検索します。</td>
+            </tr>
+            <tr>
+              <td><strong>名前検索</strong></td>
+              <td>Search contentを空にする</td>
+              <td>filename条件で配下のfile／folderを検索します。</td>
+            </tr>
+            <tr>
+              <td><strong>内容検索</strong></td>
+              <td>Search contentへ入力する</td>
+              <td>配下fileの内容を検索します。必要に応じてfilename条件も併用できます。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>FilterとSearchは別pageで、条件のdraftを共有しません。ripgrep 15.2.0は配布packageに同梱されているため、通常は別途導入不要です。</p>
+
+      <h3 style="margin-top: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">内容検索結果</h3>
+      <p>内容検索結果はfileごとに1行で、file、ヒット数、行、列、内容を一覧表示します。内容検索中から到着した結果を確認でき、名前検索の結果一覧は検索完了後に表示します。実際に使用したengineとversionも検索結果画面に表示されます。</p>
+      <div class="midfd-table-wrap">
+        <table class="midfd-ref-table">
+          <thead>
+            <tr>
+              <th>結果画面操作</th>
+              <th>動作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><kbd>↑</kbd> / <kbd>↓</kbd></td>
+              <td>結果を移動します。</td>
+            </tr>
+            <tr>
+              <td><kbd>←</kbd> / <kbd>→</kbd></td>
+              <td>同一file内のhitを移動します。</td>
+            </tr>
+            <tr>
+              <td><kbd>Enter</kbd></td>
+              <td>名前検索は確認Browserで開き、内容検索はPreviewします。</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl + Enter</kbd></td>
+              <td>新しい通常tabを使って確認／Previewします。</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl + F</kbd></td>
+              <td>検索完了後、結果があればresult filterを開きます。0件ならcriteriaを引き継いだSearch dialogを開きます。</td>
+            </tr>
+            <tr>
+              <td><kbd>F7</kbd></td>
+              <td>criteriaを引き継いで再検索します。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p style="margin: 1rem 0;">補足: ContextMenuのdirectory項目から「新しいtabで開く」を選べます。複数directoryを選択またはMarkしている場合は一括して開き、成功したbatch openはUndo／Redoの1操作です。Workspace Snapshotにshortcutはありません。Fullで既定有効（個別変更可）にすると、tabの右クリックmenuから現在のWorkspace全体を保存できます。</p>
     <!-- 3. Mark操作とMarkSlot -->
     <section class="midfd-container" style="margin-bottom: 4rem;">
       <div class="midfd-section-heading">
         <h2>Mark操作とMarkSlot</h2>
       </div>
-      <p style="margin-bottom: 2rem;">MidFDでは、複数のファイルをMarkして一括でコピー、移動、削除などの操作を行えます。</p>
+      <p style="margin-bottom: 2rem;">MidFDでは、複数のファイルをMarkして一括でコピー、移動、削除などの操作を行えます。MarkSlotの保存・復元も通常機能です。集合演算とBackup TransferはFull限定です。</p>
       
       <div class="midfd-table-wrap">
         <table class="midfd-ref-table">
@@ -347,7 +447,7 @@
             <tr><td><kbd>F4</kbd></td><td>Edit（外部エディタで開く）</td><td>Delete（削除）</td></tr>
             <tr><td><kbd>F5</kbd></td><td>Reload（再読込）</td><td>Rename（名前変更）</td></tr>
             <tr><td><kbd>F6</kbd></td><td>Sort（並び替え）</td><td>Sort（並び替え）</td></tr>
-            <tr><td><kbd>F7</kbd></td><td>Filter（フィルター）</td><td>Filter（フィルター）</td></tr>
+            <tr><td><kbd>F7</kbd></td><td>Search dialog</td><td>Search dialog</td></tr>
             <tr><td><kbd>F8</kbd></td><td>QuickAccess</td><td>Tree（ツリー表示）</td></tr>
             <tr><td><kbd>F9</kbd></td><td>Logdsk（ディレクトリ移動）</td><td>Logdsk（ディレクトリ移動）</td></tr>
             <tr><td><kbd>F10</kbd></td><td>Command Palette</td><td>Unpack（圧縮ファイル解凍）</td></tr>

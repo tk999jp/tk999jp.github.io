@@ -2,11 +2,11 @@
 
 ## 0. 調査メタ
 
-- 調査日: 2026-07-05
+- 調査日: 2026-10-06
 - MidFD repo: `G:\\source\\repos\\MidFD` (public: `tk999jp/MidFD`)
 - branch: main
-- HEAD: 5255e21
-- origin/main: 5255e21
+- HEAD: 650e21961a8867cace70fefbf2d700a91b424f6d
+- origin/main: 650e21961a8867cace70fefbf2d700a91b424f6d
 - 調査対象:
   - `README.md`
   - `UserDocs/KEYBINDINGS.md`
@@ -70,19 +70,23 @@
 | Alt slot launcher | 外部ツール Alt slot launcher | Alt 単体でlauncher一覧表示、Alt+英数字で直接起動 | 標準 | README / KEYBINDINGS.md / USER_GUIDE.md / ExternalToolCommandDefinition.cs | recommended |
 | MarkSlot（基本） | MarkSlot | マーク状態をスロットに保存・復元 | 標準 | USER_GUIDE.md / KEYBINDINGS.md / MarkSlotStore.cs | recommended |
 | MarkSlot（高度） | MarkSlot 集合演算 / バックアップ | スロット間の集合演算（積・差・和）、バックアップのエクスポート/インポート | 高度（詳細オプション要） | KEYBINDINGS.md / PROFILES.md / FeatureId.cs / MarkSlotStore.cs | short（高度機能注記） |
-| タブ/カテゴリ | タブとカテゴリ | 複数タブ・カテゴリで作業場所を整理。Ctrl+Tab / Ctrl+Left / Ctrl+Right で移動 | 標準 | README / KEYBINDINGS.md / USER_GUIDE.md | recommended |
+| タブ/カテゴリ | タブとカテゴリ | 複数タブ・カテゴリとタブ訪問履歴で作業場所を切替。Ctrl+Tab / Ctrl+Left / Ctrl+Rightで移動 | 標準 | README / KEYBINDINGS.md / USER_GUIDE.md | recommended |
+| Tab Group | Tab Group | 同一category内の通常Browser tabをグループ化し、名前・所属・開閉状態を保存・復元 | 標準 | USER_GUIDE.md / KEYBINDINGS.md | recommended |
 | 画像ビューア | 画像ビューア | 矩形選択コピー、右90度/左90度回転、左右/上下反転、画像情報表示。変換は表示専用 | 標準 | README / USER_GUIDE.md / ImageViewerForm.cs（存在確認） | recommended |
 | VideoStill | 動画静止画プレビュー | ffmpeg使用。シークバー、←→で位置移動、Ctrl+Enterで外部再生。メタ情報表示 | 標準（ffmpeg別途要） | README / KEYBINDINGS.md / USER_GUIDE.md | recommended |
 | 外部ツール連携 | 外部ツール連携 | 任意の外部ツールを登録・実行。7-Zip / ffmpeg / ffprobe / ffplay / 外部エディタなど | 標準 | README / USER_GUIDE.md / ExternalToolCommandDefinition.cs | recommended |
 | Drag ZIP | Drag ZIP | Shift/Ctrl+複数マークドラッグでZIP化して渡す。manifest同梱対応 | 高度（詳細オプション要、既定OFF） | README / KEYBINDINGS.md / USER_GUIDE.md / PROFILES.md | short（高度機能注記） |
 | アーカイブ操作 | アーカイブ操作 | 7-Zip連携（優先）、Windows標準tar.exe fallback。圧縮・解凍・ハッシュ確認 | 標準（7-Zip任意） | README / USER_GUIDE.md | recommended |
 | Archive Contents | アーカイブ内ファイル一覧 | ZIPアーカイブ内ブラウズ、マーク解凍、テキストプレビュー | 標準 | USER_GUIDE.md / KEYBINDINGS.md | short |
-| 一覧表示モード | 一覧表示モード | ファイル名のみ / ファイル名+サイズ / ファイル名+サイズ+更新日時 の3モード | 標準 | README / KEYBINDINGS.md / USER_GUIDE.md | short |
-| 初回セットアップ | 初回セットアップ | 初回起動時にキー操作体系、メディアEnter動作、外部連携パス、初期オプションを設定。後から再表示可 | 標準 | README / USER_GUIDE.md / PROFILES.md | recommended |
-| 高度な使い方 | 高度な使い方（詳細オプション） | 設定>操作 から Workspace Snapshot / MarkSlot集合演算 / Drag ZIP などを個別ON/OFF | 高度 | README / PROFILES.md / FeatureId.cs | detail-link |
-| Workspace Snapshot | Workspace Snapshot | タブ・カーソル位置などの状態を保存・復元する作業管理機能 | 高度（詳細オプション要） | PROFILES.md / FeatureId.cs / CommandPaletteService.cs | defer |
+| 一覧表示モード | 一覧表示モード | Ctrl+1: ファイル名のみ / Ctrl+2: ファイル名+サイズ / Ctrl+3: ファイル名+サイズ+更新日時 / Ctrl+4・Ctrl+NumPad4: 拡張子整列の4モード | 標準 | KEYBINDINGS.md / USER_GUIDE.md | short |
+| 初回セットアップ | 初回セットアップ | 初回起動時に「基本機能のみ」「便利機能まで使う（PracticalStable／推奨）」「すべての機能を使う（Full）」から機能範囲を選び、各機能は後から個別変更可 | 標準 | README / USER_GUIDE.md / PROFILES.md | recommended |
+| 高度な使い方 | 高度な使い方（詳細オプション） | 設定または基本セットアップから Workspace Snapshot / MarkSlot集合演算 / Drag ZIP などの機能を個別ON/OFF | 高度 | README / PROFILES.md / FeatureId.cs | detail-link |
+| Workspace Snapshot | Workspace Snapshot | Workspace全体を名前付きで保存・復元。Full presetで既定有効、設定／基本セットアップから個別変更可 | Fullで既定ON、個別変更可 | PROFILES.md / USER_GUIDE.md / KEYBINDINGS.md | recommended |
+| 一覧Filter | 一覧Filter | Fで現在表示中の一覧だけを絞り込む。filesystemの再帰検索ではない | 標準 | KEYBINDINGS.md / USER_GUIDE.md | short |
+| 配下Search | Search | Ctrl+F / F7で現在Browser tab配下を再帰検索する | 標準 | KEYBINDINGS.md / USER_GUIDE.md | short |
+| 名前検索 | Search（content欄空） | filename条件で配下のfile／folderを検索する | 標準 | KEYBINDINGS.md / USER_GUIDE.md | short |
+| 内容検索 | Search（content欄入力） | 配下fileを検索し、filename条件も併用可。結果にfile／hit数／行／列／内容を表示し、検索中から到着結果を確認できる。ripgrep 15.2.0同梱、通常別途導入不要 | 標準 | KEYBINDINGS.md / USER_GUIDE.md | recommended |
 | Logdsk | Logdsk（ディレクトリ移動） | L / F9 で起動。移動履歴、Tab補完付き | 標準 | KEYBINDINGS.md / USER_GUIDE.md / CommandRegistry.cs | short |
-| フィルタ | フィルタ | F / Ctrl+F / F7 で一覧を絞り込み | 標準 | KEYBINDINGS.md | short |
 | 配色カスタマイズ | 配色カスタマイズ | built-inプリセット、ユーザープリセット、HEX/RGB編集 | 標準 | README / USER_GUIDE.md | short |
 | キー操作体系 | キー操作体系（操作プリセット） | 標準（現代的ショートカット中心）とFD互換（Fキー中心）の切り替え。機能制限はなし | 標準 | README / KEYBINDINGS.md / PROFILES.md | recommended |
 
@@ -90,7 +94,7 @@
 
 ## 3. 主力キーバインド（分類別）
 
-> 正本: KEYBINDINGS.md @ 5255e21
+> 正本: KEYBINDINGS.md @ 650e21961a8867cace70fefbf2d700a91b424f6d
 
 - **移動**:
   - `↑` `↓` (選択項目の上下移動)
@@ -115,9 +119,10 @@
   - `Shift+H` (コマンドプロンプトをここで開く)
 - **表示 / 整理**:
   - `T` (ディレクトリツリーを表示)
-  - `F` / `Ctrl+F` / `F7` (フィルタ)
+  - `F` (現在一覧のFilter)
+  - `Ctrl+F` / `F7` (配下Search。content欄空ならfilename、入力時は内容検索)
   - `Ctrl+R` / `Shift+R` (現在フォルダ再読込)
-  - `Ctrl+1` / `Ctrl+2` / `Ctrl+3` (表示モード切替：ファイル名のみ/サイズ/詳細)
+  - `Ctrl+1` / `Ctrl+2` / `Ctrl+3` / `Ctrl+4` / `Ctrl+NumPad4` (ファイル名のみ/サイズ/サイズ・更新日時/拡張子整列)
 - **探す / 呼び出す**:
   - `Ctrl+Shift+P` / `F10` (Command Palette を開く)
   - `Ctrl+Shift+L` (タブの固定・解除)
@@ -221,7 +226,7 @@
 
 > 正本: CommandRegistry.cs / CommandIds.cs / CommandPaletteService.cs / KEYBINDINGS.md
 
-### 8.1 全コマンド一覧（CommandRegistry.cs より全件抽出 / 計56コマンド）
+### 8.1 コマンド一覧（既存56項目のPortal検討用snapshot。current全定義の網羅表ではない）
 
 | ID | 表示名 | 説明 | カスタマイズ可 | 危険 | 正本 |
 |---|---|---|---|---|---|
@@ -297,10 +302,10 @@
 
 > 注: 外部ツールは ExternalToolCommandStorage から動的に読み込まれ、Category = "External" として追加される。
 
-### 8.3 全件抽出の可否
+### 8.3 source snapshotの範囲
 
-- 全件抽出できたか: **はい（CommandRegistry.cs の全定義を完全抽出。計56コマンド）**
-- 補足: CommandPaletteServiceの組み込みコマンドも全件確認。外部ツール登録分は動的なため個別不可（ユーザー定義）。
+- 8.1の56項目はPortal掲載検討用に残したsnapshotであり、current CommandRegistryの全件一覧ではありません。
+- MidFD authority source（650e21961a8867cace70fefbf2d700a91b424f6d）のCommandRegistry.csはCreate定義83件を機械集計しました。CommandPaletteの組み込み項目や動的な外部ツール登録は別範囲です。
 - 次の調査: FD互換プリセット時のFunctionキー割り当てデフォルトのフル表
 
 ### 8.4 FeatureId（高度な機能フラグ）
@@ -309,7 +314,7 @@
 
 | FeatureId | 機能説明 |
 |---|---|
-| WorkspaceSnapshot | Workspace Snapshot（詳細オプション要） |
+| WorkspaceSnapshot | Workspace Snapshot（Full既定ON、個別変更可） |
 | MarkSlotSetOperations | MarkSlot集合演算（詳細オプション要） |
 | MarkSlotBackupTransfer | MarkSlotバックアップexport/import（詳細オプション要） |
 | ImageQuantization | 画像減色（詳細オプション要） |
@@ -409,7 +414,10 @@
 - QuickAccess（登録先・最近・履歴を一括管理）
 - 外部ツール Alt slot launcher（Alt / Alt+英数字）
 - MarkSlot（マーク状態の保存・復元）
-- タブとカテゴリ（作業場所の整理）
+- タブとカテゴリ（作業場所の整理とタブ訪問履歴）
+- Tab Group（同一category内で通常Browser tabを整理）
+- 配下Search / 内容検索（content欄のfilename／content routing、同梱ripgrep）
+- Workspace Snapshot（Fullで既定有効、個別変更可）
 - 画像ビューア（矩形選択コピー・回転・反転・画像情報）
 - 動画静止画プレビュー（VideoStill / ffmpeg連携）
 - 外部ツール連携（7-Zip / ffmpeg / 外部エディタ等）
@@ -420,9 +428,9 @@
 
 - コマンド一覧（HelpメニューからCommand一覧を確認できる旨のみ掲載）
 - Archive Contents（ZIPアーカイブ内ブラウズと選択解凍）
-- 一覧表示モード（ファイル名のみ / +サイズ / +サイズ+日時の3モード）
+- 一覧表示モード（ファイル名のみ / +サイズ / +サイズ+更新日時 / 拡張子整列の4モード）
 - Logdsk（ディレクトリ移動、Tab補完・履歴付き）
-- フィルタ（一覧絞り込み）
+- 一覧Filter / 配下Search（Fは現在一覧、Ctrl+F / F7は配下Search）
 - 配色カスタマイズ（プリセット・HEX/RGB編集）
 - MarkSlot集合演算・バックアップ（高度機能注記付きで短く）
 - Drag ZIP（高度機能注記付きで短く）
@@ -436,7 +444,6 @@
 
 ### defer（今回は未掲載。将来検討）
 
-- Workspace Snapshot（高度機能、一般ユーザーには複雑すぎる可能性）
 - ImageQuantization（画像減色）/ SvgClipboard（SVGコピー）の詳細（FeatureIdにのみ存在、UserDocsへの記載薄い）
 - シンボリックリンク/ジャンクションの安全境界（上級者向け）
 - テキストクリップボードの.txtファイル化（既定OFFの機能）
