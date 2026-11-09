@@ -58,9 +58,92 @@
   white-space: nowrap;
 }
 
+#features .midfd-opref-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+#features .midfd-opref-card {
+  padding: 1.15rem 1.25rem;
+}
+
+#features .midfd-opref-card-title {
+  line-height: 1.35;
+}
+
+#features .midfd-opref-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.midfd-susie-steps {
+  padding-left: 1.5rem;
+}
+
+.midfd-susie-steps li + li {
+  margin-top: 0.45rem;
+}
+
+.midfd-susie-screenshot {
+  width: 100%;
+  max-width: 920px;
+  margin: 1.5rem auto;
+}
+
+.midfd-susie-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.midfd-susie-screenshot figcaption {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.midfd-susie-runtime-note p + p {
+  margin-top: 0.75rem;
+}
+
+.midfd-browser-media-table,
+.midfd-content-search-results-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.midfd-browser-media-table th:first-child,
+.midfd-browser-media-table td:first-child,
+.midfd-content-search-results-table th:first-child,
+.midfd-content-search-results-table td:first-child {
+  width: 38%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.midfd-browser-media-table th:nth-child(2),
+.midfd-browser-media-table td:nth-child(2),
+.midfd-content-search-results-table th:nth-child(2),
+.midfd-content-search-results-table td:nth-child(2) {
+  width: 62%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#keys-hero ~ .midfd-container .midfd-browser-media-table,
+#keys-hero ~ .midfd-container .midfd-content-search-results-table {
+  min-width: 0;
+}
+
 @media (max-width: 900px) {
   .midfd-preview-picker {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #features .midfd-opref-cards {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -70,8 +153,89 @@
   }
 }
 
+@media (max-width: 420px) {
+  .midfd-browser-media-table th:first-child,
+  .midfd-browser-media-table td:first-child,
+  .midfd-content-search-results-table th:first-child,
+  .midfd-content-search-results-table td:first-child {
+    width: 50%;
+  }
+
+  .midfd-browser-media-table th:nth-child(2),
+  .midfd-browser-media-table td:nth-child(2),
+  .midfd-content-search-results-table th:nth-child(2),
+  .midfd-content-search-results-table td:nth-child(2) {
+    width: 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  #keys-hero ~ .midfd-container .midfd-mobile-card-table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  #keys-hero ~ .midfd-container .midfd-mobile-card-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  #keys-hero ~ .midfd-container .midfd-mobile-card-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  #keys-hero ~ .midfd-container .midfd-mobile-card-table tbody tr {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 0.75rem;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--midfd-line);
+    background: var(--midfd-paper);
+  }
+
+  #keys-hero ~ .midfd-container .midfd-mobile-card-table tbody td {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.4rem 0;
+    border: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #keys-hero ~ .midfd-container .midfd-mobile-card-table tbody td + td {
+    border-top: 1px solid var(--midfd-line);
+  }
+
+  #keys-hero ~ .midfd-container .midfd-mobile-card-table tbody td::before {
+    display: block;
+    margin-bottom: 0.1rem;
+    color: var(--midfd-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    content: attr(data-label);
+  }
+}
+
 @media (max-width: 760px) {
   .midfd-feature-spotlight-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.midfd-release-history-list{display:grid;gap:1rem;list-style:none;padding:0}.midfd-release-history-card{background:var(--surface-color,#fff);border:1px solid var(--border-color,#ddd);border-radius:12px;padding:1.25rem}.midfd-release-history-meta{color:var(--text-muted);font-size:.9rem}.midfd-release-history-notes{white-space:pre-wrap;overflow-wrap:anywhere;margin-top:.75rem}.midfd-release-history-assets{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.75rem}

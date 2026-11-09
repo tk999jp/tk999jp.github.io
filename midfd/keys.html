@@ -27,6 +27,7 @@
     <a href="./">MidFD ホーム</a>
     <a href="guide.html">導入ガイド</a>
     <a href="keys.html" class="active" aria-current="page">キー操作</a>
+    <a href="releases.html">公開履歴</a>
     <a href="design.html">Design Notes</a>
     <a href="index.html#verify">確認情報</a>
   </nav>
@@ -51,7 +52,7 @@
       </div>
       <p style="text-align: center; margin-bottom: 2rem;">まずは以下の基本操作を覚えると、すぐに MidFD を使い始めることができます。F1～F12の割り当ては、後半のプロファイル別表を確認してください。</p>
       <div class="midfd-table-wrap" style="max-width: 800px; margin: 0 auto;">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>機能</th>
@@ -61,44 +62,44 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>開く / 実行</strong></td>
-              <td><kbd>Enter</kbd></td>
-              <td><code>..</code>は親フォルダー、フォルダーはMidFD内で移動、ファイルは対象に応じて開く／実行します。</td>
+              <td data-label="機能"><strong>開く / 実行</strong></td>
+              <td data-label="共通キー"><kbd>Enter</kbd></td>
+              <td data-label="説明"><code>..</code>は親フォルダー、フォルダーはMidFD内で移動、ファイルは対象に応じて開く／実行します。</td>
             </tr>
             <tr>
-              <td><strong>内蔵Viewer / Preview</strong></td>
-              <td><kbd>V</kbd></td>
-              <td>選択ファイルをMidFD内でプレビューします。</td>
+              <td data-label="機能"><strong>内蔵ビューアー／プレビュー</strong></td>
+              <td data-label="共通キー"><kbd>V</kbd></td>
+              <td data-label="説明">選択したファイルをMidFD内でプレビューします。</td>
             </tr>
             <tr>
-              <td><strong>関連付けで開く</strong></td>
-              <td><kbd>Z</kbd></td>
-              <td>フォルダーはExplorer、ファイルはOSの既定アプリで開きます。</td>
+              <td data-label="機能"><strong>関連付けで開く</strong></td>
+              <td data-label="共通キー"><kbd>Z</kbd></td>
+              <td data-label="説明">フォルダーはExplorer、ファイルはOSの既定アプリで開きます。</td>
             </tr>
             <tr>
-              <td><strong>外部エディタで開く</strong></td>
-              <td><kbd>E</kbd></td>
-              <td>選択ファイルを登録した外部エディタで開きます。</td>
+              <td data-label="機能"><strong>外部エディタで開く</strong></td>
+              <td data-label="共通キー"><kbd>E</kbd></td>
+              <td data-label="説明">Browserで選択したファイルを外部エディタで開きます。内容検索結果の<kbd>E</kbd>は選択中の一致箇所を開きます。</td>
             </tr>
             <tr>
-              <td><strong>コマンド実行</strong></td>
-              <td><kbd>X</kbd></td>
-              <td>コマンド・引数・Working Directoryを指定します。Working Directoryを空欄にすると現在のBrowser directoryを使います。</td>
+              <td data-label="機能"><strong>コマンド実行</strong></td>
+              <td data-label="共通キー"><kbd>X</kbd></td>
+              <td data-label="説明">コマンド・引数・Working Directoryを指定します。Working Directoryを空欄にすると現在のBrowser directoryを使います。</td>
             </tr>
             <tr>
-              <td><strong>Command Palette</strong></td>
-              <td><kbd>Ctrl + Shift + P</kbd></td>
-              <td>機能、設定、外部ツールなどをすばやく検索・実行します。</td>
+              <td data-label="機能"><strong>Command Palette</strong></td>
+              <td data-label="共通キー"><kbd>Ctrl + Shift + P</kbd></td>
+              <td data-label="説明">機能、設定、外部ツールなどをすばやく検索・実行します。</td>
             </tr>
             <tr>
-              <td><strong>移動履歴（Logdsk）</strong></td>
-              <td><kbd>L</kbd> / <kbd>F9</kbd></td>
-              <td>過去の移動履歴からディレクトリを素早く移動します。F9は両プロファイル共通です。</td>
+              <td data-label="機能"><strong>移動履歴（Logdsk）</strong></td>
+              <td data-label="共通キー"><kbd>L</kbd> / <kbd>F9</kbd></td>
+              <td data-label="説明">過去の移動履歴からディレクトリを素早く移動します。F9は両プロファイル共通です。</td>
             </tr>
             <tr>
-              <td><strong>QuickAccess</strong></td>
-              <td><kbd>Q</kbd></td>
-              <td>登録済みの場所や最近使ったフォルダーへ移動します。</td>
+              <td data-label="機能"><strong>QuickAccess</strong></td>
+              <td data-label="共通キー"><kbd>Q</kbd></td>
+              <td data-label="説明">登録済みの場所や最近使ったフォルダーへ移動します。</td>
             </tr>
           </tbody>
         </table>
@@ -113,7 +114,7 @@
       
       <h3 style="margin-top: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">カーソル・移動</h3>
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>操作</th>
@@ -123,54 +124,54 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>上下移動</strong></td>
-              <td><kbd>↑</kbd> / <kbd>↓</kbd></td>
-              <td>選択項目を上下に移動します。</td>
+              <td data-label="操作"><strong>上下移動</strong></td>
+              <td data-label="キー"><kbd>↑</kbd> / <kbd>↓</kbd></td>
+              <td data-label="説明">選択項目を上下に移動します。</td>
             </tr>
             <tr>
-              <td><strong>左右移動（列）</strong></td>
-              <td><kbd>←</kbd> / <kbd>→</kbd></td>
-              <td>複数列表示時、選択項目を左右の列へ移動します。</td>
+              <td data-label="操作"><strong>左右移動（列）</strong></td>
+              <td data-label="キー"><kbd>←</kbd> / <kbd>→</kbd></td>
+              <td data-label="説明">複数列表示時、選択項目を左右の列へ移動します。</td>
             </tr>
             <tr>
-              <td><strong>ページ移動</strong></td>
-              <td><kbd>PageUp</kbd> / <kbd>PageDown</kbd></td>
-              <td>一覧をページ単位でスクロールします。</td>
+              <td data-label="操作"><strong>ページ移動</strong></td>
+              <td data-label="キー"><kbd>PageUp</kbd> / <kbd>PageDown</kbd></td>
+              <td data-label="説明">一覧をページ単位でスクロールします。</td>
             </tr>
             <tr>
-              <td><strong>親ディレクトリへ移動</strong></td>
-              <td><kbd>Backspace</kbd> / <kbd>Alt + ↑</kbd></td>
-              <td>現在位置の1つ上のフォルダーへ移動します。</td>
+              <td data-label="操作"><strong>親ディレクトリへ移動</strong></td>
+              <td data-label="キー"><kbd>Backspace</kbd> / <kbd>Alt + ↑</kbd></td>
+              <td data-label="説明">現在位置の1つ上のフォルダーへ移動します。</td>
             </tr>
             <tr>
-              <td><strong>ディレクトリ履歴を戻る</strong></td>
-              <td><kbd>Alt + ←</kbd> / <kbd>Ctrl + Backspace</kbd></td>
-              <td>移動履歴を1つ戻ります。</td>
+              <td data-label="操作"><strong>ディレクトリ履歴を戻る</strong></td>
+              <td data-label="キー"><kbd>Alt + ←</kbd> / <kbd>Ctrl + Backspace</kbd></td>
+              <td data-label="説明">移動履歴を1つ戻ります。</td>
             </tr>
             <tr>
-              <td><strong>ディレクトリ履歴を進む</strong></td>
-              <td><kbd>Alt + →</kbd></td>
-              <td>移動履歴を1つ進みます。</td>
+              <td data-label="操作"><strong>ディレクトリ履歴を進む</strong></td>
+              <td data-label="キー"><kbd>Alt + →</kbd></td>
+              <td data-label="説明">移動履歴を1つ進みます。</td>
             </tr>
             <tr>
-              <td><strong>タブ履歴を戻る</strong></td>
-              <td><kbd>Alt + Shift + ←</kbd></td>
-              <td>タブ訪問履歴を1つ戻ります。</td>
+              <td data-label="操作"><strong>タブ履歴を戻る</strong></td>
+              <td data-label="キー"><kbd>Alt + Shift + ←</kbd></td>
+              <td data-label="説明">タブ訪問履歴を1つ戻ります。</td>
             </tr>
             <tr>
-              <td><strong>タブ履歴を進む</strong></td>
-              <td><kbd>Alt + Shift + →</kbd></td>
-              <td>タブ訪問履歴を1つ進みます。</td>
+              <td data-label="操作"><strong>タブ履歴を進む</strong></td>
+              <td data-label="キー"><kbd>Alt + Shift + →</kbd></td>
+              <td data-label="説明">タブ訪問履歴を1つ進みます。</td>
             </tr>
             <tr>
-              <td><strong>ドライブのルートへ</strong></td>
-              <td><kbd>\</kbd>（バックスラッシュ/円マーク）</td>
-              <td>現在のドライブの最上層（ルート）へ移動します。</td>
+              <td data-label="操作"><strong>ドライブのルートへ</strong></td>
+              <td data-label="キー"><kbd>\</kbd>（バックスラッシュ/円マーク）</td>
+              <td data-label="説明">現在のドライブの最上層（ルート）へ移動します。</td>
             </tr>
             <tr>
-              <td><strong>パスの直接入力</strong></td>
-              <td><kbd>Ctrl + L</kbd></td>
-              <td>パス入力欄を開いて直接フォルダーパスを指定します。<code>%TEMP%</code> や <code>%USERPROFILE%</code> などの環境変数を含むパスも指定できます。</td>
+              <td data-label="操作"><strong>パスの直接入力</strong></td>
+              <td data-label="キー"><kbd>Ctrl + L</kbd></td>
+              <td data-label="説明">パス入力欄を開いて直接フォルダーパスを指定します。<code>%TEMP%</code> や <code>%USERPROFILE%</code> などの環境変数を含むパスも指定できます。</td>
             </tr>
           </tbody>
         </table>
@@ -178,7 +179,7 @@
 
       <h3 style="margin-top: 2.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">ファイル編集・操作</h3>
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>操作</th>
@@ -188,54 +189,54 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Rename（名前変更）</strong></td>
-              <td><kbd>R</kbd></td>
-              <td>単一対象は通常の名前変更、複数選択またはMark中はBatch Renameを開きます。</td>
+              <td data-label="操作"><strong>Rename（名前変更）</strong></td>
+              <td data-label="共通キー"><kbd>R</kbd></td>
+              <td data-label="説明">単一対象は通常の名前変更、複数選択またはMark中はBatch Renameを開きます。</td>
             </tr>
             <tr>
-              <td><strong>Copy（コピー）</strong></td>
-              <td><kbd>C</kbd></td>
-              <td>コピー先の入力欄を開いてコピーを実行します。</td>
+              <td data-label="操作"><strong>Copy（コピー）</strong></td>
+              <td data-label="共通キー"><kbd>C</kbd></td>
+              <td data-label="説明">コピー先の入力欄を開いてコピーを実行します。</td>
             </tr>
             <tr>
-              <td><strong>Move（移動）</strong></td>
-              <td><kbd>M</kbd></td>
-              <td>移動先の入力欄を開いて移動を実行します。</td>
+              <td data-label="操作"><strong>Move（移動）</strong></td>
+              <td data-label="共通キー"><kbd>M</kbd></td>
+              <td data-label="説明">移動先の入力欄を開いて移動を実行します。</td>
             </tr>
             <tr>
-              <td><strong>Delete（削除）</strong></td>
-              <td><kbd>D</kbd> / <kbd>Delete</kbd></td>
-              <td>選択またはMarkしている項目を削除します。</td>
+              <td data-label="操作"><strong>Delete（削除）</strong></td>
+              <td data-label="共通キー"><kbd>D</kbd> / <kbd>Delete</kbd></td>
+              <td data-label="説明">選択またはMarkしている項目を削除します。</td>
             </tr>
             <tr>
-              <td><strong>新規フォルダー作成</strong></td>
-              <td><kbd>K</kbd></td>
-              <td>新規フォルダー作成ダイアログを開きます。</td>
+              <td data-label="操作"><strong>新規フォルダー作成</strong></td>
+              <td data-label="共通キー"><kbd>K</kbd></td>
+              <td data-label="説明">新規フォルダー作成ダイアログを開きます。</td>
             </tr>
             <tr>
-              <td><strong>新規ファイル作成</strong></td>
-              <td><kbd>N</kbd></td>
-              <td>空の新規ファイル作成ダイアログを開きます。</td>
+              <td data-label="操作"><strong>新規ファイル作成</strong></td>
+              <td data-label="共通キー"><kbd>N</kbd></td>
+              <td data-label="説明">空の新規ファイル作成ダイアログを開きます。</td>
             </tr>
             <tr>
-              <td><strong>属性・日時変更</strong></td>
-              <td><kbd>A</kbd></td>
-              <td>ファイルの属性（読み取り専用・隠し等）や日時を一括変更します。</td>
+              <td data-label="操作"><strong>属性・日時変更</strong></td>
+              <td data-label="共通キー"><kbd>A</kbd></td>
+              <td data-label="説明">ファイルの属性（読み取り専用・隠し等）や日時を一括変更します。</td>
             </tr>
             <tr>
-              <td><strong>圧縮</strong></td>
-              <td><kbd>P</kbd></td>
-              <td>選択・Markした項目を ZIP などに圧縮します。</td>
+              <td data-label="操作"><strong>圧縮</strong></td>
+              <td data-label="共通キー"><kbd>P</kbd></td>
+              <td data-label="説明">選択・Markした項目を ZIP などに圧縮します。</td>
             </tr>
             <tr>
-              <td><strong>解凍</strong></td>
-              <td><kbd>U</kbd></td>
-              <td>選択した圧縮ファイルを展開・解凍します。</td>
+              <td data-label="操作"><strong>解凍</strong></td>
+              <td data-label="共通キー"><kbd>U</kbd></td>
+              <td data-label="説明">選択した圧縮ファイルを展開・解凍します。</td>
             </tr>
             <tr>
-              <td><strong>元に戻す / やり直し</strong></td>
-              <td><kbd>Ctrl + Z</kbd> / <kbd>Ctrl + Y</kbd></td>
-              <td>対応するfile操作を戻す／やり直します。一括directory tab openも1操作として同じ時系列履歴に入ります。</td>
+              <td data-label="操作"><strong>元に戻す / やり直し</strong></td>
+              <td data-label="共通キー"><kbd>Ctrl + Z</kbd> / <kbd>Ctrl + Y</kbd></td>
+              <td data-label="説明">対応するfile操作を戻す／やり直します。一括directory tab openも1操作として同じ時系列履歴に入ります。</td>
             </tr>
           </tbody>
         </table>
@@ -243,7 +244,7 @@
 
       <h3 style="margin-top: 2.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">表示・整理</h3>
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>操作</th>
@@ -253,50 +254,66 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Reload（再読込）</strong></td>
-              <td><kbd>Ctrl + R</kbd> / <kbd>Shift + R</kbd></td>
-              <td>現在フォルダーの内容を最新に更新します。</td>
+              <td data-label="操作"><strong>Reload（再読込）</strong></td>
+              <td data-label="キー"><kbd>Ctrl + R</kbd> / <kbd>Shift + R</kbd></td>
+              <td data-label="説明">現在フォルダーの内容を最新に更新します。</td>
             </tr>
             <tr>
-              <td><strong>一覧Filter</strong></td>
-              <td><kbd>F</kbd></td>
-              <td>現在表示中の一覧だけを絞り込みます。filesystemを再帰検索しません。</td>
+              <td data-label="操作"><strong>一覧Filter</strong></td>
+              <td data-label="キー"><kbd>F</kbd></td>
+              <td data-label="説明">現在表示中の一覧だけを絞り込みます。filesystemを再帰検索しません。</td>
             </tr>
             <tr>
-              <td><strong>配下Search</strong></td>
-              <td><kbd>Ctrl + F</kbd> / <kbd>F7</kbd></td>
-              <td>現在のBrowser tabをrootに配下を再帰検索します。名前／内容の使い分けと結果操作は<a href="#filter-search">Filter / Search</a>を参照してください。</td>
+              <td data-label="操作"><strong>配下Search</strong></td>
+              <td data-label="キー"><kbd>Ctrl + F</kbd> / <kbd>F7</kbd></td>
+              <td data-label="説明">現在のBrowser tabをrootに配下を再帰検索します。名前／内容の使い分けと結果操作は<a href="#filter-search">Filter / Search</a>を参照してください。</td>
             </tr>
             <tr>
-              <td><strong>頭文字jump</strong></td>
-              <td><kbd>@</kbd>の後に1文字</td>
-              <td>Browser一覧のfocus中、入力した1文字で始まる項目へ移動します。</td>
+              <td data-label="操作"><strong>頭文字jump</strong></td>
+              <td data-label="キー"><kbd>@</kbd>の後に1文字</td>
+              <td data-label="説明">Browser一覧のfocus中、入力した1文字で始まる項目へ移動します。</td>
             </tr>
             <tr>
-              <td><strong>ソート順変更</strong></td>
-              <td>プロファイル別Fキー表を参照</td>
-              <td>ソート順変更ダイアログを開きます。</td>
+              <td data-label="操作"><strong>ソート順変更</strong></td>
+              <td data-label="キー">プロファイル別Fキー表を参照</td>
+              <td data-label="説明">ソート順変更ダイアログを開きます。</td>
             </tr>
             <tr>
-              <td><strong>ディレクトリツリー</strong></td>
-              <td><kbd>T</kbd></td>
-              <td>視覚的なディレクトリツリーを開きます。</td>
+              <td data-label="操作"><strong>ディレクトリツリー</strong></td>
+              <td data-label="キー"><kbd>T</kbd></td>
+              <td data-label="説明">視覚的なディレクトリツリーを開きます。</td>
             </tr>
             <tr>
-              <td><strong>表示モード切替</strong></td>
-              <td><kbd>Ctrl + 1</kbd> / <kbd>Ctrl + 2</kbd> / <kbd>Ctrl + 3</kbd> / <kbd>Ctrl + 4</kbd> / <kbd>Ctrl + NumPad4</kbd></td>
-              <td>「ファイル名のみ」「ファイル名＋サイズ」「ファイル名＋サイズ＋更新日時」「拡張子整列」を切り替えます。拡張子整列は同じ表示列のfileで拡張子の開始位置を揃えます。</td>
+              <td data-label="操作"><strong>表示モード切替</strong></td>
+              <td data-label="キー"><kbd>Ctrl + 1</kbd> / <kbd>Ctrl + 2</kbd> / <kbd>Ctrl + 3</kbd> / <kbd>Ctrl + 4</kbd> / <kbd>Ctrl + NumPad4</kbd></td>
+              <td data-label="説明">「ファイル名のみ」「ファイル名＋サイズ」「ファイル名＋サイズ＋更新日時」「拡張子整列」を切り替えます。拡張子整列は同じ表示列のfileで拡張子の開始位置を揃えます。</td>
             </tr>
             <tr>
-              <td><strong>システム情報</strong></td>
-              <td><kbd>I</kbd></td>
-              <td>ドライブ使用量やメモリなどのシステム状況を表示します。</td>
+              <td data-label="操作"><strong>システム情報</strong></td>
+              <td data-label="キー"><kbd>I</kbd></td>
+              <td data-label="説明">ドライブ使用量やメモリなどのシステム状況を表示します。</td>
             </tr>
             <tr>
-              <td><strong>設定を開く</strong></td>
-              <td><kbd>O</kbd> / <kbd>Alt + F5</kbd></td>
-              <td>設定ダイアログを開きます。</td>
+              <td data-label="操作"><strong>設定を開く</strong></td>
+              <td data-label="キー"><kbd>O</kbd> / <kbd>Alt + F5</kbd></td>
+              <td data-label="説明">設定ダイアログを開きます。</td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 id="browser-media" style="margin-top: 2.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">画像・動画・音声の開き方</h3>
+      <p>Browserで選択した項目の種類とキーに応じて開き先が変わります。<kbd>Z</kbd>はファイルをWindowsの関連付けで開きます。Browserでは<kbd>E</kbd>と（MidFD標準の割り当てでは）<kbd>F4</kbd>で外部エディタを開きます。FD／WinFD互換では<kbd>F4</kbd>は削除です。</p>
+      <div class="midfd-table-wrap">
+        <table class="midfd-ref-table midfd-browser-media-table">
+          <thead><tr><th>Browser操作</th><th>動作</th></tr></thead>
+          <tbody>
+            <tr><td><kbd>Enter</kbd>（対応画像）</td><td>選択した画像を内蔵ビューアーで表示します。通常は設定に応じてBrowserの選択変更に追従します。Susieプラグインを使う画像は、登録・有効化と検査が済み、対応形式として確認されたものが対象です。</td></tr>
+            <tr><td><kbd>Ctrl + Enter</kbd>（単一画像）</td><td>選択中の画像を内蔵ビューアで開き、固定表示にします。固定を解除すると、Browserの選択に追従します。</td></tr>
+            <tr><td><kbd>Enter</kbd>（動画）</td><td>内蔵MidPlayerで動画を再生します。再生中／一時停止中は自動的に固定され、停止または再生終了後はBrowserの選択に追従します。</td></tr>
+            <tr><td><kbd>Ctrl + Enter</kbd>（動画）</td><td>内蔵MidPlayerで動画を開きます。再生時の固定動作はEnterと同じです。</td></tr>
+            <tr><td><kbd>Enter</kbd> / <kbd>Ctrl + Enter</kbd>（対応音声）</td><td>設定済みの外部再生アプリで開きます。</td></tr>
+            <tr><td><kbd>Z</kbd></td><td>ファイルをWindowsの関連付けで開き、フォルダーはエクスプローラーで開きます。</td></tr>
+            <tr><td><kbd>E</kbd> / MidFD標準の<kbd>F4</kbd></td><td>Browserで選択中のファイルを設定済みの外部エディタで開きます。未設定の場合はMidFDの既定の動作に従います。</td></tr>
           </tbody>
         </table>
       </div>
@@ -307,7 +324,7 @@
         <h2>Filter / Search</h2>
       </div>
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>操作</th>
@@ -317,34 +334,35 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>現在一覧Filter</strong></td>
-              <td><kbd>F</kbd></td>
-              <td>現在表示中の一覧だけを絞り込みます。filesystemを再帰検索しません。</td>
+              <td data-label="操作"><strong>現在一覧Filter</strong></td>
+              <td data-label="キー／条件"><kbd>F</kbd></td>
+              <td data-label="説明">現在表示中の一覧だけを絞り込みます。ファイルシステムを再帰検索しません。</td>
             </tr>
             <tr>
-              <td><strong>Search</strong></td>
-              <td><kbd>Ctrl + F</kbd> / <kbd>F7</kbd></td>
-              <td>現在のBrowser tabをrootとして配下を再帰検索します。</td>
+              <td data-label="操作"><strong>Search</strong></td>
+              <td data-label="キー／条件"><kbd>Ctrl + F</kbd> / <kbd>F7</kbd></td>
+              <td data-label="説明">現在のBrowserタブで開いているフォルダーと、その配下を再帰検索します。</td>
             </tr>
             <tr>
-              <td><strong>名前検索</strong></td>
-              <td>Search contentを空にする</td>
-              <td>filename条件で配下のfile／folderを検索します。</td>
+              <td data-label="操作"><strong>名前検索</strong></td>
+              <td data-label="キー／条件">検索画面の内容欄を空にする</td>
+              <td data-label="説明">ファイル名条件で、その配下のファイル／フォルダーを検索します。</td>
             </tr>
             <tr>
-              <td><strong>内容検索</strong></td>
-              <td>Search contentへ入力する</td>
-              <td>配下fileの内容を検索します。必要に応じてfilename条件も併用できます。</td>
+              <td data-label="操作"><strong>内容検索</strong></td>
+              <td data-label="キー／条件">検索画面の内容欄へ入力する</td>
+              <td data-label="説明">配下のファイル内容を検索します。必要に応じてファイル名条件も使えます。</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p>FilterとSearchは別pageで、条件のdraftを共有しません。ripgrep 15.2.0は配布packageに同梱されているため、通常は別途導入不要です。</p>
+      <p>FilterとSearchは別の画面で、入力した検索条件は共有しません。ripgrep 15.2.0は配布ZIPに同梱されているため、通常は別途導入不要です。</p>
 
       <h3 style="margin-top: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">内容検索結果</h3>
-      <p>内容検索結果はfileごとに1行で、file、ヒット数、行、列、内容を一覧表示します。内容検索中から到着した結果を確認でき、名前検索の結果一覧は検索完了後に表示します。実際に使用したengineとversionも検索結果画面に表示されます。</p>
+      <p>内容検索の結果はファイルごとに1行で、検索数・行・列・一致箇所を一覧表示します。内容検索は到着した結果を順次確認でき、名前検索の結果は検索完了後に一覧表示します。使用した検索エンジン名と版も結果画面に表示されます。</p>
+      <p>検索結果画面の<kbd>E</kbd>は、名前検索では選択したファイルを、内容検索では選択中の一致箇所を設定済みの外部エディタで開きます。外部エディタの引数テンプレートでファイル／行／列を渡せます。このテンプレートは名前検索や通常のBrowserで<kbd>E</kbd>を使う場合には適用されません。</p>
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-content-search-results-table">
           <thead>
             <tr>
               <th>結果画面操作</th>
@@ -358,23 +376,31 @@
             </tr>
             <tr>
               <td><kbd>←</kbd> / <kbd>→</kbd></td>
-              <td>同一file内のhitを移動します。</td>
+              <td>同じファイル内の一致箇所を移動します。</td>
             </tr>
             <tr>
               <td><kbd>Enter</kbd></td>
-              <td>名前検索は確認Browserで開き、内容検索はPreviewします。</td>
+              <td>名前検索の結果は確認用のBrowserで開き、内容検索は内容をプレビューします。</td>
             </tr>
             <tr>
               <td><kbd>Ctrl + Enter</kbd></td>
-              <td>新しい通常tabを使って確認／Previewします。</td>
+              <td>新しい通常のタブで開き、内容検索の結果はプレビューします。</td>
             </tr>
             <tr>
               <td><kbd>Ctrl + F</kbd></td>
-              <td>検索完了後、結果があればresult filterを開きます。0件ならcriteriaを引き継いだSearch dialogを開きます。</td>
+              <td>検索完了後、結果があれば検索結果の絞り込み画面を開きます。0件の場合は検索条件を引き継いだ検索画面を開きます。</td>
+            </tr>
+            <tr>
+              <td><kbd>E</kbd></td>
+              <td>選択中の内容検索結果を設定済みの外部エディタで開きます。引数テンプレートでファイル／行／列を渡せます。</td>
+            </tr>
+            <tr>
+              <td><kbd>Ctrl + Shift + O</kbd> / Function Barの<kbd>Output</kbd></td>
+              <td>検索が最後まで完了した場合、または一部の結果で終了した場合に、絞り込み前の結果一覧をファイルへ出力し、外部エディタで開きます。完了時は全結果、一部終了時は取得済みの一致箇所と未完了の理由を出力します。</td>
             </tr>
             <tr>
               <td><kbd>F7</kbd></td>
-              <td>criteriaを引き継いで再検索します。</td>
+              <td>現在の検索条件で再検索します。</td>
             </tr>
           </tbody>
         </table>
@@ -390,7 +416,7 @@
       <p style="margin-bottom: 2rem;">MidFDでは、複数のファイルをMarkして一括でコピー、移動、削除などの操作を行えます。MarkSlotの保存・復元も通常機能です。集合演算とBackup TransferはFull限定です。</p>
       
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>操作</th>
@@ -400,24 +426,24 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Mark切り替え</strong></td>
-              <td><kbd>Space</kbd> / <kbd>Insert</kbd></td>
-              <td>カーソル位置の項目のMark状態を反転させて下に移動します。</td>
+              <td data-label="操作"><strong>Mark切り替え</strong></td>
+              <td data-label="共通キー"><kbd>Space</kbd> / <kbd>Insert</kbd></td>
+              <td data-label="説明">カーソル位置の項目のMark状態を反転させて下に移動します。</td>
             </tr>
             <tr>
-              <td><strong>ファイルのみ全選択</strong></td>
-              <td><kbd>Home</kbd></td>
-              <td>ディレクトリ（フォルダー）を除外し、ファイルのみを全選択/解除します。</td>
+              <td data-label="操作"><strong>ファイルのみ全選択</strong></td>
+              <td data-label="共通キー"><kbd>Home</kbd></td>
+              <td data-label="説明">ディレクトリ（フォルダー）を除外し、ファイルのみを全選択/解除します。</td>
             </tr>
             <tr>
-              <td><strong>フォルダーを含む全選択</strong></td>
-              <td><kbd>End</kbd> / <kbd>Ctrl + A</kbd></td>
-              <td>すべてのフォルダーとファイルを一括選択/解除します。</td>
+              <td data-label="操作"><strong>フォルダーを含む全選択</strong></td>
+              <td data-label="共通キー"><kbd>End</kbd> / <kbd>Ctrl + A</kbd></td>
+              <td data-label="説明">すべてのフォルダーとファイルを一括選択/解除します。</td>
             </tr>
             <tr>
-              <td><strong>MarkSlot画面を開く</strong></td>
-              <td><kbd>Ctrl + M</kbd></td>
-              <td>現在のMark状態をスロットに一時保存・復元する画面を開きます。</td>
+              <td data-label="操作"><strong>MarkSlot画面を開く</strong></td>
+              <td data-label="共通キー"><kbd>Ctrl + M</kbd></td>
+              <td data-label="説明">現在のMark状態をスロットに一時保存・復元する画面を開きます。</td>
             </tr>
           </tbody>
         </table>
@@ -432,7 +458,7 @@
       <p style="margin-bottom: 2rem;">操作方式により、ファンクションキー（F1〜F12）の初期機能が変化します。キーおよびファンクションバーの割り当ては設定からカスタマイズ可能です。</p>
 
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>物理キー</th>
@@ -441,25 +467,25 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td><kbd>F1</kbd></td><td>Help（ヘルプ表示）</td><td>Help（ヘルプ表示）</td></tr>
-            <tr><td><kbd>F2</kbd></td><td>Rename（名前変更）</td><td>コマンド実行Dialogを開きます。</td></tr>
-            <tr><td><kbd>F3</kbd></td><td>Copy（コピー）</td><td>Copy（コピー）</td></tr>
-            <tr><td><kbd>F4</kbd></td><td>Edit（外部エディタで開く）</td><td>Delete（削除）</td></tr>
-            <tr><td><kbd>F5</kbd></td><td>Reload（再読込）</td><td>Rename（名前変更）</td></tr>
-            <tr><td><kbd>F6</kbd></td><td>Sort（並び替え）</td><td>Sort（並び替え）</td></tr>
-            <tr><td><kbd>F7</kbd></td><td>Search dialog</td><td>Search dialog</td></tr>
-            <tr><td><kbd>F8</kbd></td><td>QuickAccess</td><td>Tree（ツリー表示）</td></tr>
-            <tr><td><kbd>F9</kbd></td><td>Logdsk（ディレクトリ移動）</td><td>Logdsk（ディレクトリ移動）</td></tr>
-            <tr><td><kbd>F10</kbd></td><td>Command Palette</td><td>Unpack（圧縮ファイル解凍）</td></tr>
-            <tr><td><kbd>F11</kbd></td><td>MarkSlot</td><td>Top（一覧の最上部へ移動）</td></tr>
-            <tr><td><kbd>F12</kbd></td><td>コマンド一覧の表示</td><td>Bottom（一覧の最下部へ移動）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F1</kbd></td><td data-label="MidFD標準">Help（ヘルプ表示）</td><td data-label="FD／WinFD互換">Help（ヘルプ表示）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F2</kbd></td><td data-label="MidFD標準">Rename（名前変更）</td><td data-label="FD／WinFD互換">コマンド実行Dialogを開きます。</td></tr>
+            <tr><td data-label="物理キー"><kbd>F3</kbd></td><td data-label="MidFD標準">Copy（コピー）</td><td data-label="FD／WinFD互換">Copy（コピー）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F4</kbd></td><td data-label="MidFD標準">Edit（外部エディタで開く）</td><td data-label="FD／WinFD互換">Delete（削除）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F5</kbd></td><td data-label="MidFD標準">Reload（再読込）</td><td data-label="FD／WinFD互換">Rename（名前変更）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F6</kbd></td><td data-label="MidFD標準">Sort（並び替え）</td><td data-label="FD／WinFD互換">Sort（並び替え）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F7</kbd></td><td data-label="MidFD標準">Search dialog</td><td data-label="FD／WinFD互換">Search dialog</td></tr>
+            <tr><td data-label="物理キー"><kbd>F8</kbd></td><td data-label="MidFD標準">QuickAccess</td><td data-label="FD／WinFD互換">Tree（ツリー表示）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F9</kbd></td><td data-label="MidFD標準">Logdsk（ディレクトリ移動）</td><td data-label="FD／WinFD互換">Logdsk（ディレクトリ移動）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F10</kbd></td><td data-label="MidFD標準">Command Palette</td><td data-label="FD／WinFD互換">Unpack（圧縮ファイル解凍）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F11</kbd></td><td data-label="MidFD標準">MarkSlot</td><td data-label="FD／WinFD互換">Top（一覧の最上部へ移動）</td></tr>
+            <tr><td data-label="物理キー"><kbd>F12</kbd></td><td data-label="MidFD標準">コマンド一覧の表示</td><td data-label="FD／WinFD互換">Bottom（一覧の最下部へ移動）</td></tr>
           </tbody>
         </table>
       </div>
 
       <h3 style="margin-top: 2rem; border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">FD／WinFD互換時のShift割り当て</h3>
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>キー</th>
@@ -468,19 +494,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td><kbd>Shift + F1</kbd></td><td>属性・日時変更</td><td>属性・日時変更ダイアログを開きます。</td></tr>
-            <tr><td><kbd>Shift + F2</kbd></td><td>システム情報</td><td>システム情報を表示します。</td></tr>
-            <tr><td><kbd>Shift + F3</kbd></td><td>Move（移動）</td><td>移動先の入力欄を開きます。</td></tr>
-            <tr><td><kbd>Shift + F4</kbd></td><td>Delete（削除）</td><td>FD／WinFD互換では、F4とShift+F4の両方が削除です。</td></tr>
-            <tr><td><kbd>Shift + F5</kbd></td><td>新規フォルダー</td><td>新規フォルダー作成ダイアログを開きます。</td></tr>
-            <tr><td><kbd>Shift + F6</kbd></td><td>Command Prompt</td><td>Command Promptを開きます。</td></tr>
-            <tr><td><kbd>Shift + F7</kbd></td><td>Reload（再読込）</td><td>現在フォルダーの内容を再読込します。</td></tr>
-            <tr><td><kbd>Shift + F8</kbd></td><td>Edit（外部エディタ）</td><td>選択ファイルを登録した外部エディタで開きます。</td></tr>
-            <tr><td><kbd>Shift + F9</kbd></td><td>Preview</td><td>選択項目をプレビューします。</td></tr>
-            <tr><td><kbd>Shift + F10</kbd></td><td>Pack（圧縮）</td><td>圧縮ダイアログを開きます。</td></tr>
-            <tr><td><kbd>Shift + F11</kbd></td><td>QuickAccess</td><td>QuickAccessを開きます。</td></tr>
-            <tr><td><kbd>Shift + F12</kbd></td><td>未割り当て</td><td>既定では機能を割り当てていません。</td></tr>
-            <tr><td><kbd>Shift + Enter</kbd></td><td>Edit（外部エディタ）</td><td>FD／WinFD互換時の外部エディタ別名キーです。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F1</kbd></td><td data-label="操作">属性・日時変更</td><td data-label="説明">属性・日時変更ダイアログを開きます。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F2</kbd></td><td data-label="操作">システム情報</td><td data-label="説明">システム情報を表示します。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F3</kbd></td><td data-label="操作">Move（移動）</td><td data-label="説明">移動先の入力欄を開きます。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F4</kbd></td><td data-label="操作">Delete（削除）</td><td data-label="説明">FD／WinFD互換では、F4とShift+F4の両方が削除です。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F5</kbd></td><td data-label="操作">新規フォルダー</td><td data-label="説明">新規フォルダー作成ダイアログを開きます。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F6</kbd></td><td data-label="操作">Command Prompt</td><td data-label="説明">Command Promptを開きます。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F7</kbd></td><td data-label="操作">Reload（再読込）</td><td data-label="説明">現在フォルダーの内容を再読込します。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F8</kbd></td><td data-label="操作">Edit（外部エディタ）</td><td data-label="説明">選択ファイルを登録した外部エディタで開きます。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F9</kbd></td><td data-label="操作">Preview</td><td data-label="説明">選択項目をプレビューします。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F10</kbd></td><td data-label="操作">Pack（圧縮）</td><td data-label="説明">圧縮ダイアログを開きます。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F11</kbd></td><td data-label="操作">QuickAccess</td><td data-label="説明">QuickAccessを開きます。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + F12</kbd></td><td data-label="操作">未割り当て</td><td data-label="説明">既定では機能を割り当てていません。</td></tr>
+            <tr><td data-label="キー"><kbd>Shift + Enter</kbd></td><td data-label="操作">Edit（外部エディタ）</td><td data-label="説明">FD／WinFD互換時の外部エディタ別名キーです。</td></tr>
           </tbody>
         </table>
       </div>
@@ -492,46 +518,24 @@
         <h2>メディアプレビューと外部連携</h2>
       </div>
 
-      <h3 style="border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">動画静画プレビュー（VideoStill）操作</h3>
-      <p style="margin: 1rem 0;">内蔵画像Viewerで動画プレビュー（ffmpeg連携時）を表示している際、以下のシーク操作を行えます。</p>
+      <h3 style="border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">内蔵動画Playerと音声の操作</h3>
+      <p style="margin: 1rem 0;">Browserで動画をEnter／Ctrl+Enterすると、内蔵MidPlayer（Media Foundation）で再生します。再生中／一時停止中は固定され、停止・終了・エラーではBrowser選択への追従に戻ります。</p>
       <div class="midfd-table-wrap" style="margin-bottom: 2rem;">
-        <table class="midfd-ref-table">
-          <thead>
-            <tr>
-              <th>操作</th>
-              <th>キー</th>
-              <th>説明</th>
-            </tr>
-          </thead>
+        <table class="midfd-ref-table midfd-mobile-card-table">
+          <thead><tr><th>操作</th><th>キー／UI</th><th>動作</th></tr></thead>
           <tbody>
-            <tr>
-              <td><strong>シーク（戻る/進む）</strong></td>
-              <td><kbd>←</kbd> / <kbd>→</kbd></td>
-              <td>動画の再生位置をステップ移動します（動画長に応じて自動調整）。</td>
-            </tr>
-            <tr>
-              <td><strong>大シーク（戻る/進む）</strong></td>
-              <td><kbd>Shift + ←</kbd> / <kbd>Shift + →</kbd></td>
-              <td>大きくステップ移動します。</td>
-            </tr>
-            <tr>
-              <td><strong>先頭に戻る</strong></td>
-              <td><kbd>Home</kbd></td>
-              <td>動画の最初（0秒）に位置を戻します。</td>
-            </tr>
-            <tr>
-              <td><strong>位置追従で外部再生</strong></td>
-              <td><kbd>Ctrl + Enter</kbd></td>
-              <td>現在のプレビュー位置を引き継いで外部プレーヤー（ffplay等）で再生します。</td>
-            </tr>
+            <tr><td data-label="操作"><strong>動画を開く</strong></td><td data-label="キー／UI"><kbd>Enter</kbd> / <kbd>Ctrl + Enter</kbd></td><td data-label="動作">内蔵MidPlayerで再生します。開始時はBrowser選択に追従し、再生中／一時停止中は自動固定します。</td></tr>
+            <tr><td data-label="操作"><strong>固定／追従を切替</strong></td><td data-label="キー／UI">Viewerの固定button</td><td data-label="動作">手動で固定を解除すると、動画再生中でも矢印キーをBrowser選択へ送れます。次の実再生状態の変化で自動規則が再評価されます。</td></tr>
+            <tr><td data-label="操作"><strong>固定中の動画操作</strong></td><td data-label="キー／UI"><kbd>←</kbd> / <kbd>→</kbd>、<kbd>↑</kbd> / <kbd>↓</kbd>、<kbd>Space</kbd></td><td data-label="動作">固定中は左右でseek、上下で音量、Spaceで一時停止／再開します。追従中の矢印はBrowser選択を移動します。</td></tr>
+            <tr><td data-label="操作"><strong>対応音声を開く</strong></td><td data-label="キー／UI"><kbd>Enter</kbd> / <kbd>Ctrl + Enter</kbd></td><td data-label="動作">ffplayで外部再生します。ffplayが見つからない場合はWindowsの関連付けを使います。</td></tr>
+            <tr><td data-label="操作"><strong>動画の明示Preview</strong></td><td data-label="キー／UI"><kbd>V</kbd></td><td data-label="動作">file内容probeによるPreviewです。通常動画はBinary表示で、動画再生は行いません。Windowsの関連付けで開く場合は<kbd>Z</kbd>を使います。</td></tr>
           </tbody>
         </table>
       </div>
-
       <h3 style="border-left: 4px solid var(--accent-color); padding-left: 0.75rem;">外部ツール Alt slot launcher</h3>
       <p style="margin: 1rem 0;">設定で外部ツールにショートカットキー（Alt + 英数字）を割り当てると、ファイラーから一発で起動できます。</p>
       <div class="midfd-table-wrap">
-        <table class="midfd-ref-table">
+        <table class="midfd-ref-table midfd-mobile-card-table">
           <thead>
             <tr>
               <th>操作</th>
@@ -541,19 +545,19 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>ランチャー表示</strong></td>
-              <td><kbd>Alt</kbd>（単押し）</td>
-              <td>登録済みの外部ツール一覧スロットを画面に表示します。</td>
+              <td data-label="操作"><strong>ランチャー表示</strong></td>
+              <td data-label="キー"><kbd>Alt</kbd>（単押し）</td>
+              <td data-label="説明">登録済みの外部ツール一覧スロットを画面に表示します。</td>
             </tr>
             <tr>
-              <td><strong>スロット直接起動</strong></td>
-              <td><kbd>Alt + 英数字</kbd></td>
-              <td>対応するスロットに登録した外部ツールを直接起動します。</td>
+              <td data-label="操作"><strong>スロット直接起動</strong></td>
+              <td data-label="キー"><kbd>Alt + 英数字</kbd></td>
+              <td data-label="説明">対応するスロットに登録した外部ツールを直接起動します。</td>
             </tr>
             <tr>
-              <td><strong>選択して起動</strong></td>
-              <td><kbd>↑</kbd> / <kbd>↓</kbd> を経て <kbd>Enter</kbd></td>
-              <td>Altで開いたランチャー内で選択を移動し、決定して起動します。</td>
+              <td data-label="操作"><strong>選択して起動</strong></td>
+              <td data-label="キー"><kbd>↑</kbd> / <kbd>↓</kbd> を経て <kbd>Enter</kbd></td>
+              <td data-label="説明">Altで開いたランチャー内で選択を移動し、決定して起動します。</td>
             </tr>
           </tbody>
         </table>

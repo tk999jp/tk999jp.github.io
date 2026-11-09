@@ -59,6 +59,7 @@
 <a href="./" class="active" aria-current="page">MidFD ホーム</a>
 <a href="guide.html">導入ガイド</a>
 <a href="keys.html">キー操作</a>
+<a href="releases.html">公開履歴</a>
 <a href="design.html">Design Notes</a>
 <a href="#verify">リリース情報</a>
 </nav>
@@ -81,6 +82,7 @@
 <strong>動作要件:</strong>
 <span>Windows 10／11 64bit / .NET 10 Desktop Runtime x64</span>
 </div>
+<p class="midfd-small-note">32bit Susie SPIプラグインを使う場合は、.NET 10 Desktop Runtime x86も必要です。</p>
 <p class="midfd-small-note">Runtime が不足している場合は <a href="guide.html">導入ガイド</a> を確認してください。</p>
 </div>
 <div class="midfd-product-stage">
@@ -94,7 +96,8 @@
 <button class="midfd-preview-button" data-midfd-preview-trigger="horizontal-tabs" data-preview-alt="MidFD 横型タブ画面" data-preview-caption="画面上部にタブとカテゴリを表示できます。" data-preview-src="assets/images/screenshot-main-browser.png" data-preview-title="横型タブ" type="button">横型タブ</button>
 <button class="midfd-preview-button" data-midfd-preview-trigger="command-palette" data-preview-alt="MidFD コマンドパレット" data-preview-caption="機能、設定、外部ツールなどを検索して実行できます。" data-preview-src="assets/images/screenshot-command-palette.png" data-preview-title="Command Palette" type="button">Command Palette</button>
 <button class="midfd-preview-button" data-midfd-preview-trigger="input-customize" data-preview-alt="MidFD キー設定" data-preview-caption="入力割り当てをまとめて確認・変更できます。" data-preview-src="assets/images/screenshot-input-customize.png" data-preview-title="キー設定" type="button">キー設定</button>
-<button class="midfd-preview-button" data-midfd-preview-trigger="image-viewer" data-preview-alt="MidFD 画像ビューア" data-preview-caption="矩形選択、回転、反転、画像情報表示に対応します。" data-preview-src="assets/images/screenshot-image-viewer.png" data-preview-title="画像ビューア" type="button">画像ビューア</button>
+<button class="midfd-preview-button" data-midfd-preview-trigger="image-viewer" data-preview-alt="MidFD 内蔵画像Viewer" data-preview-caption="内蔵画像Viewerで表示します。Browser選択への追従と固定を切り替えられます。" data-preview-src="assets/images/screenshot-midplayer-image.png" data-preview-title="画像ビューア" type="button">画像ビューア</button>
+<button class="midfd-preview-button" data-midfd-preview-trigger="video-player" data-preview-alt="MidFD 内蔵動画Player" data-preview-caption="内蔵Playerで動画を再生します。再生・停止、seek、速度、音量を操作できます。" data-preview-src="assets/images/screenshot-midplayer-video.png" data-preview-title="動画ビューア" type="button">動画ビューア</button>
 <button class="midfd-preview-button" data-midfd-preview-trigger="settings-colors" data-preview-alt="MidFD 設定画面" data-preview-caption="設定画面の雰囲気を確認できます。" data-preview-src="assets/images/screenshot-settings-colors.png" data-preview-title="設定画面" type="button">設定画面</button>
 <button class="midfd-preview-button" data-midfd-preview-trigger="content-search" data-preview-alt="MidFD 内容検索結果画面" data-preview-caption="ファイル内容を横断検索し、ヒットしたファイル、行、列、内容を一覧で確認できます。" data-preview-src="assets/images/screenshot-content-search.png" data-preview-title="内容検索" type="button">内容検索</button>
 </div>
@@ -110,7 +113,7 @@
 <div class="midfd-dl-card">
 <p class="midfd-kicker">通常版</p>
 <p class="midfd-dl-filename"><code>MidFD-win-x64.zip</code></p>
-<p>ZIP を展開して <code>MidFD.exe</code> を起動するだけで使い始められます。MidFD本体はインストール不要です。動作には <code>.NET 10 Desktop Runtime x64</code> が必要ですが、導入済みの環境では追加インストールは不要です。</p>
+<p>ZIP を展開して <code>MidFD.exe</code> を起動するだけで使い始められます。MidFD本体はインストール不要です。動作には <code>.NET 10 Desktop Runtime x64</code> が必要ですが、導入済みの環境では追加インストールは不要です。32bit Susie SPIプラグインを使う場合は、x86 Runtimeも追加で必要です。</p>
 <div class="midfd-panel-actions">
 <a class="midfd-button midfd-button-primary" href="https://github.com/tk999jp/MidFD/releases/latest/download/MidFD-win-x64.zip" id="dl-main-btn">通常版をダウンロード</a>
 <a class="midfd-button midfd-button-secondary" href="https://github.com/tk999jp/MidFD/releases" rel="noopener noreferrer" target="_blank">配布元ページ (GitHub Releases)</a>
@@ -121,6 +124,7 @@
 <ul class="midfd-req-list">
 <li><strong>OS:</strong> Windows 10／11 64bit</li>
 <li><strong>Runtime:</strong> .NET 10 Desktop Runtime x64</li>
+<li><strong>追加Runtime:</strong> 32bit Susie SPIプラグインを使う場合のみ.NET 10 Desktop Runtime x86</li>
 </ul>
 <p class="midfd-small-note">起動時に「<code>Download it now</code>」ボタンが表示された場合は、そこからRuntime を追加できます。それ以外の方法は <a href="guide.html">導入ガイド</a> を参照してください。</p>
 </div>
@@ -133,24 +137,28 @@
 </div>
 <div class="midfd-opref-cards">
 <div class="midfd-opref-card">
-<div class="midfd-opref-card-title">移動と作業場所をすばやく切り替える</div>
-<p>パンくずや直接path入力、QuickAccessに加え、縦型／横型タブ、タブ訪問履歴、<code>@</code>＋1文字の頭文字jumpが使えます。複数directoryをそれぞれ新しいtabで開き、同一category内のTab Groupとして整理できます。</p>
+<div class="midfd-opref-card-title">移動・タブ管理</div>
+<p>縦型／横型タブ、QuickAccess、訪問履歴を使って作業場所を切り替えられます。<a href="#vertical-tabs">タブ表示の紹介</a></p>
 </div>
 <div class="midfd-opref-card">
-<div class="midfd-opref-card-title">検索と一括操作</div>
-<p>Fは現在一覧だけをFilterし、Ctrl+F／F7は現在tab配下をSearchします。content欄が空なら名前検索、入力すればfile内容を検索し、結果ではfileごとのhit数・行・列・内容を確認できます。ripgrep同梱のため別途導入は不要です。<a href="keys.html#filter-search">Filter／名前検索／内容検索の使い分けを見る</a>。Batch Renameと複数directoryの一括tab openにも対応し、成功した一括openはfile操作と共通の時系列Undo／Redoへ記録されます。</p>
+<div class="midfd-opref-card-title">名前検索・内容検索</div>
+<p>一覧の絞り込み、名前検索、ファイル内容の検索に対応します。検索結果の一致箇所を外部エディタで開き、結果一覧をファイルへ出力できます。<a href="keys.html#filter-search">検索の使い分けと操作</a></p>
 </div>
 <div class="midfd-opref-card">
-<div class="midfd-opref-card-title">WorkspaceとMarkを管理</div>
-<p>Workspace SnapshotでWorkspace全体を保存・復元できます（Fullで既定有効、個別変更可）。MarkSlotの保存・復元は通常機能で、集合演算とBackup TransferはFull限定です。</p>
+<div class="midfd-opref-card-title">ファイル操作・Mark</div>
+<p>コピー・移動・削除、Mark、一括名前変更に対応します。成功したファイル操作や一括でタブを開く操作は、元に戻す／やり直す履歴に入ります。MarkSlotの集合演算とバックアップの書き出し／読み込みはFull限定です。<a href="keys.html">キー操作を見る</a></p>
 </div>
 <div class="midfd-opref-card">
-<div class="midfd-opref-card-title">ファイル作成・Windows連携</div>
-<p>単一fileはContextMenuの「プログラムから開く...」でWindowsアプリを選べます。「新規作成」に表示する拡張子presetは設定から管理できます。</p>
+<div class="midfd-opref-card-title">画像・動画ビューアー</div>
+<p>画像は内蔵ビューアー、動画はMidPlayerで開けます。有効にしたSusieプラグインが対応する画像形式も表示できます。<a href="keys.html#browser-media">開き方</a>／<a href="guide.html#susie-plugins">Susieプラグインの登録方法</a></p>
 </div>
 <div class="midfd-opref-card">
-<div class="midfd-opref-card-title">圧縮・Viewer・外部連携</div>
-<p>7-Zipの標準ダイアログやZIPのDrag操作、画像・テキスト・Markdown・CSV/TSV・SQLite・動画プレビューを使えます。必要な外部ツールも後から連携できます。</p>
+<div class="midfd-opref-card-title">圧縮・外部ツール</div>
+<p>7-Zip連携で書庫を操作できます。対応音声はffplayで外部再生でき、外部エディタなども必要に応じて登録できます。<a href="#external-tools">外部ツールの紹介</a></p>
+</div>
+<div class="midfd-opref-card">
+<div class="midfd-opref-card-title">Workspace・操作カスタマイズ</div>
+<p>Workspace Snapshotで作業環境を保存・復元できます。入力割り当て、Functionバー、配色や表示を調整できます。SnapshotはFullで既定有効、個別に変更できます。</p>
 </div>
 </div>
 </section>
@@ -219,19 +227,19 @@
 <div>
 <div class="midfd-optional-tool-type">Media</div>
 <div class="midfd-optional-tool-name">ffmpeg / ffplay / ffprobe</div>
-<div class="midfd-optional-tool-desc">動画のサムネイル・シークプレビュー（VideoStill）機能やメディアファイルの再生連携に使用します。</div>
+<div class="midfd-optional-tool-desc"><code>ffplay</code>は音声の外部再生に使います。Browserの動画Enter／Ctrl+Enterは内蔵MidPlayer（Media Foundation）で再生し、動画再生に<code>ffplay</code>、<code>ffmpeg</code>、<code>ffprobe</code>の登録は必要ありません。</div>
 </div>
 <div class="midfd-card-cta">ダウンロードページを開く ↗ <span class="midfd-external-badge">外部サイト</span></div>
 </a>
 
-<a href="guide.html#external-tools" class="midfd-optional-tool-card">
+<div class="midfd-optional-tool-card">
 <div>
 <div class="midfd-optional-tool-type">Text</div>
 <div class="midfd-optional-tool-name">外部エディタ</div>
-<div class="midfd-optional-tool-desc"><code>E</code>キーで選択ファイルを使い慣れた好みのテキストエディタで直接開くための設定が可能です。</div>
+<div class="midfd-optional-tool-desc">Browserでは<code>E</code>（MidFD標準の<code>F4</code>）で選択したファイルを、内容検索では<code>E</code>で選択中の一致箇所を外部エディタで開けます。使い分けは<a href="keys.html#filter-search">キー操作ガイド</a>をご覧ください。</div>
 </div>
-<div class="midfd-card-cta">設定方法を見る →</div>
-</a>
+<a href="guide.html#external-tools" class="midfd-card-cta">設定方法を見る →</a>
+</div>
 </div>
 </section>
 
@@ -324,7 +332,8 @@
 <ul class="footer-links">
 <li><a href="./">MidFD ホーム</a></li>
 <li><a href="guide.html">導入ガイド</a></li>
-<li><a href="keys.html">キー操作</a></li>
+<li><a href="keys.html">キー操作</a>
+<a href="releases.html">公開履歴</a></li>
 <li><a href="design.html">Design Notes</a></li>
 <li><a href="#external-tools">外部ツール連携</a></li>
 <li><a href="#verify">リリース情報</a></li>
